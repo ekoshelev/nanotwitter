@@ -1,0 +1,14 @@
+<form action='/submit' method='POST'>
+	<input type='text' name='model[name]' value='Enter Model Name' />
+	<input type='submit' value='Submit' />
+</form>
+
+<h3>All Models</h3>
+<ul>
+<% @models.each do |model| %>
+	<li>
+		<%= model.name %>
+	</li>
+<% end %>
+</ul>
+<a href="/">Back to Home</a>
