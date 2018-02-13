@@ -1,7 +1,6 @@
 require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
-require './models/model'
 require 'sinatra/twitter-bootstrap'
 
 get '/' do
