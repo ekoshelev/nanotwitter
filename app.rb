@@ -8,18 +8,28 @@ get '/' do
 	erb :index
 end
 
-post '/submit' do
-  @model = Model.new(params[:model])
-  if @model.save
-    redirect '/models'
-  else
-    'Sorry, there was an error!'
-  end
+get '/search' do
+	erb :search
 end
 
-get '/models' do
-	@models = Model.all
-	erb :models
+get '/profile' do
+	erb :profile
+end
+
+get '/viewprofile' do
+	erb :viewprofile
+end
+
+post '/login' do
+    redirect '/search'
+end
+
+post '/register' do
+    redirect '/search'
+end
+
+post '/search' do
+    redirect '/search'
 end
 
 class TestApp < Sinatra::Base
