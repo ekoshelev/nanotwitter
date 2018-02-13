@@ -2,6 +2,7 @@ require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require './models/model'
+require 'sinatra/twitter-bootstrap'
 
 get '/' do
 	erb :index
@@ -19,4 +20,8 @@ end
 get '/models' do
 	@models = Model.all
 	erb :models
+end
+
+class TestApp < Sinatra::Base
+  register Sinatra::Twitter::Bootstrap::Assets
 end

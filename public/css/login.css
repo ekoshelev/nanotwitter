@@ -1,0 +1,36 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+/* Fixed navbar */
+body {
+    padding-top: 90px;
+    background-image: url('/../img/color-splash.jpg');
+    /* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+div.cn {
+    vertical-align: middle;
+    text-align: center;
+}
+div.inner {
+    display: inline-block;
+    color: #fff;
+    font-size: 150px;
+}
