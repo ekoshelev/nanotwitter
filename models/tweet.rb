@@ -6,4 +6,6 @@ class Tweet < ActiveRecord::Base
 
   has_many :mentions
   has_many :users, through: :mentions
+
+  
 end
