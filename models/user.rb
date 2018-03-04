@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   # has_many :users, through: :followers
 
   has_many :mentions
-  has_many :tweets, through: :mentions
+  has_many :retweets
+  #has_many :tweets, through: :mentions
 
 end
