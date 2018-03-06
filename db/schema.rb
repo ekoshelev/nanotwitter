@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20180215190635) do
   enable_extension "plpgsql"
 
   create_table "followers", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "follower_id"
-    t.integer "followee_id"
   end
 
   create_table "hashtags", force: :cascade do |t|
@@ -27,10 +27,6 @@ ActiveRecord::Schema.define(version: 20180215190635) do
   create_table "mentions", force: :cascade do |t|
     t.integer "tweet_id"
     t.integer "user_id"
-  end
-
-  create_table "models", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "retweets", force: :cascade do |t|
