@@ -1,0 +1,34 @@
+#API Documentation#
+
+* GET /tweets/23
+  * Returns a Tweet by ID
+
+* GET /tweets/23/users
+  * Returns the user who posted the tweet by ID
+
+* GET /tweets/23/retweets
+  * Returns a list of retweets of a tweet by id.
+
+* GET /tweets/recent
+  * Returns the last (undecided) number of tweets posted.
+
+* GET /users/23
+  * Returns a user by ID
+
+* GET /users/23/tweets
+  * Returns a list of tweets from a user by ID
+
+* GET /users/23/followers
+  * Returns a list of users following a user by ID
+
+* GET /users/23/followers/7
+  * Returns a user by ID that is a follower of a user by ID
+
+* GET /users/23/followings
+ * Returns a list of users a user is following, by ID
+
+* GET /users/23/followings/7
+  * Return a user by id that a user by ID is following
+
+* POST /tweets/new
+  * Create a new tweet
