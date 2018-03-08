@@ -51,6 +51,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  minitest
   pg
   pry-byebug
   rake
