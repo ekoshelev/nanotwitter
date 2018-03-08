@@ -53,10 +53,10 @@ DEPENDENCIES
   activerecord
   pg
   pry-byebug
-  rake
+  rake (~> 12.3)
   sinatra
   sinatra-activerecord
   sinatra-twitter-bootstrap
 
 BUNDLED WITH
-   1.15.1
+   1.16.0
