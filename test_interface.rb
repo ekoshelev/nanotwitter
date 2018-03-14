@@ -7,6 +7,16 @@ Dir["./models/*.rb"].each {|file| require file}
 class TestInterface
 
 
+  def create_test_user
+    test_user = User.new
+    test_user.name = "TestUser"
+    test_user.email = "testuser@sample.com"
+    test_user.password = "password"
+    test_user.save
+    return test_user
+  end
+
+
   def reset_User
     if User.exists?
       User.delete_all
@@ -59,8 +69,17 @@ class TestInterface
     tweet.delete
   end
 
+  def delete_retweet(retweet)
+    retweet.delete
+  end
+
   def delete_follow(follow)
     #delete all following id's, then all follower.where(follower_id: user.id).delete_all
+    follow.delete
+  end
+
+  def delete_following(following)
+    following.delete
   end
 
 

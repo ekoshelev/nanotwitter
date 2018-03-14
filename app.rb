@@ -54,7 +54,7 @@ get '/test' do
 	erb :test_display
 end
 
-get '/test/reset' do
+get '/test/page' do
 	erb :post_interface
 end
 
@@ -63,22 +63,45 @@ post '/test/reset/all' do
 	tester = TestInterface.new
 
 	tester.reset_All
+	tester.create_test_user
 
-	test_user = User.new
-	test_user.name = "TestUser"
-	test_user.email = "testuser@sample.com"
-	test_user.password = "password"
-
-	test_user.save
 end
 
 post '/test/reset/testuser' do
 	tester = TestInterface.new
-	test_user = User.where(name: 'TestUser')
 
-	test_user.tweets.each do |tweet|
-		tester.delete_tweet(tweet)
+	if User.exists?(name: 'TestUser')
+
+	test_user = User.where(name: 'TestUser').first
+
+
+	if test_user.tweets.exists?
+		test_user.tweets.each do |tweet|
+			tester.delete_tweet(tweet)
+		end
 	end
 
-	
+	if test_user.retweets.exists?
+			test_user.retweets.each do |retweet|
+				tester.delete_retweet(retweet)
+			end
+	end
+
+	if test_user.followers.exists?
+		test_user.followers.each do |follow|
+			tester.delete_follow(follow)
+		end
+	end
+
+	if test_user.following.exists?
+		test_user.following.each do |following|
+			tester.delete_following(following)
+		end
+	end
+
+	test_user.delete
+	end
+
+	tester.create_test_user
+
 end
