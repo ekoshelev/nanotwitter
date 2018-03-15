@@ -13,8 +13,11 @@ class TestInterface
     test_user.email = "testuser@sample.com"
     test_user.password = "password"
     test_user.save
+    @test_id = test_user.id
     return test_user
   end
+
+  attr_accessor :test_id
 
 
   def reset_User
@@ -26,6 +29,7 @@ class TestInterface
   def reset_Tweet
     if Tweet.exists?
       Tweet.delete_all
+      TweetHashtag.delete_all
     end
   end
 
@@ -74,13 +78,11 @@ class TestInterface
   end
 
   def delete_follow(follow)
-    #delete all following id's, then all follower.where(follower_id: user.id).delete_all
     follow.delete
   end
 
   def delete_following(following)
     following.delete
   end
-
 
 end

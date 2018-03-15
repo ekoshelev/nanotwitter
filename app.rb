@@ -105,7 +105,6 @@ post '/test/reset/testuser' do
 
 	test_user = User.where(name: 'TestUser').first
 
-
 	if test_user.tweets.exists?
 		test_user.tweets.each do |tweet|
 			tester.delete_tweet(tweet)
@@ -134,5 +133,27 @@ post '/test/reset/testuser' do
 	end
 
 	tester.create_test_user
+
+end
+
+get '/test/status' do
+	erb :report
+end
+
+post '/test/reset/standard' do
+	tester = TestInterface.new
+
+	tester.reset_User
+	tester.reset_Tweet
+	tester.reset_Follower
+	tester.reset_Mention
+	tester.reset_Retweet
+
+	tester.create_test_user
+
+	# if params[:tweets].exists?
+  #
+	# else
+	load "./db/seeds.rb"
 
 end

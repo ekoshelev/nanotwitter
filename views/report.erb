@@ -1,0 +1,10 @@
+<h1>Report</h1>
+
+<bold>Number of Users:</bold>  <%= User.all.size %><br>
+
+<bold>Number of Follows:</bold> <%= Follower.all.size %><br>
+
+<bold>Number of Tweets:</bold> <%= Tweet.all.size %><br>
+
+
+<bold>Test User ID</bold> <%= User.where(name: 'TestUser').first.id %><br>
