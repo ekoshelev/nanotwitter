@@ -1,5 +1,7 @@
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 <link href="/css/login.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -38,8 +40,14 @@
 		<div class="cn">
       <ol>
         <%@tweets.each do |tweet|%>
-        <li>
-          <strong>Name:</strong> <%=tweet.text%><br>
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title"><%=tweet.text%></h4>
+                <p class="card-text"> <%=tweet.time_created%> </p>
+            </div>
+        </div>
+
+        <br>
           <br>
         </li>
         <%end%>

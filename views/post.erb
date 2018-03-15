@@ -40,6 +40,7 @@
               <form action='/post_tweet' method='POST'>
   <label for="tweet" Username:/>
 <input id="description" name="tweet[text]" type="text">
+<input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
 <input type='submit' value='Post Tweet'/>
 </form>
 

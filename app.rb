@@ -55,7 +55,6 @@ post '/post_tweet' do
 	@result = Tweet.new(@tweet)
 	@result.save
 	@tweets = Tweet.all
-	byebug
 	redirect '/display'
 end
 
