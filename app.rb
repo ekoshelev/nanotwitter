@@ -52,7 +52,8 @@ end
 
 post '/post_tweet' do
 	@tweet = params[:tweet]
-	@results = Tweet.new(@tweet)
+	@result = Tweet.new(@tweet)
+	@result.save
 	@tweets = Tweet.all
 	byebug
 	redirect '/display'
