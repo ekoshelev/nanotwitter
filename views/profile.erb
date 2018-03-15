@@ -16,8 +16,10 @@
         <li><a href="">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="/profile">Profile</a></li>
-          <li><a href="/">Sign Out</a></li>
+        <li><a href="/display"> Timeline</a></li>
+              <li><a href="/post">   Post A Tweet</a></li>
+        <li><a href="/profile">   <%= session[:user] %>'s' Profile</a></li>
+        <li><a href="/">Sign Out</a></li>
           <li>
             <form class="navbar-form" role="search">
      <div class="input-group">

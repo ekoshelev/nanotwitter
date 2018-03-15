@@ -19,6 +19,16 @@ get '/search' do
 	erb :search
 end
 
+get '/post' do
+	erb :post
+end
+
+get '/display' do
+	@tweets = Tweet.all
+	erb :display
+end
+
+
 get '/profile' do
 	erb :profile
 end
@@ -33,11 +43,19 @@ post '/login' do
 
 	if BCrypt::Password.new(user.password).is_password? password
 		session[:user] = user.name
-		redirect to('/fry_protected_test')
+		redirect to('/display')
 	else
 		"Login Failed!"
 	end
     #redirect '/search'
+end
+
+post '/post_tweet' do
+	@tweet = params[:tweet]
+	@results = Tweet.new(@tweet)
+	@tweets = Tweet.all
+	byebug
+	redirect '/display'
 end
 
 post '/register' do
@@ -50,7 +68,7 @@ post '/register' do
 	@user.password = BCrypt::Password.create(@user.password)
 	@user.save
 
-	redirect '/test'
+	redirect to('/display')
 end
 
 post '/search' do

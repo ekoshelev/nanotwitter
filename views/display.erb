@@ -36,12 +36,14 @@
 <div class="container">
 	<div class="row">
 		<div class="cn">
-
-              <form action='/post_tweet' method='POST'>
-  <label for="tweet" Username:/>
-<input id="description" name="tweet[text]" type="text">
-<input type='submit' value='Post Tweet'/>
-</form>
+      <ol>
+        <%@tweets.each do |tweet|%>
+        <li>
+          <strong>Name:</strong> <%=tweet.text%><br>
+          <br>
+        </li>
+        <%end%>
+      </ol>
 
         </div>
 	</div>
