@@ -42,7 +42,7 @@ post '/login' do
 	password = "#{params[:password]}"
 
 	if BCrypt::Password.new(user.password).is_password? password
-		session[:user] = user.name
+		session[:user] = user
 		redirect to('/display')
 	else
 		"Login Failed!"

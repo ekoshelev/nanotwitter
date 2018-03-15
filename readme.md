@@ -11,3 +11,4 @@ Email: scalability404@gmail.com
 Week 1: Lizzie does bootstrap and UI, Riely sets up database, Lara does routes
 Week 2: Lara does authentication, Riely migrates database, Lizzie updates readme
 Week 3: Lara does seed data, Riely does tests, Lizzie sets up codeship and connects to heroku
+Week 4: Lara continues authentication, Riely does tests, Lizzie helps w/ authentication and implements posts
