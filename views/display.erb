@@ -1,5 +1,7 @@
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 <link href="/css/login.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -18,7 +20,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/display"> Timeline</a></li>
               <li><a href="/post">   Post A Tweet</a></li>
-              
+
         <li><a href="/profile">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/">Sign Out</a></li>
           <li>
@@ -26,7 +28,7 @@
      <div class="input-group">
          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
          <div class="input-group-btn">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Submit</button>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
          </div>
      </div>
      </form></li>
@@ -37,9 +39,21 @@
 <div class="container">
 	<div class="row">
 		<div class="cn">
-            <div class="inner">
-                  Welcome to Team Error 404's Profile Page!
+      <ol>
+        <%@tweets.each do |tweet|%>
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title"><%=tweet.text%></h4>
+                <p class="card-text"> <%= User.find_by(id: "#{tweet.user_id}").name %> </p> <p class="card-text"><%=tweet.time_created%> </p>
             </div>
+        </div>
+
+        <br>
+          <br>
+        </li>
+        <%end%>
+      </ol>
+
         </div>
 	</div>
 </div>

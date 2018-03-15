@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/display"> Timeline</a></li>
               <li><a href="/post">   Post A Tweet</a></li>
-              
+
         <li><a href="/profile">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/">Sign Out</a></li>
           <li>
@@ -26,7 +26,7 @@
      <div class="input-group">
          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
          <div class="input-group-btn">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Submit</button>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
          </div>
      </div>
      </form></li>
@@ -37,9 +37,15 @@
 <div class="container">
 	<div class="row">
 		<div class="cn">
-            <div class="inner">
-                  Welcome to Team Error 404's Profile Page!
-            </div>
+
+              <form action='/post_tweet' method='POST'>
+  <label for="tweet" Username:/>
+<input id="description" name="tweet[text]" type="text">
+<input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
+<input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
+<input type='submit' value='Post Tweet'/>
+</form>
+
         </div>
 	</div>
 </div>
