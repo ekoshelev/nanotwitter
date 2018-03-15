@@ -1,4 +1,4 @@
-require 'pry-byebug'
+#require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
