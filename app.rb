@@ -5,6 +5,8 @@ require 'sinatra/twitter-bootstrap'
 require_relative 'test_interface.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
+require_relative 'temp/fry_test_001.rb'
+
 get '/' do
 	erb :index
 end

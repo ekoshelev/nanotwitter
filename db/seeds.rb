@@ -25,7 +25,7 @@ def manual_mapping(table_name, csv_row)
   when "users"
     name = csv_row[1].gsub("'", "''").downcase
     email = "#{name}@example.com"
-    password = name.reverse
+    password = BCrypt::Password.create(name.reverse)
     api_token = csv_row[0]
 
     table_row = "('#{name}','#{email}','#{password}','#{api_token}')"
@@ -43,10 +43,10 @@ def manual_mapping(table_name, csv_row)
   end
 end
 
-#t1 = Time.now
+t1 = Time.now
 seed_table("users.csv", "users", "(name, email, password, api_token)")
 seed_table("tweets.csv", "tweets", "(text, time_created, user_id)")
 seed_table("follows.csv", "followers", "(user_id, follower_id)")
-#t2 = Time.now
+t2 = Time.now
 
-#puts (t2 - t1).round(2)
+puts (t2 - t1).round(2)
