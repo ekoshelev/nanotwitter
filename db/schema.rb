@@ -15,11 +15,6 @@ ActiveRecord::Schema.define(version: 20180215190635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.string "date"
-  end
-
   create_table "followers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "follower_id"
@@ -32,19 +27,6 @@ ActiveRecord::Schema.define(version: 20180215190635) do
   create_table "mentions", force: :cascade do |t|
     t.integer "tweet_id"
     t.integer "user_id"
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.string "dob"
-    t.string "gender"
-    t.string "zipcode"
-  end
-
-  create_table "registrations", force: :cascade do |t|
-    t.string "person_id"
-    t.string "event_id"
-    t.string "status"
   end
 
   create_table "retweets", force: :cascade do |t|

@@ -5,6 +5,8 @@ require 'sinatra/twitter-bootstrap'
 require_relative 'test_interface.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
+require_relative 'temp/fry_test_001.rb'
+
 get '/' do
 	erb :index
 end
@@ -26,7 +28,16 @@ get '/viewprofile' do
 end
 
 post '/login' do
-    redirect '/search'
+	user = User.find_by(name: "#{params[:username]}")
+	password = "#{params[:password]}"
+
+	if BCrypt::Password.new(user.password).is_password? password
+		session[:user] = user.name
+		redirect to('/fry_protected_test')
+	else
+		"Login Failed!"
+	end
+    #redirect '/search'
 end
 
 post '/register' do
@@ -34,10 +45,12 @@ post '/register' do
 		redirect '/'
 	end
 	params[:user].delete('confirm-password')
+
 	@user = User.new(params[:user])
+	@user.password = BCrypt::Password.create(@user.password)
 	@user.save
-    #redirect '/search'
-		redirect '/test'
+
+	redirect '/test'
 end
 
 post '/search' do
