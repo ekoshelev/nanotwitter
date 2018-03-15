@@ -45,7 +45,7 @@
             <div class="card-block">
                 <h4 class="card-title"><%=tweet.text%></h4>
                 <%byebug %>
-                <p class="card-text"> <%= User.find_by(id: "#{tweet.user_id}").name %> <%=tweet.time_created%> </p>
+                <p class="card-text"> <%= User.find_by(id: "#{tweet.user_id}").name %> </p> <p class="card-text"><%=tweet.time_created%> </p>
             </div>
         </div>
 

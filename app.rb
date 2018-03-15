@@ -67,7 +67,7 @@ post '/register' do
 	@user = User.new(params[:user])
 	@user.password = BCrypt::Password.create(@user.password)
 	@user.save
-
+session[:user] = @user
 	redirect to('/display')
 end
 
