@@ -85,4 +85,11 @@ class TestInterface
     following.delete
   end
 
+  def add_follow(followee,follower)
+    follow = Follower.new
+    follow.user_id = followee.id
+    follow.follower_id = follower.id
+    follow.save
+  end
+
 end
