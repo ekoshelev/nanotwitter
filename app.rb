@@ -36,10 +36,12 @@ post '/register' do
 		redirect '/'
 	end
 	params[:user].delete('confirm-password')
+	
 	@user = User.new(params[:user])
+	@user.password = BCrypt::Password.create(@user.password)
 	@user.save
-    #redirect '/search'
-		redirect '/test'
+
+	redirect '/test'
 end
 
 post '/search' do
