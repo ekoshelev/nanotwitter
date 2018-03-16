@@ -1,7 +1,7 @@
-require 'pry-byebug'
-require 'sinatra'
-require 'sinatra/activerecord'
-require 'sinatra/twitter-bootstrap'
+# require 'pry-byebug'
+# require 'sinatra'
+# require 'sinatra/activerecord'
+# require 'sinatra/twitter-bootstrap'
 Dir["./models/*.rb"].each {|file| require file}
 
 class TestInterface
