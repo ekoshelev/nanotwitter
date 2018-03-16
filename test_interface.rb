@@ -1,6 +1,6 @@
 # require 'pry-byebug'
-# require 'sinatra'
-# require 'sinatra/activerecord'
+require 'sinatra'
+require 'sinatra/activerecord'
 # require 'sinatra/twitter-bootstrap'
 Dir["./models/*.rb"].each {|file| require file}
 
