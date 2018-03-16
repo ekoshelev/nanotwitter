@@ -1,8 +1,8 @@
-#require 'pry-byebug'
+require 'minitest/autorun'
+require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
-require 'minitest/autorun'
 require './test_interface.rb'
 Dir["./models/*.rb"].each {|file| require file}
 

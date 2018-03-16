@@ -67,6 +67,12 @@ class TestInterface
     reset_Follower
   end
 
+  def delete_user(user)
+    user.followers.delete_all
+    user.following.delete_all
+    user.delete
+  end
+
   def delete_tweet(tweet)
     tweet.mentions.delete_all
     tweet.tweetHashtags.delete_all

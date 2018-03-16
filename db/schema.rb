@@ -15,25 +15,30 @@ ActiveRecord::Schema.define(version: 20180215190635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  #user_id referrs to the user being followed, follower_id referrs to the user following
   create_table "followers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "follower_id"
   end
 
+  #name referrs to the #name
   create_table "hashtags", force: :cascade do |t|
     t.string "name"
   end
 
+  #a mention is set up like a join table, joining a user and a tweet by id.
   create_table "mentions", force: :cascade do |t|
     t.integer "tweet_id"
     t.integer "user_id"
   end
 
+  #the user_id referrs to the retweeter, and the tweet_id refeers to the id of the tweet being retweeted
   create_table "retweets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
   end
 
+  #joins a hastag with the tweet its being tagged in
   create_table "tweet_hashtags", force: :cascade do |t|
     t.integer "tweet_id"
     t.integer "hashtag_id"
