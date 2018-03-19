@@ -163,6 +163,7 @@ post '/test/users/create' do
 end
 
 post '/test/user/follow' do
+	byebug
 	num = params[:count]
 
 	random_users = User.all.sample(num*2)
