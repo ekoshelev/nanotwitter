@@ -165,3 +165,21 @@ post '/test/reset/standard' do
 	load "./db/seeds.rb"
 
 end
+
+post '/test/users/create' do
+
+end
+
+post '/test/user/follow' do
+	num = params[:count]
+
+	random_users = User.all.sample(num*2)
+
+	random_followees = random_users[0...num]
+	random_followers = random_users[num..random_users.size-1]
+
+	num.times do |count|
+		add_follow(random_followees[count],random_followers[count])
+	end
+
+end

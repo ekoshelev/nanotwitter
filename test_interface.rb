@@ -1,7 +1,7 @@
-require 'pry-byebug'
-require 'sinatra'
+# require 'pry-byebug'
+# require 'sinatra'
 require 'sinatra/activerecord'
-require 'sinatra/twitter-bootstrap'
+# require 'sinatra/twitter-bootstrap'
 Dir["./models/*.rb"].each {|file| require file}
 
 class TestInterface
@@ -67,6 +67,12 @@ class TestInterface
     reset_Follower
   end
 
+  def delete_user(user)
+    user.followers.delete_all
+    user.following.delete_all
+    user.delete
+  end
+
   def delete_tweet(tweet)
     tweet.mentions.delete_all
     tweet.tweetHashtags.delete_all
@@ -83,6 +89,13 @@ class TestInterface
 
   def delete_following(following)
     following.delete
+  end
+
+  def add_follow(followee,follower)
+    follow = Follower.new
+    follow.user_id = followee.id
+    follow.follower_id = follower.id
+    follow.save
   end
 
 end
