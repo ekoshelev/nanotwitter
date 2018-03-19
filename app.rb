@@ -23,8 +23,16 @@ get '/post' do
 	erb :post
 end
 
-get '/display' do
+post '/retweet' do
 	@tweets = Tweet.all
+	@retweets = Retweet.all
+	erb :display
+end
+
+get '/display' do
+
+	@tweets = Tweet.all
+	@retweets = Retweet.all
 	erb :display
 end
 
