@@ -1,4 +1,5 @@
 require 'bcrypt'
+require_relative 'fry_seeding.rb'
 
 configure do
   enable :sessions
@@ -39,4 +40,20 @@ end
 get '/fry_logout' do
   session.clear
   redirect to('/fry_login')
+end
+
+get '/fry_test' do
+  tester = TestInterface.new
+
+	tester.reset_User
+	tester.reset_Tweet
+	tester.reset_Follower
+	tester.reset_Mention
+	tester.reset_Retweet
+
+	tester.create_test_user
+
+  seed_table("users.csv", "users", "(name, email, password, api_token)")
+  seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets].to_i)
+  seed_table("follows.csv", "followers", "(user_id, follower_id)")
 end
