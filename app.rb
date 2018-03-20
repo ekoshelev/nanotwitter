@@ -27,7 +27,6 @@ end
 post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Retweet.new(@retweet)
-	byebug
 	@result.save
 	@tweets = Tweet.all
 	@retweets = Retweet.all
