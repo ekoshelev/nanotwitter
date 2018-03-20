@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require_relative 'test_interface.rb'
+require 'faker'
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
@@ -88,16 +89,13 @@ class TestApp < Sinatra::Base
 end
 
 #Test Calls
-get '/test' do
-	@users = User.all
-	erb :test_display
-end
-
-get '/test/page' do
-	erb :post_interface
-end
+# get '/test' do
+# 	@users = User.all
+# 	erb :test_display
+# end
 
 
+#Test Interface HTTP calls
 post '/test/reset/all' do
 	tester = TestInterface.new
 
@@ -148,6 +146,11 @@ get '/test/status' do
 	erb :report
 end
 
+get '/test/version' do
+	#donn't know what is meany by presented as JSON
+	erb :version
+end
+
 post '/test/reset/standard' do
 	tester = TestInterface.new
 
@@ -168,10 +171,86 @@ end
 
 post '/test/users/create' do
 
+	user_number = params[:count].to_i
+	tweet_number = params[:tweets].to_i
+
+	if user_number == nil
+		user_number = 1
+	end
+
+	if tweet_number == nil
+		tweet_number = 0
+	end
+
+	user_number.times do
+		u = User.new
+		u.name = Faker::Internet.unique.user_name
+		u.email = Faker::Internet.unique.email(u.name)
+		u.password = Faker::Internet.password
+		u.save
+
+		tweet_number.times do
+			t = Tweet.new
+			t.text = Faker::Twitter.status['text']
+			t.user_id = u.id
+			t.save
+		end
+
+	end
+
+	return 200
+
+end
+
+post '/test/user/:u/tweets' do
+	if params[:u] == 'testuser'
+		user = User.find_by_name('TestUser')
+	elsif User.find_by_id(params[:u].to_i)
+		user = User.find_by_id(params[:u].to_i)
+	else
+		return 404
+	end
+
+	number_tweets = params[:count].to_i
+
+	if number_tweets==nil
+		return 500
+	end
+
+	number_tweets.times do
+		t = Tweet.new
+		t.text = Faker::Twitter.status['text']
+		t.user_id = user.id
+		t.save
+	end
+
+return 200
+
+end
+
+post '/test/user/:id/follow' do
+	tester = TestInterface.new
+	followee = User.find_by_id(params[:id])
+
+	if followee == nil
+		return 404 #{"no user under id"}
+	end
+
+	num = params[:count].to_i
+
+	random_followers = User.all.sample(num)
+
+	num.times do |count|
+		tester.add_follow(followee,random_followers[count])
+	end
+
+	return 200
+
 end
 
 post '/test/user/follow' do
-	num = params[:count]
+	tester = TestInterface.new
+	num = params[:count].to_i
 
 	random_users = User.all.sample(num*2)
 
@@ -179,7 +258,9 @@ post '/test/user/follow' do
 	random_followers = random_users[num..random_users.size-1]
 
 	num.times do |count|
-		add_follow(random_followees[count],random_followers[count])
+		tester.add_follow(random_followees[count],random_followers[count])
 	end
+
+	return 200
 
 end
