@@ -42,9 +42,38 @@
       <ol>
         <%@tweets.each do |tweet|%>
         <div class="card">
-            <div class="card-block">
-                <h4 class="card-title"><%=tweet.text%></h4>
-                <p class="card-text"> <%= User.find_by(id: "#{tweet.user_id}").name %> </p> <p class="card-text"><%=tweet.time_created%> </p>
+            <div class="card-block float-right">
+                <p class="card-text"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>
+
+                <form method="POST" action="/retweet">
+                  <input type="hidden" name="tweet[tweet_id]" value="<%= tweet.id %>">
+                  <input type="hidden" name="tweet[user_id]" value="<%= tweet.user_id %>">
+    <input class='btn btn-primary' type='submit' value='Retweet'>
+</form>
+
+  <span class="glyphicon glyphicon-retweet"></span></button>
+                <span class="glyphicon glyphicon-comment"></span>  <span class="glyphicon glyphicon-heart-empty"></span>  Follow
+            </div>
+        </div>
+
+        <br>
+          <br>
+        </li>
+        <%end%>
+
+        <%@retweets.each do |retweet|%>
+        <div class="card">
+            <div class="card-block float-right">
+                <p class="card-text"><b><%= User.find_by(id: "#{retweet.user_id}").name %> retweeted <%= User.find_by(id: "#{Tweet.find_by(id: "#{retweet.tweet_id}").user_id}").name %></b> <%= Tweet.find_by(id: "#{retweet.tweet_id}").time_created %> </p> <p class="card-text">  <%=Tweet.find_by(id: "#{retweet.tweet_id}").text %></p>
+
+                <form method="POST" action="/retweet">
+                  <input type="hidden" name="tweet[tweet_id]" value="<%= tweet.id %>">
+                  <input type="hidden" name="tweet[user_id]" value="<%= tweet.user_id %>">
+    <input class='btn btn-primary' type='submit' value='Retweet'>
+</form>
+
+  <span class="glyphicon glyphicon-retweet"></span></button>
+                <span class="glyphicon glyphicon-comment"></span>  <span class="glyphicon glyphicon-heart-empty"></span>  Follow
             </div>
         </div>
 
