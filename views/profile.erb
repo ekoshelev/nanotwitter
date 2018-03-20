@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/display"> Timeline</a></li>
               <li><a href="/post">   Post A Tweet</a></li>
-              
+
         <li><a href="/profile">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/">Sign Out</a></li>
           <li>
@@ -37,9 +37,23 @@
 <div class="container">
 	<div class="row">
 		<div class="cn">
-            <div class="inner">
-                  Welcome to Team Error 404's Profile Page!
-            </div>
+            <div>
+                  Followers:
+                  <%
+                  @followers.each do |follower|
+                    if follower.user_id==session[:user].id %>
+                      <p><%= User.find_by(id: "#{follower.follower_id}").name %></p>
+                        <%end%>
+                            <%end%>
+  </div>
+      <div>
+                        Following:
+                        <%@followers.each do |follower|
+                          if follower.follower_id==session[:user].id %>
+                            <p><%= User.find_by(id: "#{follower.user_id}").name %></p>
+                              <%end%>
+                                  <%end%>
+
         </div>
 	</div>
 </div>

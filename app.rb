@@ -30,6 +30,29 @@ post '/retweet' do
 	@result.save
 	@tweets = Tweet.all
 	@retweets = Retweet.all
+	@followers = Follower.all
+	erb :display
+end
+
+
+post '/follow' do
+	@follow = params[:follow]
+	@result = Follower.new(@follow)
+	@result.save
+	@tweets = Tweet.all
+	@retweets = Retweet.all
+	@followers = Follower.all
+	erb :display
+end
+
+post '/unfollow' do
+	@unfollow = params[:unfollow]
+
+	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
+	follower.delete
+	@tweets = Tweet.all
+	@retweets = Retweet.all
+	@followers = Follower.all
 	erb :display
 end
 
@@ -37,15 +60,18 @@ get '/display' do
 
 	@tweets = Tweet.all
 	@retweets = Retweet.all
+	@followers = Follower.all
 	erb :display
 end
 
 
 get '/profile' do
+	@followers = Follower.all
 	erb :profile
 end
 
 get '/viewprofile' do
+		@followers = Follower.all
 	erb :viewprofile
 end
 
