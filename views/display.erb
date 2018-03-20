@@ -40,7 +40,7 @@
 	<div class="row">
 		<div class="cn">
       <ol>
-        <%@tweets.each do |tweet|%>
+        <%@tweets[0..10].each do |tweet|%>
         <div class="card">
             <div class="card-block float-right">
                 <p class="card-text"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>

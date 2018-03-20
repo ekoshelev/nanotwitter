@@ -146,7 +146,7 @@ get '/test/status' do
 end
 
 get '/test/version' do
-	#donn't know what is meany by presented as JSON
+	#donn't know what is meant by presented as JSON
 	erb :version
 end
 

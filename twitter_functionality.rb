@@ -11,10 +11,8 @@ Dir["./models/*.rb"].each {|file| require file}
     test_user.email = "testuser@sample.com"
     test_user.password = "password"
     test_user.save
-    @test_id = test_user.id
     return test_user
   end
-
 
 
   def reset_User
