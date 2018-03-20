@@ -4,8 +4,6 @@ require 'sinatra/activerecord'
 # require 'sinatra/twitter-bootstrap'
 Dir["./models/*.rb"].each {|file| require file}
 
-class TestInterface
-
 
   def create_test_user
     test_user = User.new
@@ -17,7 +15,6 @@ class TestInterface
     return test_user
   end
 
-  attr_accessor :test_id
 
 
   def reset_User
@@ -97,5 +94,3 @@ class TestInterface
     follow.follower_id = follower.id
     follow.save
   end
-
-end

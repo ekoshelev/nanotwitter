@@ -3,14 +3,13 @@ require 'minitest/autorun'
 #require 'sinatra'
 require 'sinatra/activerecord'
 # require 'sinatra/twitter-bootstrap'
-require './test_interface.rb'
+require './twitter_functionality.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
 class TestUser <  Minitest::Test
 
   def setup
-    @tester = TestInterface.new
-    @tester.reset_All
+    reset_All
   end
 
   def test_create_user
@@ -25,11 +24,11 @@ class TestUser <  Minitest::Test
     assert_equal "testemail@tester.com", User.first.email
     assert_equal "TestPassword", User.first.password
 
-    @tester.reset_All
+    reset_All
   end
 
   def test_create_tweet
-    @tester.reset_All
+    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -45,11 +44,11 @@ class TestUser <  Minitest::Test
     assert_equal "This is a test Tweet", Tweet.first.text
     assert_equal user.id, Tweet.first.user.id
 
-    @tester.reset_All
+    reset_All
   end
 
   def test_hashtag
-    @tester.reset_All
+    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -76,11 +75,11 @@ class TestUser <  Minitest::Test
     assert_equal "#Test", Tweet.first.hashtags.first.name
     assert_equal "#Test", User.first.tweets.first.hashtags.first.name
 
-    @tester.reset_All
+    reset_All
   end
 
   def test_mention
-    @tester.reset_All
+    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -107,12 +106,12 @@ class TestUser <  Minitest::Test
     assert_equal "MentionedUser", User.first.tweets.first.mentions.first.user.name
     assert_equal "TestUser", User.second.mentions.first.tweet.user.name
 
-    @tester.reset_All
+    reset_All
 
   end
 
   def test_retweet
-    @tester.reset_All
+    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -139,11 +138,11 @@ class TestUser <  Minitest::Test
     assert_equal "RetweetingUser", Tweet.first.retweets.first.user.name
     assert_equal "This is a test Tweet", User.second.retweets.first.tweet.text
 
-    @tester.reset_All
+    reset_All
   end
 
   def test_follower
-    @tester.reset_All
+    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -166,7 +165,7 @@ class TestUser <  Minitest::Test
     assert_equal "TestUser", User.second.following.first.user.name
 
 
-    @tester.reset_All
+    reset_All
   end
 
 
