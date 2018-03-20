@@ -171,11 +171,18 @@ post '/test/reset/testuser' do
 end
 
 get '/test/status' do
+	test_user = User.find_by_name('TestUser')
+	if test_user == nil
+		@test_id = "no test user"
+	else
+		@test_id = test_user.id
+	end
+
 	erb :report
 end
 
 get '/test/version' do
-	#donn't know what is meany by presented as JSON
+	#donn't know what is meant by presented as JSON
 	erb :version
 end
 
@@ -290,4 +297,9 @@ post '/test/user/follow' do
 
 	return 200
 
+end
+
+
+get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
+	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
 end

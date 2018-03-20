@@ -1,7 +1,7 @@
 Report:
 
-Number of Users:  <%= User.all.size %>
-Number of Follows: <%= Follower.all.size %>
-Number of Tweets: <%= Tweet.all.size %>
+Number of Users:  <%= User.all.size %><br>
+Number of Follows: <%= Follower.all.size %><br>
+Number of Tweets: <%= Tweet.all.size %><br>
 
-Test User ID: <%= User.where(name: 'TestUser').first.id %>
+Test User ID: <%= @test_id %>
