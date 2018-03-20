@@ -46,8 +46,8 @@
                 <p class="card-text"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>
 
                 <form method="POST" action="/retweet">
-                  <input type="hidden" name="tweet[tweet_id]" value="<%= tweet.id %>">
-                  <input type="hidden" name="tweet[user_id]" value="<%= tweet.user_id %>">
+                  <input type="hidden" name="retweet[tweet_id]" value="<%= tweet.id %>">
+                  <input type="hidden" name="retweet[user_id]" value="<%= tweet.user_id %>">
     <input class='btn btn-primary' type='submit' value='Retweet'>
 </form>
 
@@ -67,9 +67,9 @@
                 <p class="card-text"><b><%= User.find_by(id: "#{retweet.user_id}").name %> retweeted <%= User.find_by(id: "#{Tweet.find_by(id: "#{retweet.tweet_id}").user_id}").name %></b> <%= Tweet.find_by(id: "#{retweet.tweet_id}").time_created %> </p> <p class="card-text">  <%=Tweet.find_by(id: "#{retweet.tweet_id}").text %></p>
 
                 <form method="POST" action="/retweet">
-                  <input type="hidden" name="tweet[tweet_id]" value="<%= tweet.id %>">
-                  <input type="hidden" name="tweet[user_id]" value="<%= tweet.user_id %>">
-    <input class='btn btn-primary' type='submit' value='Retweet'>
+                  <input type="hidden" name="retweet[tweet_id]" value="<%= retweet.id %>">
+                  <input type="hidden" name="retweet[user_id]" value="<%= retweet.user_id %>">
+                  <input class='btn btn-primary' type='submit' value='Retweet'>
 </form>
 
   <span class="glyphicon glyphicon-retweet"></span></button>

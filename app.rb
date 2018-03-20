@@ -25,6 +25,9 @@ get '/post' do
 end
 
 post '/retweet' do
+	@retweet = params[:retweet]
+	@result = Retweet.new(@retweet)
+	@result.save
 	@tweets = Tweet.all
 	@retweets = Retweet.all
 	erb :display
