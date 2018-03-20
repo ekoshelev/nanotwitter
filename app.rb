@@ -2,7 +2,7 @@ require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
-require_relative 'test_interface.rb'
+require_relative 'twitter_functionality'
 require 'faker'
 Dir["./models/*.rb"].each {|file| require file}
 
@@ -89,15 +89,14 @@ end
 
 #Test Interface HTTP calls
 post '/test/reset/all' do
-	tester = TestInterface.new
 
 	tester.reset_All
 	tester.create_test_user
 
+	return 200
 end
 
 post '/test/reset/testuser' do
-	tester = TestInterface.new
 
 	if User.exists?(name: 'TestUser')
 
@@ -105,32 +104,32 @@ post '/test/reset/testuser' do
 
 	if test_user.tweets.exists?
 		test_user.tweets.each do |tweet|
-			tester.delete_tweet(tweet)
+			delete_tweet(tweet)
 		end
 	end
 
 	if test_user.retweets.exists?
 			test_user.retweets.each do |retweet|
-				tester.delete_retweet(retweet)
+				delete_retweet(retweet)
 			end
 	end
 
 	if test_user.followers.exists?
 		test_user.followers.each do |follow|
-			tester.delete_follow(follow)
+			delete_follow(follow)
 		end
 	end
 
 	if test_user.following.exists?
 		test_user.following.each do |following|
-			tester.delete_following(following)
+			delete_following(following)
 		end
 	end
 
 	test_user.delete
 	end
 
-	tester.create_test_user
+	create_test_user
 
 end
 
@@ -144,21 +143,20 @@ get '/test/version' do
 end
 
 post '/test/reset/standard' do
-	tester = TestInterface.new
 
-	tester.reset_User
-	tester.reset_Tweet
-	tester.reset_Follower
-	tester.reset_Mention
-	tester.reset_Retweet
+	reset_User
+	reset_Tweet
+	reset_Follower
+	reset_Mention
+	reset_Retweet
 
-	tester.create_test_user
+	create_test_user
 
 	# if params[:tweets].exists?
   #
 	# else
 	load "./db/seeds.rb"
-
+	return 200
 end
 
 post '/test/users/create' do
@@ -221,7 +219,7 @@ return 200
 end
 
 post '/test/user/:id/follow' do
-	tester = TestInterface.new
+
 	followee = User.find_by_id(params[:id])
 
 	if followee == nil
@@ -233,7 +231,7 @@ post '/test/user/:id/follow' do
 	random_followers = User.all.sample(num)
 
 	num.times do |count|
-		tester.add_follow(followee,random_followers[count])
+		add_follow(followee,random_followers[count])
 	end
 
 	return 200
@@ -241,7 +239,7 @@ post '/test/user/:id/follow' do
 end
 
 post '/test/user/follow' do
-	tester = TestInterface.new
+
 	num = params[:count].to_i
 
 	random_users = User.all.sample(num*2)
@@ -250,7 +248,7 @@ post '/test/user/follow' do
 	random_followers = random_users[num..random_users.size-1]
 
 	num.times do |count|
-		tester.add_follow(random_followees[count],random_followers[count])
+		add_follow(random_followees[count],random_followers[count])
 	end
 
 	return 200
