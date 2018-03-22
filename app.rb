@@ -4,9 +4,22 @@ require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require_relative 'twitter_functionality'
 require 'faker'
+require 'redis-sinatra'
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
+
+
+require 'sinatra'
+
+
+class MyApp < Sinatra::Base
+  register Sinatra::Cache
+
+  get '/hi' do
+    settings.cache.fetch('greet') { 'Hello, World!' }
+  end
+end
 
 get '/' do
 	erb :index
