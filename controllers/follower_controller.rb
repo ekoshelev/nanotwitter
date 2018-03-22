@@ -1,4 +1,4 @@
-
+class follower_controller
   def get_follower_count(user)
     if it doesnt exist
     Redis::put(make_follower_id(user),1)
@@ -26,20 +26,20 @@
         Redis::decrement(make_following_id(user))
   end
 
-def  incr_follower_count(user)
-    Redis::increment(make_follower_id(user))
-end
+  def  incr_follower_count(user)
+      Redis::increment(make_follower_id(user))
+  end
 
-def decr_follower_count(user)
-      Redis::decrement(make_follower_id(user))
-end
+  def decr_follower_count(user)
+        Redis::decrement(make_follower_id(user))
+  end
 
 
-def make_following_id(user)
-  return user + "_following";
+  def make_following_id(user)
+    return user + "_following";
+  end
+  def make_follower_id(user)
+        return user + "_followers";
+  end
 end
-def make_follower_id(user)
-      return user + "_followers";
-end
-
 #where save to database?
