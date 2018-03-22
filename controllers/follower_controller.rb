@@ -1,14 +1,11 @@
 
   def get_follower_count(user)
-
     if it doesnt exist
     Redis::put(make_follower_id(user),1)
-
     return 0
   else {
     return  Redis::get(make_follower_id(user))
   }
-
   end
 
   def get_following_count(user)
@@ -44,3 +41,5 @@ end
 def make_follower_id(user)
       return user + "_followers";
 end
+
+#where save to database?
