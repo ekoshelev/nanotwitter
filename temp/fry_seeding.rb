@@ -10,7 +10,7 @@ require 'csv'
 
 def seed_table(csv_file_name, table_name, table_columns, cutoff = nil)
   csv_entries = CSV.parse(File.read("lib/seeds/#{csv_file_name}"))
-  csv_entries = csv_entries.first(cutoff) if !cutoff.nil?
+  csv_entries = csv_entries.first(cutoff.to_i) if !cutoff.nil?
 
   table_values = csv_entries.map do |csv_row|
     table_row = manual_mapping(table_name, csv_row)
