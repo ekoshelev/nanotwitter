@@ -67,8 +67,8 @@ get '/display' do
 end
 
 
-get '/profile/:u' do
-  @user = User.find_by_id(params[:u])
+get '/profile/:id' do
+  @user = User.find_by_id(params[:id])
 	@followers = Follower.all
 	erb :profile
 end
