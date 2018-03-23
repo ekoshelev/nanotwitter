@@ -73,10 +73,6 @@ get '/profile/:u' do
 	erb :profile
 end
 
-get '/viewprofile' do
-		@followers = Follower.all
-	erb :viewprofile
-end
 
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
