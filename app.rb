@@ -12,7 +12,6 @@ require_relative 'temp/fry_test_001.rb'
 
 require 'sinatra'
 
-
 class MyApp < Sinatra::Base
   register Sinatra::Cache
 
@@ -92,7 +91,7 @@ post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
 	password = "#{params[:password]}"
 
-	if BCrypt::Password.new(user.password).is_password? password
+	if !user.nil? && (BCrypt::Password.new(user.password).is_password? password)
 		session[:user] = user
 		redirect to('/display')
 	else
@@ -110,7 +109,9 @@ post '/post_tweet' do
 end
 
 post '/register' do
-	if params[:user]['password'] != params[:user]['confirm-password']
+	user_check = User.find_by(name: "#{params[:user]['name']}")
+
+	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
 		redirect '/'
 	end
 	params[:user].delete('confirm-password')
