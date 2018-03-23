@@ -78,15 +78,11 @@ get '/display' do
 end
 
 
-get '/profile' do
+get '/profile/:u' do
 	@followers = Follower.all
 	erb :profile
 end
 
-get '/viewprofile' do
-		@followers = Follower.all
-	erb :viewprofile
-end
 
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
