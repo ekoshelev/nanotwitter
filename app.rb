@@ -10,17 +10,6 @@ Dir["./models/*.rb"].each {|file| require file}
 require_relative 'temp/fry_test_001.rb'
 
 
-require 'sinatra'
-
-
-class MyApp < Sinatra::Base
-  register Sinatra::Cache
-
-  get '/hi' do
-    settings.cache.fetch('greet') { 'Hello, World!' }
-  end
-end
-
 get '/' do
 	erb :index
 end
@@ -78,7 +67,8 @@ get '/display' do
 end
 
 
-get '/profile' do
+get '/profile/:u' do
+  @user = User.find_by_id(params[:u])
 	@followers = Follower.all
 	erb :profile
 end
