@@ -1,5 +1,7 @@
 require 'bcrypt'
+require 'byebug'
 require_relative 'fry_seeding.rb'
+require_relative '../controllers/twitter_functionality.rb'
 
 configure do
   enable :sessions
@@ -18,6 +20,10 @@ get '/fry_login' do
   else
     erb :fry_login
   end
+end
+
+get '/fry_poptest' do
+  erb :fry_poptest
 end
 
 post '/fry_login' do
@@ -43,7 +49,7 @@ get '/fry_logout' do
 end
 
 get '/fry_test' do
-  tester = TestInterface.new
+  tester = TwitterFunctionality.new
 
 	tester.reset_User
 	tester.reset_Tweet

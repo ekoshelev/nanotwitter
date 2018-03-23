@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 # require 'sinatra/twitter-bootstrap'
 Dir["./models/*.rb"].each {|file| require file}
 
-
+class TwitterFunctionality
   def create_test_user
     test_user = User.new
     test_user.name = "TestUser"
@@ -92,3 +92,4 @@ Dir["./models/*.rb"].each {|file| require file}
     follow.follower_id = follower.id
     follow.save
   end
+end

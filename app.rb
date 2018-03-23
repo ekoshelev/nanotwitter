@@ -9,7 +9,6 @@ Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 
-
 get '/' do
 	erb :index
 end
@@ -67,8 +66,8 @@ get '/display' do
 end
 
 
-get '/profile/:u' do
-  @user = User.find_by_id(params[:u])
+get '/profile/:id' do
+  @user = User.find_by_id(params[:id])
 	@followers = Follower.all
 	erb :profile
 end
@@ -78,7 +77,7 @@ post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
 	password = "#{params[:password]}"
 
-	if BCrypt::Password.new(user.password).is_password? password
+	if !user.nil? && (BCrypt::Password.new(user.password).is_password? password)
 		session[:user] = user
 		redirect to('/display')
 	else
@@ -96,7 +95,9 @@ post '/post_tweet' do
 end
 
 post '/register' do
-	if params[:user]['password'] != params[:user]['confirm-password']
+	user_check = User.find_by(name: "#{params[:user]['name']}")
+
+	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
 		redirect '/'
 	end
 	params[:user].delete('confirm-password')
