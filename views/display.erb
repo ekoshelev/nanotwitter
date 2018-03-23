@@ -21,7 +21,7 @@
         <li><a href="/display"> Timeline</a></li>
               <li><a href="/post">   Post A Tweet</a></li>
 
-        <li><a href="/profile">   <%= session[:user].name %>'s' Profile</a></li>
+        <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/">Sign Out</a></li>
           <li>
             <form class="navbar-form" role="search">
@@ -44,7 +44,7 @@
           %>
         <div class="card">
             <div class="card-block float-right">
-                <p class="card-text"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>
+                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>
 
                 <% if tweet.user_id != session[:user].id
 

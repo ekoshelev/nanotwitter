@@ -70,7 +70,11 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+<<<<<<< HEAD
     rake (12.3.1)
+=======
+    rake (12.3.0)
+>>>>>>> 29b3edf352b90bad49c33aa789d86c8c64e90c08
     redis-sinatra (0.0.0)
     sinatra (2.0.1)
       mustermann (~> 1.0)
@@ -107,4 +111,4 @@ DEPENDENCIES
   sinatra-twitter-bootstrap
 
 BUNDLED WITH
-   1.15.1
+   1.16.1

@@ -37,11 +37,12 @@
 <div class="container">
 	<div class="row">
 		<div class="cn">
+      <%= @user.name %>'s' Profile
             <div>
                   Followers:
                   <%
                   @followers.each do |follower|
-                    if follower.user_id==session[:user].id %>
+                    if follower.user_id==@user.id %>
                       <p><%= User.find_by(id: "#{follower.follower_id}").name %></p>
                         <%end%>
                             <%end%>
@@ -49,7 +50,7 @@
       <div>
                         Following:
                         <%@followers.each do |follower|
-                          if follower.follower_id==session[:user].id %>
+                          if follower.follower_id==@user.id %>
                             <p><%= User.find_by(id: "#{follower.user_id}").name %></p>
                               <%end%>
                                   <%end%>

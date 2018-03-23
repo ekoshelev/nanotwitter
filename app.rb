@@ -10,6 +10,7 @@ Dir["./models/*.rb"].each {|file| require file}
 require_relative 'temp/fry_test_001.rb'
 
 
+<<<<<<< HEAD
 require 'sinatra'
 
 class MyApp < Sinatra::Base
@@ -20,6 +21,8 @@ class MyApp < Sinatra::Base
   end
 end
 
+=======
+>>>>>>> 29b3edf352b90bad49c33aa789d86c8c64e90c08
 get '/' do
 	erb :index
 end
@@ -77,15 +80,12 @@ get '/display' do
 end
 
 
-get '/profile' do
+get '/profile/:id' do
+  @user = User.find_by_id(params[:id])
 	@followers = Follower.all
 	erb :profile
 end
 
-get '/viewprofile' do
-		@followers = Follower.all
-	erb :viewprofile
-end
 
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
