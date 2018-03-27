@@ -4,7 +4,8 @@ def initialize
 end
 
   def return_recent_tweets
-    return @tweets[0..2]
+    tweets= @tweets.sort_by{ |k| k["time_created"] }.reverse!
+    return tweets[0..49]
   end
 
 end
