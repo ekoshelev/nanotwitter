@@ -36,7 +36,7 @@
 	<div class="row">
 		<div class="cn">
           <ol>
-<div class="container">
+<div class="container-fluid">
                     <form action='/post_tweet' class="form-inline"  method='POST'>
         <label for="tweet" Username:/>
           <div class="form-group row">
@@ -51,8 +51,9 @@
         <%@tweets.each do |tweet|
           %>
         <div class="card">
-            <div class="card-block float-right">
-                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b> <%=tweet.time_created%></p> <p class="card-text">  <%=tweet.text%></p>
+            <div class="card-block">
+              <div class="row">
+                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b> <%=tweet.time_created%></p>
 
                 <% if tweet.user_id != session[:user].id
 
@@ -78,6 +79,8 @@
 </form>
                     <%end%>
                     <%end%>
+                  </div>
+                  <p class="card-text">  <%=tweet.text%></p>
                 <form method="POST" action="/retweet">
                   <input type="hidden" name="retweet[tweet_id]" value="<%= tweet.id %>">
                   <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
@@ -99,7 +102,7 @@
         <%@retweets.each do |retweet|%>
         <div class="card">
             <div class="card-block float-right">
-                <a class="card-text" href="/profile/<%= User.find_by(id: retweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{retweet.user_id}").name %></b></a> retweeted <%= User.find_by(id: "#{Tweet.find_by(id: "#{retweet.tweet_id}").user_id}").name %></b> <%= Tweet.find_by(id: "#{retweet.tweet_id}").time_created %> </p> <p class="card-text">  <%=Tweet.find_by(id: "#{retweet.tweet_id}").text %></p>
+                <a class="card-text" href="/profile/<%= User.find_by(id: retweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{retweet.user_id}").name %></b></a> retweeted <a class="card-text" href="/profile/<%= User.find_by(id: Tweet.find_by(id: retweet.tweet_id.to_s).user_id.to_s).id %>"><b><%= User.find_by(id: "#{Tweet.find_by(id: "#{retweet.tweet_id}").user_id}").name %></b></a><%= Tweet.find_by(id: "#{retweet.tweet_id}").time_created %> </p> <p class="card-text">  <%=Tweet.find_by(id: "#{retweet.tweet_id}").text %></p>
 
                 <form method="POST" action="/retweet">
                   <input type="hidden" name="retweet[tweet_id]" value="<%= retweet.id %>">

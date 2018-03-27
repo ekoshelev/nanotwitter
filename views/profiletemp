@@ -1,0 +1,59 @@
+<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+<link href="/css/login.css" rel="stylesheet">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Error 404's Nanotwitter</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/display"> Timeline</a></li>
+
+          <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
+        <li><a href="/">Sign Out</a></li>
+          <li>
+            <form class="navbar-form" role="search">
+     <div class="input-group">
+         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+         <div class="input-group-btn">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Submit</button>
+         </div>
+     </div>
+     </form></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="cn">
+      <%= @user.name %>'s' Profile
+            <div>
+                  Followers:
+                  <%
+                  @followers.each do |follower|
+                    if follower.user_id==@user.id %>
+                      <p><%= User.find_by(id: "#{follower.follower_id}").name %></p>
+                        <%end%>
+                            <%end%>
+  </div>
+      <div>
+                        Following:
+                        <%@followers.each do |follower|
+                          if follower.follower_id==@user.id %>
+                            <p><%= User.find_by(id: "#{follower.user_id}").name %></p>
+                              <%end%>
+                                  <%end%>
+
+        </div>
+	</div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

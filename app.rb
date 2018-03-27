@@ -43,21 +43,22 @@ post '/follow' do
 	@follow = params[:follow]
 	@result = Follower.new(@follow)
 	@result.save
+  @user = User.find_by_id( @follow[:user_id])
 	@tweets = Tweet.all
 	@retweets = Retweet.all
 	@followers = Follower.all
-	erb :display
+	erb :profile
 end
 
 post '/unfollow' do
 	@unfollow = params[:unfollow]
-
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
+  @user = User.find_by_id( @unfollow[:user_id])
 	@tweets = Tweet.all
 	@retweets = Retweet.all
 	@followers = Follower.all
-	erb :display
+	erb :profile
 end
 
 get '/display' do
@@ -71,6 +72,8 @@ end
 
 get '/profile/:id' do
   @user = User.find_by_id(params[:id])
+  @tweets = Tweet.all
+  @retweets = Retweet.all
 	@followers = Follower.all
 	erb :profile
 end
