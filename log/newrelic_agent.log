@@ -1,0 +1,99 @@
+# Logfile created on 2018-03-27 18:05:08 -0400 by logger.rb/v1.2.7
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Environment: development
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : No known dispatcher detected.
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Application: My Application (Development)
+[2018-03-27 18:05:08 -0400 codex (4624)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:05:08 -0400 codex (4624)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Installing Net instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Finished instrumentation
+[2018-03-27 18:05:08 -0400 codex (4624)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:05:08 -0400 codex (4624)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:05:08 -0400 codex (4624)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:05:10 -0400 codex (4624)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:05:24 -0400 codex (4624)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:06:37 -0400 codex (4624)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Environment: development
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : No known dispatcher detected.
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Application: My Application (Development)
+[2018-03-27 18:06:42 -0400 codex (4703)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:06:42 -0400 codex (4703)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Installing Net instrumentation
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:06:42 -0400 codex (4703)] INFO : Finished instrumentation
+[2018-03-27 18:06:43 -0400 codex (4703)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:06:43 -0400 codex (4703)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:06:43 -0400 codex (4703)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Environment: development
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : No known dispatcher detected.
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Application: My Application (Development)
+[2018-03-27 18:07:05 -0400 codex (4729)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:07:05 -0400 codex (4729)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Installing Net instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Finished instrumentation
+[2018-03-27 18:07:05 -0400 codex (4729)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:07:05 -0400 codex (4729)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:07:05 -0400 codex (4729)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:07:39 -0400 codex (4729)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:09:17 -0400 codex (4729)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:10:41 -0400 codex (4729)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Environment: development
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : No known dispatcher detected.
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Application: My Application (Development)
+[2018-03-27 18:10:49 -0400 codex (4828)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:10:49 -0400 codex (4828)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Installing Net instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Finished instrumentation
+[2018-03-27 18:10:49 -0400 codex (4828)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:10:49 -0400 codex (4828)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:10:49 -0400 codex (4828)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:10:51 -0400 codex (4828)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:15:48 -0400 codex (4828)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:19:17 -0400 codex (4828)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:20:19 -0400 codex (4828)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:20:55 -0400 codex (4828)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : Environment: development
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : No known dispatcher detected.
+[2018-03-27 18:41:18 -0400 lizzie-GT62VR-7RE (11320)] INFO : Application: My Application (Development)
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Installing Net instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Finished instrumentation
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:41:19 -0400 lizzie-GT62VR-7RE (11320)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:41:21 -0400 lizzie-GT62VR-7RE (11320)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:41:22 -0400 lizzie-GT62VR-7RE (11320)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.

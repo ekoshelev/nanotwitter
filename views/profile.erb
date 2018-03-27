@@ -22,10 +22,11 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if session[:user] %>
         <li><a href="/display"> Timeline</a></li>
-
-          <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
+            <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/logout">Sign Out</a></li>
+        <% end %>
           <li>
             <form class="navbar-form" role="search">
      <div class="input-group">
@@ -43,15 +44,16 @@
 <div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
+            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/" >
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
-        <div class="useravatar">
-            <img alt="" src="http://lorempixel.com/100/100/people/9/">
-        </div>
         <div class="card-info"> <span class="card-title"><%= @user.name %></span>
+<<<<<<< HEAD
           <% if session[:user].id != @user.id
+=======
+          <% if session[:user].nil? || session[:user].id != @user.id
 
+>>>>>>> 5973c1ee232f428fa1f9b62ba7ad66f8ac5c3b11
             @unfollow=false
           %>
 
@@ -59,7 +61,7 @@
               %>
               <% if follower.follower_id == session[:user].id && follower.user_id ==  @user.id
                 @unfollow=true %>
-              <form method="POST" action="/unfollow">
+              <form method="POST" action="/unfollowprofile">
                 <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
                 <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
                 <input class='btn btn-primary' type='submit' value='Unfollow'>
@@ -67,11 +69,18 @@
               <%end%>
             <%end%>
             <% if @unfollow ==false %>
+<<<<<<< HEAD
+            <form method="POST" action="/followprofile">
+=======
+
+            <% unless session[:user].nil? %>
             <form method="POST" action="/follow">
+>>>>>>> 5973c1ee232f428fa1f9b62ba7ad66f8ac5c3b11
               <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
               <input type="hidden" name="follow[user_id]" value="<%=  @user.id  %>">
               <input class='btn btn-primary' type='submit' value='Follow'>
 </form>
+            <% end %>
               <%end%>
               <%end%>
 
@@ -110,25 +119,6 @@
 
                     @unfollow=false
                   %>
-
-                    <%@followers.each do |follower|
-                      %>
-                      <% if follower.follower_id == session[:user].id && follower.user_id == tweet.user_id
-                        @unfollow=true %>
-                      <form method="POST" action="/unfollow">
-                        <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
-                        <input type="hidden" name="unfollow[user_id]" value="<%= tweet.user_id  %>">
-                        <input class='btn btn-primary' type='submit' value='Unfollow'>
-                      </form>
-                      <%end%>
-                    <%end%>
-                    <% if @unfollow ==false %>
-                    <form method="POST" action="/follow">
-                      <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
-                      <input type="hidden" name="follow[user_id]" value="<%= tweet.user_id  %>">
-                      <input class='btn btn-primary' type='submit' value='Follow'>
-  </form>
-                      <%end%>
                       <%end%>
                     </div>
                     <p class="card-text">  <%=tweet.text%></p>
@@ -136,15 +126,16 @@
                     <input type="hidden" name="retweet[tweet_id]" value="<%= tweet.id %>">
                     <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
       <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
-
-
   </form>
+  </div>
+</div>
       <%end%>
       <%end%>
 
+</div>
 
 
-        </div>
+      </div>
         <div class="tab-pane fade in" id="tab2">
           <%
           @followers.each do |follower|
