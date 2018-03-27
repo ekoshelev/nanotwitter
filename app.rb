@@ -2,10 +2,12 @@ require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
+require 'sinatra/json'
 require 'faker'
 require 'redis-sinatra'
 require_relative 'twitter_functionality'
 require_relative './temp/fry_seeding.rb'
+require_relative 'graphql/schema'
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
@@ -128,8 +130,8 @@ end
 #Test Interface HTTP calls
 post '/test/reset/all' do
 
-	tester.reset_All
-	tester.create_test_user
+	reset_All
+	create_test_user
 
 	return 200
 end
@@ -305,3 +307,25 @@ end
 get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
 	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
 end
+
+get '/test/json' do
+  message = { success: true, message: 'hello'}
+  json message
+end
+
+get '/users/json' do
+  @users = User.all
+  json @users
+end
+
+
+#use Rack::PostBodyContentTypeParser
+
+# post '/test/graphql' do
+#   result = NTAppSchema.execute(
+#     params[:query],
+#     variables: params[:variables],
+#     context: { current_user: nil },
+#   )
+#   json result
+# end
