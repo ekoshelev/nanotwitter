@@ -6,6 +6,7 @@ require 'sinatra/json'
 require 'faker'
 require './controllers/return_timeline.rb'
 require 'redis-sinatra'
+require 'newrelic_rpm'
 require_relative 'twitter_functionality'
 require_relative './temp/fry_seeding.rb'
 require_relative 'graphql/schema'
@@ -116,6 +117,11 @@ post '/login' do
 		"Login Failed!"
 	end
     #redirect '/search'
+end
+
+get '/logout' do
+	session.clear
+	redirect '/'
 end
 
 post '/post_tweet' do
