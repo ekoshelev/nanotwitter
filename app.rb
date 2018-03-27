@@ -93,6 +93,11 @@ post '/login' do
     #redirect '/search'
 end
 
+get '/logout' do
+	session.clear
+	redirect '/'
+end
+
 post '/post_tweet' do
 	@tweet = params[:tweet]
 	@result = Tweet.new(@tweet)
