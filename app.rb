@@ -4,6 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require 'sinatra/json'
 require 'faker'
+require './controllers/return_timeline.rb'
 require 'redis-sinatra'
 require_relative 'twitter_functionality'
 require_relative './temp/fry_seeding.rb'
@@ -13,6 +14,8 @@ Dir["./models/*.rb"].each {|file| require file}
 require_relative 'temp/fry_test_001.rb'
 
 get '/' do
+	timeclass=ReturnTimeline.new
+	@hometweets= timeclass.return_recent_tweets
 	erb :index
 end
 
@@ -39,7 +42,7 @@ post '/retweet' do
 end
 
 
-post '/follow' do
+post '/followprofile' do
 	@follow = params[:follow]
 	@result = Follower.new(@follow)
 	@result.save
@@ -50,7 +53,7 @@ post '/follow' do
 	erb :profile
 end
 
-post '/unfollow' do
+post '/unfollowprofile' do
 	@unfollow = params[:unfollow]
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
@@ -60,6 +63,29 @@ post '/unfollow' do
 	@followers = Follower.all
 	erb :profile
 end
+
+
+post '/follow' do
+	@follow = params[:follow]
+	@result = Follower.new(@follow)
+	@result.save
+	@tweets = Tweet.all
+	@retweets = Retweet.all
+	@followers = Follower.all
+	erb :display
+end
+
+post '/unfollow' do
+	@unfollow = params[:unfollow]
+
+	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
+	follower.delete
+	@tweets = Tweet.all
+	@retweets = Retweet.all
+	@followers = Follower.all
+	erb :display
+end
+
 
 get '/display' do
 
