@@ -22,10 +22,11 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if session[:user] %>
         <li><a href="/display"> Timeline</a></li>
-
-          <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
+            <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
         <li><a href="/logout">Sign Out</a></li>
+        <% end %>
           <li>
             <form class="navbar-form" role="search">
      <div class="input-group">
@@ -50,7 +51,7 @@
             <img alt="" src="http://lorempixel.com/100/100/people/9/">
         </div>
         <div class="card-info"> <span class="card-title"><%= @user.name %></span>
-          <% if session[:user].id != @user.id
+          <% if session[:user].nil? || session[:user].id != @user.id
 
             @unfollow=false
           %>
@@ -67,11 +68,14 @@
               <%end%>
             <%end%>
             <% if @unfollow ==false %>
+
+            <% unless session[:user].nil? %>
             <form method="POST" action="/follow">
               <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
               <input type="hidden" name="follow[user_id]" value="<%=  @user.id  %>">
               <input class='btn btn-primary' type='submit' value='Follow'>
 </form>
+            <% end %>
               <%end%>
               <%end%>
 
