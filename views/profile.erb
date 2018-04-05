@@ -48,12 +48,9 @@
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
         <div class="card-info"> <span class="card-title"><%= @user.name %></span>
-<<<<<<< HEAD
-          <% if session[:user].id != @user.id
-=======
+
           <% if session[:user].nil? || session[:user].id != @user.id
 
->>>>>>> 5973c1ee232f428fa1f9b62ba7ad66f8ac5c3b11
             @unfollow=false
           %>
 
