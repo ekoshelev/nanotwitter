@@ -337,8 +337,19 @@ get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
 	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
 end
 
-post '/graphql' do
-  request_payload = JSON.parse(request.body.read)
-  result = Schema.execute(request_payload['query'])
-  result.to_json
+post '/api/v1/:apitoken/graphql' do
+
+	token = params[:apitoken]
+
+	if User.where(api_token: token).exists?
+		request_payload = JSON.parse(request.body.read)
+	  result = Schema.execute(request_payload['query'])
+	  result.to_json
+	else
+		"invalid API token".to_json
+	end
+
+
+
+
 end
