@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require 'faker'
 require 'redis-sinatra'
-#require 'newrelic_rpm'
+require 'newrelic_rpm'
 require 'graphql'
 require 'json'
 require './controllers/return_timeline.rb'
@@ -20,10 +20,6 @@ get '/' do
 	@hometweets= timeclass.return_recent_tweets
 	erb :index
 end
-
-# get '/' do
-# 	erb :index
-# end
 
 get '/search' do
 	erb :search
@@ -343,7 +339,7 @@ post '/api/v1/:apitoken/graphql' do
 
 	if User.where(api_token: token).exists?
 		request_payload = JSON.parse(request.body.read)
-	  result = Schema.execute(request_payload['query'])
+	  result = NanoTwitterAPI.execute(request_payload['query'])
 	  result.to_json
 	else
 		"invalid API token".to_json

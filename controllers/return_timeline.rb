@@ -4,7 +4,7 @@ def initialize
 end
 
   def return_recent_tweets
-    return @tweets[0..2]
+    return @tweets[0..20]
   end
 
 end
