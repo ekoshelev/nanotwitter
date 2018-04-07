@@ -4,6 +4,7 @@ TweetType = GraphQL::ObjectType.define do
   description "A Tweet from Nanotwiiter QraphQL test"
   field :id, types.ID
   field :text, types.String
+  field :time_created, types.String
 
   field :user do
     type UserType

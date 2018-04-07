@@ -9,9 +9,9 @@ UserType = GraphQL::ObjectType.define do
 
   field :tweets do
     type types[TweetType]
-    argument :number, types.Int, default_value: 10
+    argument :recent, types.Int, default_value: 10
     resolve -> (user, args, ctx) {
-    return user.tweets.limit(args[:number])
+    return user.tweets.limit(args[:recent]).reverse
     }
   end
 
