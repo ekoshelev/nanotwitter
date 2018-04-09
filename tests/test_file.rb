@@ -1,15 +1,16 @@
 require 'minitest/autorun'
-# require 'pry-byebug'
+require 'pry-byebug'
 #require 'sinatra'
 require 'sinatra/activerecord'
 # require 'sinatra/twitter-bootstrap'
-require './twitter_functionality.rb'
+require './controllers/twitter_functionality.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
 class TestUser <  Minitest::Test
 
   def setup
-    reset_All
+    @controller = TwitterFunctionality.new
+    @controller.reset_All
   end
 
   def test_create_user
@@ -24,11 +25,10 @@ class TestUser <  Minitest::Test
     assert_equal "testemail@tester.com", User.first.email
     assert_equal "TestPassword", User.first.password
 
-    reset_All
+    @controller.reset_All
   end
 
   def test_create_tweet
-    reset_All
 
     user = User.new
     user.name = "TestUser"
@@ -44,11 +44,11 @@ class TestUser <  Minitest::Test
     assert_equal "This is a test Tweet", Tweet.first.text
     assert_equal user.id, Tweet.first.user.id
 
-    reset_All
+    @controller.reset_All
   end
 
   def test_hashtag
-    reset_All
+
 
     user = User.new
     user.name = "TestUser"
@@ -75,11 +75,11 @@ class TestUser <  Minitest::Test
     assert_equal "#Test", Tweet.first.hashtags.first.name
     assert_equal "#Test", User.first.tweets.first.hashtags.first.name
 
-    reset_All
+    @controller.reset_All
   end
 
   def test_mention
-    reset_All
+
 
     user = User.new
     user.name = "TestUser"
@@ -106,12 +106,12 @@ class TestUser <  Minitest::Test
     assert_equal "MentionedUser", User.first.tweets.first.mentions.first.user.name
     assert_equal "TestUser", User.second.mentions.first.tweet.user.name
 
-    reset_All
+    @controller.reset_All
 
   end
 
   def test_retweet
-    reset_All
+
 
     user = User.new
     user.name = "TestUser"
@@ -128,21 +128,22 @@ class TestUser <  Minitest::Test
     tweet.user_id = user.id
     tweet.save
 
-    retweet = Retweet.new
-    retweet.user_id = User.second.id
-    retweet.tweet_id = Tweet.first.id
-    retweet.save
+    tweet2 = Tweet.new
+    tweet2.retweet_id = tweet.id
+    tweet2.text = tweet2.retweet.text
+    tweet2.user_id = user2.id
+    tweet2.save
 
-    assert_equal "This is a test Tweet", Retweet.first.tweet.text
-    assert_equal "RetweetingUser", Retweet.first.user.name
-    assert_equal "RetweetingUser", Tweet.first.retweets.first.user.name
-    assert_equal "This is a test Tweet", User.second.retweets.first.tweet.text
+    assert_equal "This is a test Tweet", Tweet.second.text
+    assert_equal "TestUser", Tweet.second.retweet.user.name
+    # assert_equal "RetweetingUser", Tweet.first.retweet.first.user.name
+    assert_equal "This is a test Tweet", User.second.tweets.first.retweet.text
 
-    reset_All
+    @controller.reset_All
   end
 
   def test_follower
-    reset_All
+
 
     user = User.new
     user.name = "TestUser"
@@ -165,7 +166,7 @@ class TestUser <  Minitest::Test
     assert_equal "TestUser", User.second.following.first.user.name
 
 
-    reset_All
+    @controller.reset_All
   end
 
 

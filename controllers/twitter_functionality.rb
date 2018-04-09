@@ -41,11 +41,6 @@ class TwitterFunctionality
     end
   end
 
-  def reset_Retweet
-    if Retweet.exists?
-      Retweet.delete_all
-    end
-  end
 
   def reset_Follower
     if Follower.exists?
@@ -58,7 +53,6 @@ class TwitterFunctionality
   	reset_Tweet
   	reset_Hashtag
     reset_Mention
-    reset_Retweet
     reset_Follower
   end
 
@@ -72,10 +66,6 @@ class TwitterFunctionality
     tweet.mentions.delete_all
     tweet.tweetHashtags.delete_all
     tweet.delete
-  end
-
-  def delete_retweet(retweet)
-    retweet.delete
   end
 
   def delete_follow(follow)
