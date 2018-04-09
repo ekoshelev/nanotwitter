@@ -141,7 +141,15 @@
                         <% else %>
                           <p class="card-text">  <%=tweet.text%></p>
         <%end%>
-
+        <% if session[:user] != nil && tweet.user_id != session[:user].id %>
+        <form method="POST" action="/retweet">
+          <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
+          <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
+          <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
+          <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
+        <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
+        </form>
+        <%end%>
                   </div>
               </div>
 

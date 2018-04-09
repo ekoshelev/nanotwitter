@@ -2320,3 +2320,23 @@
 [2018-04-09 16:01:07 -0400 lizzie-GT62VR-7RE (14475)] ERROR : NameError: uninitialized constant Redis::VERSION
 [2018-04-09 16:01:14 -0400 lizzie-GT62VR-7RE (14475)] ERROR : Invalid license key, please contact support@newrelic.com
 [2018-04-09 16:01:14 -0400 lizzie-GT62VR-7RE (14475)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Environment: development
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : No known dispatcher detected.
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Installing Net instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Installing Sinatra instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Finished instrumentation
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 16:07:44 -0400 lizzie-GT62VR-7RE (14953)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 16:07:51 -0400 lizzie-GT62VR-7RE (14953)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-09 16:07:51 -0400 lizzie-GT62VR-7RE (14953)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
