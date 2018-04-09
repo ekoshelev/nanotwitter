@@ -290,6 +290,7 @@ post '/test/user/:id/follow' do
 
 end
 
+
 post '/test/user/follow' do
 
 	num = params[:count].to_i
@@ -330,4 +331,22 @@ post '/api/v1/:apitoken/graphql' do
 		"invalid API token".to_json
 	end
 
+end
+
+post '/api/token/new' do
+	if session[:user] != nil
+		session[:user].api_token = Faker::Crypto.unique.md5
+		session[:user].save
+	end
+	redirect to('/api/token/view')
+end
+
+get '/api/token/view' do
+	if session[:user] != nil
+		@token = session[:user].api_token
+	else
+		@token = "You must sign in to view your API token"
+	end
+
+	erb :api_token
 end
