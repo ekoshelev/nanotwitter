@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="">About</a></li>
       </ul>
+        <%if  session[:user] == nil %>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
@@ -48,6 +49,7 @@
             </div>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
@@ -94,6 +96,25 @@
           </ul>
         </li>
       </ul>
+      <% else %>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/display"> Timeline</a></li>
+
+          <li><a href="/profile/<%= session[:user].id.to_s%>">   <%= session[:user].name %>'s' Profile</a></li>
+          <li><a href="/logout">Sign Out</a></li>
+            <li>
+              <form class="navbar-form" role="search">
+       <div class="input-group">
+           <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+           <div class="input-group-btn">
+               <button class="btn btn-outline-success " type="submit">Submit</button>
+           </div>
+       </div>
+       </form></li>
+        </ul>
+      </div>
+      <%end%>
     </div>
   </div>
 </nav>
