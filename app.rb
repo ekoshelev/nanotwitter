@@ -2,14 +2,15 @@ require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
-require 'sinatra/json'
 require 'faker'
-require './controllers/return_timeline.rb'
 require 'redis-sinatra'
 require 'newrelic_rpm'
+require 'graphql'
+require 'json'
+require './controllers/return_timeline.rb'
 require_relative 'twitter_functionality'
 require_relative './temp/fry_seeding.rb'
-require_relative 'graphql/schema'
+Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
@@ -17,10 +18,6 @@ require_relative 'temp/fry_test_001.rb'
 get '/' do
 	@timeclass=ReturnTimeline.new
 	@hometweets= @timeclass.return_recent_tweets
-	erb :index
-end
-
-get '/' do
 	erb :index
 end
 
@@ -134,13 +131,6 @@ class TestApp < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
 end
 
-#Test Calls
-# get '/test' do
-# 	@users = User.all
-# 	erb :test_display
-# end
-
-
 #Test Interface HTTP calls
 post '/test/reset/all' do
 
@@ -200,7 +190,7 @@ end
 
 get '/test/version' do
 	#donn't know what is meant by presented as JSON
-	erb :version
+	0.5.to_json
 end
 
 
@@ -322,24 +312,22 @@ get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
 	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
 end
 
-get '/test/json' do
-  message = { success: true, message: 'hello'}
-  json message
+
+
+#Root of GraphQL Based API
+post '/api/v1/:apitoken/graphql' do
+
+	token = params[:apitoken]
+
+	if User.where(api_token: token).exists?
+
+		request_payload = JSON.parse(request.body.read)
+
+	  result = NanoTwitterAPI.execute(request_payload['query'])
+
+	  result.to_json
+	else
+		"invalid API token".to_json
+	end
+
 end
-
-get '/users/json' do
-  @users = User.all
-  json @users
-end
-
-
-#use Rack::PostBodyContentTypeParser
-
-# post '/test/graphql' do
-#   result = NTAppSchema.execute(
-#     params[:query],
-#     variables: params[:variables],
-#     context: { current_user: nil },
-#   )
-#   json result
-# end

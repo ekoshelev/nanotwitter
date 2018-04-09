@@ -56,7 +56,6 @@
               %>
               <% if follower.follower_id == session[:user].id && follower.user_id ==  @user.id
                 @unfollow=true %>
-              <form method="POST" action="/unfollowprofile">
                 <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
                 <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
                 <input class='btn btn-primary' type='submit' value='Unfollow'>
