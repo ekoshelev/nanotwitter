@@ -15,8 +15,8 @@ Dir["./models/*.rb"].each {|file| require file}
 require_relative 'temp/fry_test_001.rb'
 
 get '/' do
-	timeclass=ReturnTimeline.new
-	@hometweets= timeclass.return_recent_tweets
+	@timeclass=ReturnTimeline.new
+	@hometweets= @timeclass.return_recent_tweets
 	erb :index
 end
 
@@ -34,10 +34,10 @@ end
 
 post '/retweet' do
 	@retweet = params[:retweet]
-	@result = Retweet.new(@retweet)
+	@result = Tweet.new(@retweet)
 	@result.save
-	@tweets = Tweet.all
-	@retweets = Retweet.all
+	@timeclass=ReturnTimeline.new
+	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
 end
@@ -48,9 +48,10 @@ post '/followprofile' do
 	@result = Follower.new(@follow)
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
-	@tweets = Tweet.all
-	@retweets = Retweet.all
-	@followers = Follower.all
+	@timeclass=ReturnTimeline.new
+	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
+	@followers = @timeclass.return_follower_list( @follow[:user_id])
+	@following = @timeclass.return_following_list( @follow[:user_id])
 	erb :profile
 end
 
@@ -59,49 +60,27 @@ post '/unfollowprofile' do
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
   @user = User.find_by_id( @unfollow[:user_id])
-	@tweets = Tweet.all
-	@retweets = Retweet.all
-	@followers = Follower.all
+	@timeclass=ReturnTimeline.new
+	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
+	@followers = @timeclass.return_follower_list( @unfollow[:user_id])
+	@following = @timeclass.return_following_list( @unfollow[:user_id])
 	erb :profile
 end
 
-
-post '/follow' do
-	@follow = params[:follow]
-	@result = Follower.new(@follow)
-	@result.save
-	@tweets = Tweet.all
-	@retweets = Retweet.all
-	@followers = Follower.all
-	erb :display
-end
-
-post '/unfollow' do
-	@unfollow = params[:unfollow]
-
-	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
-	follower.delete
-	@tweets = Tweet.all
-	@retweets = Retweet.all
-	@followers = Follower.all
-	erb :display
-end
-
-
 get '/display' do
-
-	@tweets = Tweet.all
-	@retweets = Retweet.all
+	@timeclass=ReturnTimeline.new
+	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
 end
 
 
 get '/profile/:id' do
+	@timeclass=ReturnTimeline.new
   @user = User.find_by_id(params[:id])
-  @tweets = Tweet.all
-  @retweets = Retweet.all
-	@followers = Follower.all
+  @usertweets = @timeclass.return_tweets_by_user(params[:id])
+	@followers = @timeclass.return_follower_list(params[:id])
+	@following = @timeclass.return_following_list(params[:id])
 	erb :profile
 end
 

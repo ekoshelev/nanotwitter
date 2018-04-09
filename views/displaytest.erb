@@ -49,30 +49,62 @@
 </div>
 
         <%@tweets.each do |tweet|
+          byebug
           %>
         <div class="card">
             <div class="card-block">
               <div class="row">
-                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b>
-<% if tweet.retweet_id != nil
+                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a>
+<%=if tweet.retweet_id != nil
+  byebug
   origintweet = Tweet.find_by(id: tweet.retweet_id) %>
-retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
+<a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
   <%end%>
                 </b> <%=tweet.time_created%></p>
 
-                  </div>
-                  <% if tweet.retweet_id != nil %>
-                      <p class="card-text">  <%= origintweet.text%></p>
-                  <% else %>
-                    <p class="card-text">  <%=tweet.text%></p>
-  <%end%>
-  <form method="POST" action="/retweet">
-    <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
-    <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
-    <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
-    <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
-<button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
+                <% if tweet.user_id != session[:user].id
+
+                  @unfollow=false
+                %>
+
+                  <%@followers.each do |follower|
+                    %>
+                    <% if follower.follower_id == session[:user].id && follower.user_id == tweet.user_id
+                      @unfollow=true %>
+                    <form method="POST" action="/unfollow">
+                      <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
+                      <input type="hidden" name="unfollow[user_id]" value="<%= tweet.user_id  %>">
+                      <input class='btn btn-primary' type='submit' value='Unfollow'>
+                    </form>
+                    <%end%>
+                  <%end%>
+                  <% if @unfollow ==false %>
+                  <form method="POST" action="/follow">
+                    <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
+                    <input type="hidden" name="follow[user_id]" value="<%= tweet.user_id  %>">
+                    <input class='btn btn-primary' type='submit' value='Follow'>
 </form>
+                    <%end%>
+                    <%end%>
+                  </div>
+                    <p class="card-text">  <%=tweet.text%></p>
+                  <%= if tweet.retweet_id == nil
+                  %>
+  <p class="card-text">  <%=tweet.text%></p>
+    <% else %>
+      <p class="card-text">  <%=origintweet.text%></p>
+                  <% end%>
+                <form method="POST" action="/retweet">
+                <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
+                <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
+                  <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
+    <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
+
+
+</form>
+  <% end%>
+
+
             </div>
         </div>
 

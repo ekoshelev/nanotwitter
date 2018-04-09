@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20180215190635) do
     t.integer "user_id"
   end
 
-  create_table "retweets", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tweet_id"
-  end
-
   create_table "tweet_hashtags", force: :cascade do |t|
     t.integer "tweet_id"
     t.integer "hashtag_id"
@@ -43,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180215190635) do
     t.string "text"
     t.datetime "time_created"
     t.integer "user_id"
+    t.integer "retweet_id"
   end
 
   create_table "users", force: :cascade do |t|

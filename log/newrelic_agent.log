@@ -133,3 +133,858 @@
 [2018-03-27 18:47:20 -0400 lizzie-GT62VR-7RE (11878)] ERROR : NameError: uninitialized constant Redis::VERSION
 [2018-03-27 18:47:23 -0400 lizzie-GT62VR-7RE (11878)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
 [2018-03-27 18:47:23 -0400 lizzie-GT62VR-7RE (11878)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Environment: development
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : No known dispatcher detected.
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Application: My Application (Development)
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Installing Net instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Finished instrumentation
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:52:55 -0400 lizzie-GT62VR-7RE (12390)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:52:57 -0400 lizzie-GT62VR-7RE (12390)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:52:59 -0400 lizzie-GT62VR-7RE (12390)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Environment: development
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : No known dispatcher detected.
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Application: My Application (Development)
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Installing Net instrumentation
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:53:58 -0400 lizzie-GT62VR-7RE (12478)] INFO : Finished instrumentation
+[2018-03-27 18:53:59 -0400 lizzie-GT62VR-7RE (12478)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:53:59 -0400 lizzie-GT62VR-7RE (12478)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:53:59 -0400 lizzie-GT62VR-7RE (12478)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:54:01 -0400 lizzie-GT62VR-7RE (12478)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Environment: development
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : No known dispatcher detected.
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Application: My Application (Development)
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Installing Net instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Installing Sinatra instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Finished instrumentation
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-27 18:57:28 -0400 lizzie-GT62VR-7RE (12732)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-27 18:57:30 -0400 lizzie-GT62VR-7RE (12732)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-27 18:57:46 -0400 lizzie-GT62VR-7RE (12732)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Environment: development
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : No known dispatcher detected.
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Application: My Application (Development)
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Will re-attempt in 60 seconds
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Installing Net instrumentation
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Installing Sinatra instrumentation
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 12:31:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Finished instrumentation
+[2018-03-29 12:31:31 -0400 lizzie-GT62VR-7RE (4213)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 12:31:31 -0400 lizzie-GT62VR-7RE (4213)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:31:31 -0400 lizzie-GT62VR-7RE (4213)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:32:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:32:30 -0400 lizzie-GT62VR-7RE (4213)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:32:30 -0400 lizzie-GT62VR-7RE (4213)] INFO : Will re-attempt in 120 seconds
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Environment: development
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : No known dispatcher detected.
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Application: My Application (Development)
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Will re-attempt in 60 seconds
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Installing Net instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Installing Sinatra instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Finished instrumentation
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:43:40 -0400 lizzie-GT62VR-7RE (5722)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Environment: development
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : No known dispatcher detected.
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Application: My Application (Development)
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Will re-attempt in 60 seconds
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Installing Net instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Installing Sinatra instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Finished instrumentation
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:44:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:45:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:45:09 -0400 lizzie-GT62VR-7RE (6055)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:45:09 -0400 lizzie-GT62VR-7RE (6055)] INFO : Will re-attempt in 120 seconds
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Environment: development
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : No known dispatcher detected.
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Application: My Application (Development)
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 60 seconds
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Installing Net instrumentation
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Installing Sinatra instrumentation
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 12:45:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Finished instrumentation
+[2018-03-29 12:46:00 -0400 lizzie-GT62VR-7RE (6290)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 12:46:00 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 12:46:00 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 12:46:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:46:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:46:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 120 seconds
+[2018-03-29 12:48:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:48:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:48:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 180 seconds
+[2018-03-29 12:51:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:51:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:51:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 240 seconds
+[2018-03-29 12:55:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 12:55:59 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 12:55:59 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 300 seconds
+[2018-03-29 13:01:51 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:01:51 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:01:51 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 360 seconds
+[2018-03-29 13:07:51 -0400 lizzie-GT62VR-7RE (6290)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:07:51 -0400 lizzie-GT62VR-7RE (6290)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:07:51 -0400 lizzie-GT62VR-7RE (6290)] INFO : Will re-attempt in 420 seconds
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Environment: development
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : No known dispatcher detected.
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Application: My Application (Development)
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Will re-attempt in 60 seconds
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Installing Net instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Installing Sinatra instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Finished instrumentation
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 13:10:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 13:11:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:11:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:11:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Will re-attempt in 120 seconds
+[2018-03-29 13:13:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:13:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:13:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Will re-attempt in 180 seconds
+[2018-03-29 13:16:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : Error establishing connection with New Relic Service at collector.newrelic.com:443:
+[2018-03-29 13:16:16 -0400 lizzie-GT62VR-7RE (7930)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error talking to collector.newrelic.com:443 after 2 attempts: Failed to open TCP connection to collector.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 13:16:16 -0400 lizzie-GT62VR-7RE (7930)] INFO : Will re-attempt in 240 seconds
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Environment: development
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : No known dispatcher detected.
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Application: My Application (Development)
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Installing Net instrumentation
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Installing Sinatra instrumentation
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 16:23:45 -0400 lizzie-GT62VR-7RE (5141)] INFO : Finished instrumentation
+[2018-03-29 16:23:46 -0400 lizzie-GT62VR-7RE (5141)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 16:23:46 -0400 lizzie-GT62VR-7RE (5141)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 16:23:46 -0400 lizzie-GT62VR-7RE (5141)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 16:23:47 -0400 lizzie-GT62VR-7RE (5141)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Environment: development
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : No known dispatcher detected.
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Application: My Application (Development)
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Installing Net instrumentation
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Installing Sinatra instrumentation
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 16:25:46 -0400 lizzie-GT62VR-7RE (5345)] INFO : Finished instrumentation
+[2018-03-29 16:25:47 -0400 lizzie-GT62VR-7RE (5345)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 16:25:47 -0400 lizzie-GT62VR-7RE (5345)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 16:25:47 -0400 lizzie-GT62VR-7RE (5345)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 16:25:49 -0400 lizzie-GT62VR-7RE (5345)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 16:25:51 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 16:31:30 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 16:31:55 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 16:34:22 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 16:35:31 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:14:33 -0400 lizzie-GT62VR-7RE (5345)] ERROR : 1 error(s) running task for event 'report_event_data' in Agent Event Loop:
+[2018-03-29 18:14:33 -0400 lizzie-GT62VR-7RE (5345)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-253.newrelic.com:443 after 0.000986994 seconds: Failed to open TCP connection to collector-253.newrelic.com:443 (getaddrinfo: Name or service not known)
+[2018-03-29 18:19:33 -0400 lizzie-GT62VR-7RE (5345)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Environment: development
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : No known dispatcher detected.
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Application: My Application (Development)
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Installing Net instrumentation
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:24:15 -0400 lizzie-GT62VR-7RE (6762)] INFO : Finished instrumentation
+[2018-03-29 18:24:16 -0400 lizzie-GT62VR-7RE (6762)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:24:16 -0400 lizzie-GT62VR-7RE (6762)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:24:16 -0400 lizzie-GT62VR-7RE (6762)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:24:18 -0400 lizzie-GT62VR-7RE (6762)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:24:43 -0400 lizzie-GT62VR-7RE (6762)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Environment: development
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : No known dispatcher detected.
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Application: My Application (Development)
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Installing Net instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Finished instrumentation
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:25:33 -0400 lizzie-GT62VR-7RE (6892)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:25:36 -0400 lizzie-GT62VR-7RE (6892)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Environment: development
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : No known dispatcher detected.
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Application: My Application (Development)
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Installing Net instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Finished instrumentation
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:26:18 -0400 lizzie-GT62VR-7RE (6998)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:26:21 -0400 lizzie-GT62VR-7RE (6998)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Environment: development
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : No known dispatcher detected.
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Application: My Application (Development)
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Installing Net instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Finished instrumentation
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:26:52 -0400 lizzie-GT62VR-7RE (7107)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:26:54 -0400 lizzie-GT62VR-7RE (7107)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Environment: development
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : No known dispatcher detected.
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Application: My Application (Development)
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Installing Net instrumentation
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:27:27 -0400 lizzie-GT62VR-7RE (7170)] INFO : Finished instrumentation
+[2018-03-29 18:27:28 -0400 lizzie-GT62VR-7RE (7170)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:27:28 -0400 lizzie-GT62VR-7RE (7170)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:27:28 -0400 lizzie-GT62VR-7RE (7170)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:27:30 -0400 lizzie-GT62VR-7RE (7170)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:27:37 -0400 lizzie-GT62VR-7RE (7170)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Environment: development
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : No known dispatcher detected.
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Application: My Application (Development)
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Installing Net instrumentation
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:28:06 -0400 lizzie-GT62VR-7RE (7285)] INFO : Finished instrumentation
+[2018-03-29 18:28:07 -0400 lizzie-GT62VR-7RE (7285)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:28:07 -0400 lizzie-GT62VR-7RE (7285)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:28:07 -0400 lizzie-GT62VR-7RE (7285)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:28:09 -0400 lizzie-GT62VR-7RE (7285)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:28:09 -0400 lizzie-GT62VR-7RE (7285)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:29:09 -0400 lizzie-GT62VR-7RE (7285)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:30:21 -0400 lizzie-GT62VR-7RE (7285)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Environment: development
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : No known dispatcher detected.
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Application: My Application (Development)
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Installing Net instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Finished instrumentation
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:31:20 -0400 lizzie-GT62VR-7RE (7556)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:31:22 -0400 lizzie-GT62VR-7RE (7556)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:31:24 -0400 lizzie-GT62VR-7RE (7556)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Environment: development
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : No known dispatcher detected.
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Application: My Application (Development)
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Installing Net instrumentation
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:32:00 -0400 lizzie-GT62VR-7RE (7636)] INFO : Finished instrumentation
+[2018-03-29 18:32:01 -0400 lizzie-GT62VR-7RE (7636)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:32:01 -0400 lizzie-GT62VR-7RE (7636)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:32:01 -0400 lizzie-GT62VR-7RE (7636)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:32:03 -0400 lizzie-GT62VR-7RE (7636)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:32:04 -0400 lizzie-GT62VR-7RE (7636)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Environment: development
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : No known dispatcher detected.
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Application: My Application (Development)
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Installing Net instrumentation
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:32:40 -0400 lizzie-GT62VR-7RE (7720)] INFO : Finished instrumentation
+[2018-03-29 18:32:41 -0400 lizzie-GT62VR-7RE (7720)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:32:41 -0400 lizzie-GT62VR-7RE (7720)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:32:41 -0400 lizzie-GT62VR-7RE (7720)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:32:43 -0400 lizzie-GT62VR-7RE (7720)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-03-29 18:32:48 -0400 lizzie-GT62VR-7RE (7720)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:35:42 -0400 lizzie-GT62VR-7RE (7720)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[2018-03-29 18:35:42 -0400 lizzie-GT62VR-7RE (7720)] ERROR : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-253.newrelic.com:443 after 115.668187293 seconds: Connection reset by peer - SSL_connect
+[2018-03-29 18:35:54 -0400 lizzie-GT62VR-7RE (7720)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Environment: development
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : No known dispatcher detected.
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Application: My Application (Development)
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Installing Net instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Installing Sinatra instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Finished instrumentation
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] ERROR : Error while detecting redis_instrumentation:
+[2018-03-29 18:38:57 -0400 lizzie-GT62VR-7RE (8630)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-03-29 18:42:19 -0400 lizzie-GT62VR-7RE (7720)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:15:12 -0400 lizzie-GT62VR-7RE (3441)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : Environment: development
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : No known dispatcher detected.
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : Application: My Application (Development)
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : Installing Net instrumentation
+[2018-04-09 14:15:13 -0400 lizzie-GT62VR-7RE (3441)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:15:14 -0400 lizzie-GT62VR-7RE (3441)] INFO : Finished instrumentation
+[2018-04-09 14:15:15 -0400 lizzie-GT62VR-7RE (3441)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:15:22 -0400 lizzie-GT62VR-7RE (3441)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:15:22 -0400 lizzie-GT62VR-7RE (3441)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:15:22 -0400 lizzie-GT62VR-7RE (3441)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Environment: development
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : No known dispatcher detected.
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Application: My Application (Development)
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Installing Net instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Finished instrumentation
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:15:53 -0400 lizzie-GT62VR-7RE (4648)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:15:55 -0400 lizzie-GT62VR-7RE (4648)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:16:14 -0400 lizzie-GT62VR-7RE (4648)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Environment: development
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : No known dispatcher detected.
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Application: My Application (Development)
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Installing Net instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Finished instrumentation
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:23:25 -0400 lizzie-GT62VR-7RE (6492)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:23:28 -0400 lizzie-GT62VR-7RE (6492)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:23:37 -0400 lizzie-GT62VR-7RE (6492)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:26:56 -0400 lizzie-GT62VR-7RE (6492)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Environment: development
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : No known dispatcher detected.
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Application: My Application (Development)
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Installing Net instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Finished instrumentation
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:28:10 -0400 lizzie-GT62VR-7RE (6829)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:28:18 -0400 lizzie-GT62VR-7RE (6829)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:28:28 -0400 lizzie-GT62VR-7RE (6829)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:30:25 -0400 lizzie-GT62VR-7RE (6829)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:31:31 -0400 lizzie-GT62VR-7RE (6829)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:33:06 -0400 lizzie-GT62VR-7RE (6829)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Environment: development
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : No known dispatcher detected.
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Application: My Application (Development)
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Installing Net instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Finished instrumentation
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:38:56 -0400 lizzie-GT62VR-7RE (7595)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:38:58 -0400 lizzie-GT62VR-7RE (7595)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:39:05 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:40:05 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:41:14 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:43:44 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:44:24 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:46:10 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:47:03 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:47:59 -0400 lizzie-GT62VR-7RE (7595)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Environment: development
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : No known dispatcher detected.
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Application: My Application (Development)
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Installing Net instrumentation
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Installing Sinatra instrumentation
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 14:49:55 -0400 lizzie-GT62VR-7RE (8710)] INFO : Finished instrumentation
+[2018-04-09 14:49:56 -0400 lizzie-GT62VR-7RE (8710)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 14:49:56 -0400 lizzie-GT62VR-7RE (8710)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 14:49:56 -0400 lizzie-GT62VR-7RE (8710)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 14:49:58 -0400 lizzie-GT62VR-7RE (8710)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 14:50:00 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:51:20 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:52:01 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:53:18 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:54:13 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:55:15 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:56:24 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:57:20 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:58:11 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 14:59:12 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:04:10 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:05:02 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:05:59 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:07:08 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:11:32 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:13:40 -0400 lizzie-GT62VR-7RE (8710)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Environment: development
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : No known dispatcher detected.
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Application: My Application (Development)
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Installing Net instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Finished instrumentation
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:15:28 -0400 lizzie-GT62VR-7RE (10435)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:15:30 -0400 lizzie-GT62VR-7RE (10435)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:15:31 -0400 lizzie-GT62VR-7RE (10435)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Environment: development
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : No known dispatcher detected.
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Application: My Application (Development)
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Installing Net instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Finished instrumentation
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:17:05 -0400 lizzie-GT62VR-7RE (10564)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:17:07 -0400 lizzie-GT62VR-7RE (10564)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:17:07 -0400 lizzie-GT62VR-7RE (10564)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Environment: development
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : No known dispatcher detected.
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Application: My Application (Development)
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Installing Net instrumentation
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:17:51 -0400 lizzie-GT62VR-7RE (10671)] INFO : Finished instrumentation
+[2018-04-09 15:17:52 -0400 lizzie-GT62VR-7RE (10671)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:17:52 -0400 lizzie-GT62VR-7RE (10671)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:17:52 -0400 lizzie-GT62VR-7RE (10671)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:17:54 -0400 lizzie-GT62VR-7RE (10671)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:17:55 -0400 lizzie-GT62VR-7RE (10671)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:25:42 -0400 lizzie-GT62VR-7RE (10671)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Environment: development
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : No known dispatcher detected.
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Application: My Application (Development)
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Installing Net instrumentation
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:25:49 -0400 lizzie-GT62VR-7RE (11106)] INFO : Finished instrumentation
+[2018-04-09 15:25:50 -0400 lizzie-GT62VR-7RE (11106)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:25:50 -0400 lizzie-GT62VR-7RE (11106)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:25:50 -0400 lizzie-GT62VR-7RE (11106)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:25:52 -0400 lizzie-GT62VR-7RE (11106)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:25:53 -0400 lizzie-GT62VR-7RE (11106)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Environment: development
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : No known dispatcher detected.
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Application: My Application (Development)
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Installing Net instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Finished instrumentation
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:26:34 -0400 lizzie-GT62VR-7RE (11192)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:26:37 -0400 lizzie-GT62VR-7RE (11192)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:26:37 -0400 lizzie-GT62VR-7RE (11192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:28:01 -0400 lizzie-GT62VR-7RE (11192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Environment: development
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : No known dispatcher detected.
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Application: My Application (Development)
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Installing Net instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Finished instrumentation
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:30:39 -0400 lizzie-GT62VR-7RE (11615)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:30:41 -0400 lizzie-GT62VR-7RE (11615)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:30:43 -0400 lizzie-GT62VR-7RE (11615)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:31:44 -0400 lizzie-GT62VR-7RE (11615)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:32:44 -0400 lizzie-GT62VR-7RE (11615)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Environment: development
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : No known dispatcher detected.
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Application: My Application (Development)
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Installing Net instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Finished instrumentation
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:33:37 -0400 lizzie-GT62VR-7RE (11840)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:33:39 -0400 lizzie-GT62VR-7RE (11840)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Environment: development
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : No known dispatcher detected.
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Application: My Application (Development)
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Installing Net instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Finished instrumentation
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:35:54 -0400 lizzie-GT62VR-7RE (11985)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:35:56 -0400 lizzie-GT62VR-7RE (11985)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:35:57 -0400 lizzie-GT62VR-7RE (11985)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Environment: development
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : No known dispatcher detected.
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Application: My Application (Development)
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Installing Net instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Finished instrumentation
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:36:50 -0400 lizzie-GT62VR-7RE (12072)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:36:52 -0400 lizzie-GT62VR-7RE (12072)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:37:04 -0400 lizzie-GT62VR-7RE (12072)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Environment: development
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : No known dispatcher detected.
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Application: My Application (Development)
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Installing Net instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Finished instrumentation
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:37:30 -0400 lizzie-GT62VR-7RE (12158)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:37:33 -0400 lizzie-GT62VR-7RE (12158)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:37:35 -0400 lizzie-GT62VR-7RE (12158)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Environment: development
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : No known dispatcher detected.
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Application: My Application (Development)
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Installing Net instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Finished instrumentation
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:38:38 -0400 lizzie-GT62VR-7RE (12347)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:38:40 -0400 lizzie-GT62VR-7RE (12347)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:38:50 -0400 lizzie-GT62VR-7RE (12347)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Environment: development
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : No known dispatcher detected.
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Application: My Application (Development)
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Installing Net instrumentation
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:39:48 -0400 lizzie-GT62VR-7RE (12473)] INFO : Finished instrumentation
+[2018-04-09 15:39:49 -0400 lizzie-GT62VR-7RE (12473)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:39:49 -0400 lizzie-GT62VR-7RE (12473)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:39:49 -0400 lizzie-GT62VR-7RE (12473)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:39:51 -0400 lizzie-GT62VR-7RE (12473)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:39:52 -0400 lizzie-GT62VR-7RE (12473)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:40:52 -0400 lizzie-GT62VR-7RE (12473)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:42:51 -0400 lizzie-GT62VR-7RE (12473)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:43:52 -0400 lizzie-GT62VR-7RE (12473)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:43:54 -0400 lizzie-GT62VR-7RE (12473)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Environment: development
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : No known dispatcher detected.
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Application: My Application (Development)
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Installing Net instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Finished instrumentation
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:44:36 -0400 lizzie-GT62VR-7RE (12912)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:44:38 -0400 lizzie-GT62VR-7RE (12912)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:44:38 -0400 lizzie-GT62VR-7RE (12912)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Environment: development
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : No known dispatcher detected.
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Application: My Application (Development)
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Installing Net instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Finished instrumentation
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:45:34 -0400 lizzie-GT62VR-7RE (13008)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:45:36 -0400 lizzie-GT62VR-7RE (13008)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:45:38 -0400 lizzie-GT62VR-7RE (13008)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Environment: development
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : No known dispatcher detected.
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Application: My Application (Development)
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Installing Net instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Installing Sinatra instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Finished instrumentation
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-09 15:46:08 -0400 lizzie-GT62VR-7RE (13088)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-09 15:46:14 -0400 lizzie-GT62VR-7RE (13088)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/116121093
+[2018-04-09 15:46:17 -0400 lizzie-GT62VR-7RE (13088)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.

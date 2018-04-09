@@ -101,23 +101,34 @@
 	<div class="row">
 		<div class="cn">
             <ol>
-              <%
-             @hometweets.each do |tweet|
-               %>
-             <div class="card">
-                 <div class="card-block">
-                   <div class="row">
-                     <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b> <%=tweet.time_created%></p>
-      <p class="card-text">  <%=tweet.text%></p>
+              <%@hometweets.each do |tweet|
+                %>
+              <div class="card">
+                  <div class="card-block">
+                    <div class="row">
+                      <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b>
+      <% if tweet.retweet_id != nil
+        origintweet = Tweet.find_by(id: tweet.retweet_id) %>
+      retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
+        <%end%>
+                      </b> <%=tweet.time_created%></p>
 
 
-                 </div>
-             </div>
-</div>
-             <br>
-               <br>
-             </li>
-             <%end%>
+                        </div>
+                        <% if tweet.retweet_id != nil %>
+                            <p class="card-text">  <%= origintweet.text%></p>
+                        <% else %>
+                          <p class="card-text">  <%=tweet.text%></p>
+        <%end%>
+
+                  </div>
+              </div>
+
+              <br>
+                <br>
+              </li>
+              <%end%>
+            </ol>
 
         </div>
 	</div>

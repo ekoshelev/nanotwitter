@@ -1,5 +1,6 @@
 class Tweet < ActiveRecord::Base
   belongs_to :user
+  belongs_to :retweet
 
   has_many :tweetHashtags
   has_many :hashtags, through: :tweetHashtags
@@ -7,7 +8,7 @@ class Tweet < ActiveRecord::Base
   has_many :mentions
   has_many :users, through: :mentions
 
-  has_many :retweets
+
 
 
 end
