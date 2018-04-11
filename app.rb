@@ -15,8 +15,12 @@ Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 
-get '/' do
+before do
 	@timeclass=ReturnTimeline.new
+end
+
+get '/' do
+
 	@hometweets= @timeclass.return_recent_tweets
 	erb :index
 end
@@ -33,7 +37,6 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
-	@timeclass=ReturnTimeline.new
 	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
@@ -45,7 +48,6 @@ post '/followprofile' do
 	@result = Follower.new(@follow)
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
-	@timeclass=ReturnTimeline.new
 	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @timeclass.return_follower_list( @follow[:user_id])
 	@following = @timeclass.return_following_list( @follow[:user_id])
@@ -57,7 +59,6 @@ post '/unfollowprofile' do
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
   @user = User.find_by_id( @unfollow[:user_id])
-	@timeclass=ReturnTimeline.new
 	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
 	@followers = @timeclass.return_follower_list( @unfollow[:user_id])
 	@following = @timeclass.return_following_list( @unfollow[:user_id])
@@ -65,7 +66,6 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-	@timeclass=ReturnTimeline.new
 	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
@@ -73,7 +73,6 @@ end
 
 
 get '/profile/:id' do
-	@timeclass=ReturnTimeline.new
   @user = User.find_by_id(params[:id])
   @usertweets = @timeclass.return_tweets_by_user(params[:id])
 	@followers = @timeclass.return_follower_list(params[:id])

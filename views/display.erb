@@ -20,7 +20,7 @@
 
         <li><a href="/profile/<%= session[:user].id.to_s%>">Your Profile</a></li>
         <li><a href="/logout">Sign Out</a></li>
-    
+
           <li>
             <form class="navbar-form" role="search">
      <div class="input-group">
@@ -42,7 +42,7 @@
                     <form action='/post_tweet' class="form-inline"  method='POST'>
         <label for="tweet" Username:/>
           <div class="form-group row">
-      <input id="description"  class="form-control" name="tweet[text]" type="text" placeholder="What's happening?">
+      <input id="description"  class="form-control" name="tweet[text]" type="text" maxlength="280" placeholder="What's happening?" >
       <input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
       <input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
         <input class='btn btn-primary' type='submit' value='Tweet'>
