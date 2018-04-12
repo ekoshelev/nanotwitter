@@ -397,3 +397,161 @@
 [2018-04-11 13:34:38 -0400 lizzie-GT62VR-7RE (10234)] ERROR : NameError: uninitialized constant Redis::VERSION
 [2018-04-11 13:34:42 -0400 lizzie-GT62VR-7RE (10234)] ERROR : Invalid license key, please contact support@newrelic.com
 [2018-04-11 13:34:42 -0400 lizzie-GT62VR-7RE (10234)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Environment: development
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : No known dispatcher detected.
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:15:55 -0400 codex (3709)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:15:55 -0400 codex (3709)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:15:55 -0400 codex (3709)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Installing Net instrumentation
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:15:55 -0400 codex (3709)] INFO : Finished instrumentation
+[2018-04-12 05:15:56 -0400 codex (3709)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:15:56 -0400 codex (3709)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:15:56 -0400 codex (3709)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:16:07 -0400 codex (3709)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:16:07 -0400 codex (3709)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Environment: development
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : No known dispatcher detected.
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:18:40 -0400 codex (3833)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:18:40 -0400 codex (3833)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:18:40 -0400 codex (3833)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Installing Net instrumentation
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:18:40 -0400 codex (3833)] INFO : Finished instrumentation
+[2018-04-12 05:18:41 -0400 codex (3833)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:18:41 -0400 codex (3833)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:18:41 -0400 codex (3833)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:18:57 -0400 codex (3833)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:18:57 -0400 codex (3833)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Environment: development
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : No known dispatcher detected.
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:31:41 -0400 codex (4627)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:31:41 -0400 codex (4627)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:31:41 -0400 codex (4627)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Installing Net instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Finished instrumentation
+[2018-04-12 05:31:41 -0400 codex (4627)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:31:41 -0400 codex (4627)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:31:41 -0400 codex (4627)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Environment: development
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : No known dispatcher detected.
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:32:28 -0400 codex (4657)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:32:28 -0400 codex (4657)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:32:28 -0400 codex (4657)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Installing Net instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Finished instrumentation
+[2018-04-12 05:32:28 -0400 codex (4657)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:32:28 -0400 codex (4657)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:32:28 -0400 codex (4657)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:32:38 -0400 codex (4657)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:32:38 -0400 codex (4657)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Environment: development
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : No known dispatcher detected.
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:36:41 -0400 codex (4805)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:36:41 -0400 codex (4805)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:36:41 -0400 codex (4805)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Installing Net instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Finished instrumentation
+[2018-04-12 05:36:41 -0400 codex (4805)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:36:41 -0400 codex (4805)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:36:41 -0400 codex (4805)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:36:50 -0400 codex (4805)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:36:50 -0400 codex (4805)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Environment: development
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : No known dispatcher detected.
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:37:45 -0400 codex (4854)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:37:45 -0400 codex (4854)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:37:45 -0400 codex (4854)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Installing Net instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Finished instrumentation
+[2018-04-12 05:37:45 -0400 codex (4854)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:37:45 -0400 codex (4854)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:37:45 -0400 codex (4854)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:37:54 -0400 codex (4854)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:37:54 -0400 codex (4854)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Environment: development
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : No known dispatcher detected.
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:42:19 -0400 codex (5492)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:42:19 -0400 codex (5492)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:42:19 -0400 codex (5492)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Installing Net instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Finished instrumentation
+[2018-04-12 05:42:19 -0400 codex (5492)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:42:19 -0400 codex (5492)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:42:19 -0400 codex (5492)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:42:47 -0400 codex (5492)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:42:47 -0400 codex (5492)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Reading configuration from config/newrelic.yml (/home/lara/git_directories/scalability/nanotwitter)
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Environment: development
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : No known dispatcher detected.
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-12 05:44:47 -0400 codex (5621)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-12 05:44:47 -0400 codex (5621)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:44:47 -0400 codex (5621)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Installing Net instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Installing Sinatra instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Finished instrumentation
+[2018-04-12 05:44:47 -0400 codex (5621)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-12 05:44:47 -0400 codex (5621)] ERROR : Error while detecting redis_instrumentation:
+[2018-04-12 05:44:47 -0400 codex (5621)] ERROR : NameError: uninitialized constant Redis::VERSION
+[2018-04-12 05:44:54 -0400 codex (5621)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-12 05:44:54 -0400 codex (5621)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

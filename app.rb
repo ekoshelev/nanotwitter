@@ -7,20 +7,32 @@ require 'redis-sinatra'
 require 'newrelic_rpm'
 require 'graphql'
 require 'json'
+require 'bcrypt'
+#require 'byebug'
 require './controllers/return_timeline.rb'
 require_relative 'twitter_functionality'
-require_relative './temp/fry_seeding.rb'
 Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
+require_relative './temp/fry_seeding.rb'
+
+configure do
+  enable :sessions
+end
+
+helpers do
+  def authenticate!
+    halt(401, 'Not Authorized') unless session[:user]
+    session[:original_request] = request.path_info
+  end
+end
 
 before do
 	@timeclass=ReturnTimeline.new
 end
 
 get '/' do
-
 	@hometweets= @timeclass.return_recent_tweets
 	erb :index
 end
@@ -80,7 +92,6 @@ get '/profile/:id' do
 	erb :profile
 end
 
-
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
 	password = "#{params[:password]}"
@@ -89,9 +100,13 @@ post '/login' do
 		session[:user] = user
 		redirect to('/display')
 	else
-		"Login Failed!"
+		redirect to('login_fail')
 	end
-    #redirect '/search'
+end
+
+get '/login_fail' do
+  @hometweets= @timeclass.return_recent_tweets
+  erb :login_fail
 end
 
 get '/logout' do
