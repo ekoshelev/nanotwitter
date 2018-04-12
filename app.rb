@@ -37,6 +37,20 @@ get '/' do
 	erb :index
 end
 
+get '/test_search' do
+  erb :test_search
+end
+
+post '/test_search' do
+  @users = User.all
+  @tweets = Tweet.all
+
+  @user_search = @users.select {|user| user.name.include?(params[:search_term])}
+  @tweet_search = @tweets.select {|tweet| tweet.text.include?(params[:search_term])}
+
+  erb :test_search_success
+end
+
 get '/search' do
 	erb :search
 end
