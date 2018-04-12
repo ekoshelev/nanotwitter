@@ -3,7 +3,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require 'faker'
-require 'redis-sinatra'
+require 'rubygems'
+require 'redis'
 require 'newrelic_rpm'
 require 'graphql'
 require 'json'
@@ -14,6 +15,8 @@ Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
+
+
 
 before do
 	@timeclass=ReturnTimeline.new
