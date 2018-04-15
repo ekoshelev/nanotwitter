@@ -21,7 +21,7 @@ UserType = GraphQL::ObjectType.define do
       temp = user.followers
       follower_users = []
       temp.each {|f| follower_users << f.follower}
-      return follow_users
+      return follower_users
     }
   end
 

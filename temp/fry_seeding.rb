@@ -27,6 +27,7 @@ def manual_mapping(table_name, csv_row)
     name = csv_row[1].gsub("'", "''").downcase
     email = "#{name}@example.com"
     password = BCrypt::Password.create(name.reverse)
+    #password = digest(name.reverse)
     api_token = csv_row[0]
 
     table_row = "('#{name}','#{email}','#{password}','#{api_token}')"
@@ -42,4 +43,11 @@ def manual_mapping(table_name, csv_row)
 
     table_row = "('#{user_id}','#{follower_id}')"
   end
+end
+
+
+def digest(string)
+  cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                BCrypt::Engine.cost
+  BCrypt::Password.create(string, cost: cost)
 end
