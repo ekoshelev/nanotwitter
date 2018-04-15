@@ -1,15 +1,14 @@
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 /* Fixed navbar */
 body {
-    padding-top: 90px;
-    background-image: url('/../img/color-splash.jpg');
-    /* Full height */
+  padding-top: 90px;
+background-image: url('/../img/color-splash.jpg');
+/* Full height */
 height: 100%;
 
 /* Center and scale the image nicely */
 background-position: center;
 background-repeat: no-repeat;
-background-size: cover;
+
 }
 /* General sizing */
 ul.dropdown-lr {

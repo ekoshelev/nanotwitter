@@ -1,0 +1,78 @@
+<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+<link href="/css/login.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+<form method="POST" action="/test_search">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <input type="text" name="search_term" id="search" placeholder="search term" value="">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <input type="submit" name="search-submit" id="search-submit" tabindex="4" class="form-control btn btn-info" value="Search">
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="container">
+	<div class="row">
+		<div class="cn">
+      <ol>
+        <% @user_search[0..49].each do |user| %>
+
+        <div class="card">
+          <div class="card-block">
+            <div class="row">
+              <a class="card-text" href="/profile/<%= user.id.to_s%>"><b><%= user.name %> </a></b>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+      </ol>
+            <ol>
+              <%@tweet_search[0..49].each do |tweet|
+                %>
+              <div class="card">
+                  <div class="card-block">
+                    <div class="row">
+                      <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b>
+      <% if tweet.retweet_id != nil
+        origintweet = Tweet.find_by(id: tweet.retweet_id) %>
+      retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
+        <%end%>
+                      </b> <%=tweet.time_created%></p>
+
+
+                        </div>
+                        <% if tweet.retweet_id != nil %>
+                            <p class="card-text">  <%= origintweet.text%></p>
+                        <% else %>
+                          <p class="card-text">  <%=tweet.text%></p>
+        <%end%>
+        <% if session[:user] != nil && tweet.user_id != session[:user].id %>
+        <form method="POST" action="/retweet">
+          <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
+          <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
+          <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
+          <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
+        <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
+        </form>
+        <%end%>
+                  </div>
+              </div>
+
+              <br>
+                <br>
+              </li>
+              <%end%>
+            </ol>
+
+        </div>
+	</div>
+</div>

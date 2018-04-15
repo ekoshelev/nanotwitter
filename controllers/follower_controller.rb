@@ -1,5 +1,5 @@
 class follower_controller
-  def get_follower_count(user)
+  redis = Redis.new  def get_follower_count(user)
     if it doesnt exist
     Redis::put(make_follower_id(user),1)
     return 0

@@ -3,10 +3,14 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require 'faker'
-require 'redis-sinatra'
+require 'rubygems'
+require 'redis'
+require 'uri'
 require 'newrelic_rpm'
 require 'graphql'
 require 'json'
+require 'bcrypt'
+#require 'byebug'
 require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require_relative './temp/fry_seeding.rb'
@@ -17,11 +21,42 @@ Dir["./models/*.rb"].each {|file| require file}
 #Dir["./controllers/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
+require_relative './temp/fry_seeding.rb'
+
+configure do
+  enable :sessions
+end
+
+helpers do
+  def authenticate!
+    halt(401, 'Not Authorized') unless session[:user]
+    session[:original_request] = request.path_info
+  end
+end
+
+
+
+before do
+	@timeclass=ReturnTimeline.new
+end
 
 get '/' do
-	@timeclass=ReturnTimeline.new
 	@hometweets= @timeclass.return_recent_tweets
 	erb :index
+end
+
+get '/test_search' do
+  erb :test_search
+end
+
+post '/test_search' do
+  @users = User.all
+  @tweets = Tweet.all
+
+  @user_search = @users.select {|user| user.name.include?(params[:search_term])}
+  @tweet_search = @tweets.select {|tweet| tweet.text.include?(params[:search_term])}
+
+  erb :test_search_success
 end
 
 get '/search' do
@@ -36,7 +71,6 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
-	@timeclass=ReturnTimeline.new
 	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
@@ -48,7 +82,6 @@ post '/followprofile' do
 	@result = Follower.new(@follow)
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
-	@timeclass=ReturnTimeline.new
 	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @timeclass.return_follower_list( @follow[:user_id])
 	@following = @timeclass.return_following_list( @follow[:user_id])
@@ -60,7 +93,6 @@ post '/unfollowprofile' do
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
   @user = User.find_by_id( @unfollow[:user_id])
-	@timeclass=ReturnTimeline.new
 	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
 	@followers = @timeclass.return_follower_list( @unfollow[:user_id])
 	@following = @timeclass.return_following_list( @unfollow[:user_id])
@@ -68,7 +100,6 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-	@timeclass=ReturnTimeline.new
 	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
@@ -76,14 +107,12 @@ end
 
 
 get '/profile/:id' do
-	@timeclass=ReturnTimeline.new
   @user = User.find_by_id(params[:id])
   @usertweets = @timeclass.return_tweets_by_user(params[:id])
 	@followers = @timeclass.return_follower_list(params[:id])
 	@following = @timeclass.return_following_list(params[:id])
 	erb :profile
 end
-
 
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
@@ -93,9 +122,13 @@ post '/login' do
 		session[:user] = user
 		redirect to('/display')
 	else
-		"Login Failed!"
+		redirect to('login_fail')
 	end
-    #redirect '/search'
+end
+
+get '/login_fail' do
+  @hometweets= @timeclass.return_recent_tweets
+  erb :login_fail
 end
 
 get '/logout' do
