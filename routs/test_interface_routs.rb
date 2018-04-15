@@ -14,43 +14,42 @@ Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 
 post '/test/reset/all' do
-	twitter_functionality = TwitterFunctionality.new
-	twitter_functionality.reset_All
-	twitter_functionality.create_test_user
+
+	@twitter_functionality.reset_All
+	@twitter_functionality.create_test_user
 
 	return 200
 end
 
 post '/test/reset/testuser' do
 
-	twitter_functionality = TwitterFunctionality.new
 
 	if User.exists?(name: 'TestUser')
 
     test_user = User.where(name: 'TestUser').first
 
 	if test_user.tweets.exists?
-	twitter_functionality.test_user.tweets.each do |tweet|
-			twitter_functionality.delete_tweet(tweet)
+	@twitter_functionality.test_user.tweets.each do |tweet|
+			@twitter_functionality.delete_tweet(tweet)
 		end
 	end
 
 	if test_user.followers.exists?
 		test_user.followers.each do |follow|
-			twitter_functionality.delete_follow(follow)
+			@twitter_functionality.delete_follow(follow)
 		end
 	end
 
 	if test_user.following.exists?
 		test_user.following.each do |following|
-			twitter_functionality.delete_following(following)
+			@twitter_functionality.delete_following(following)
 		end
 	end
 
 	test_user.delete
 	end
 
-	twitter_functionality.create_test_user
+	@twitter_functionality.create_test_user
 
 end
 
@@ -72,14 +71,13 @@ end
 
 
 post '/test/reset/standard' do
-	twitter_functionality = TwitterFunctionality.new
 
-	twitter_functionality.reset_User
-	twitter_functionality.reset_Tweet
-	twitter_functionality.reset_Follower
-	twitter_functionality.reset_Mention
+	@twitter_functionality.reset_User
+	@twitter_functionality.reset_Tweet
+	@twitter_functionality.reset_Follower
+	@twitter_functionality.reset_Mention
 
-	twitter_functionality.create_test_user
+	@twitter_functionality.create_test_user
 
   seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
   seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])
@@ -148,7 +146,7 @@ return 200
 end
 
 post '/test/user/:id/follow' do
-  twitter_functionality = TwitterFunctionality.new
+
 
   if params[:id] == 'testuser'
 		user = User.find_by_name('TestUser')
@@ -163,7 +161,7 @@ post '/test/user/:id/follow' do
 	random_followers = User.all.sample(num)
 
 	num.times do |count|
-		twitter_functionality.add_follow(user,random_followers[count])
+		@twitter_functionality.add_follow(user,random_followers[count])
 	end
 
 	return 200
@@ -172,7 +170,7 @@ end
 
 
 post '/test/user/follow' do
-	twitter_functionality = TwitterFunctionality.new
+
 	num = params[:count].to_i
 
 	random_users = User.all.sample(num*2)
@@ -181,7 +179,7 @@ post '/test/user/follow' do
 	random_followers = random_users[num..random_users.size-1]
 
 	num.times do |count|
-		twitter_functionality.add_follow(random_followees[count],random_followers[count])
+		@twitter_functionality.add_follow(random_followees[count],random_followers[count])
 	end
 
 	return 200

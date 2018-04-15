@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/twitter-bootstrap'
 require 'faker'
 require 'rubygems'
-require 'redis'
+require 'redis-sinatra'
 require 'uri'
 require 'newrelic_rpm'
 require 'graphql'
@@ -38,6 +38,7 @@ end
 
 before do
 	@timeclass=ReturnTimeline.new
+	@twitter_functionality = TwitterFunctionality.new
 end
 
 get '/' do
