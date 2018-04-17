@@ -77,7 +77,6 @@ post '/retweet' do
 	erb :display
 end
 
-
 post '/followprofile' do
 	@follow = params[:follow]
 	@result = Follower.new(@follow)
@@ -102,7 +101,6 @@ end
 
 get '/display' do
 	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
-	@followers = Follower.all
 	erb :display
 end
 

@@ -1,13 +1,15 @@
 /* Fixed navbar */
 body {
   padding-top: 90px;
-background-image: url('/../img/color-splash.jpg');
-/* Full height */
+   background-image: url('/../img/color-splash.jpg');
+   /* Full height */
 height: 100%;
 
 /* Center and scale the image nicely */
 background-position: center;
 background-repeat: no-repeat;
+background-size: cover;
+background-color: #551A8B;
 
 }
 /* General sizing */
