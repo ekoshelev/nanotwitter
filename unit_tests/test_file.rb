@@ -136,7 +136,7 @@ class TestUser <  Minitest::Test
 
     assert_equal "This is a test Tweet", Tweet.second.text
     assert_equal "TestUser", Tweet.second.retweet.user.name
-    # assert_equal "RetweetingUser", Tweet.first.retweet.first.user.name
+    assert_equal "RetweetingUser", Tweet.first.retweeted.first.user.name
     assert_equal "This is a test Tweet", User.second.tweets.first.retweet.text
 
     @controller.reset_All

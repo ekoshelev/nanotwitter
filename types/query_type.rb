@@ -31,7 +31,9 @@ QueryType = GraphQL::ObjectType.define do
     type types[TweetType]
     argument :recent, types.Int, default_value: 10
     resolve -> (obj, args, ctx) {
-      Tweet.all.limit(args[:recent]).reverse
+      #Tweet.all.limit(args[:recent]).reverse
+      tweets= Tweet.all.sort_by{ |k| k["time_created"] }.reverse!
+      return tweets[0..args[:recent]]
     }
   end
 
@@ -39,15 +41,15 @@ QueryType = GraphQL::ObjectType.define do
     type TweetType
 
     argument :text, !types.String
-    argument :user_id, !types.ID
+    argument :api_token, !types.String
 
     resolve -> (obj,args,ctx){
 
-      if User.where(id: args[:user_id]).exists?
-        user = User.find_by(id: args[:user_id])
+      if User.find_by(api_token: args[:api_token]) != nil
+        user = User.find_by(api_token: args[:api_token])
         tweet = user.tweets.create(text: args[:text],time_created: Time.now.getutc)
       else
-        "No user under ID #{args[:user_id]}"
+        "Invalid API Token: #{args[:api_token]}"
       end
     }
 
