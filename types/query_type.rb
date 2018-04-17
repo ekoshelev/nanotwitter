@@ -45,7 +45,7 @@ QueryType = GraphQL::ObjectType.define do
 
     resolve -> (obj,args,ctx){
 
-      if User.find_by(api_token: args[:api_token]).exists?
+      if User.find_by(api_token: args[:api_token]) != nil
         user = User.find_by(api_token: args[:api_token])
         tweet = user.tweets.create(text: args[:text],time_created: Time.now.getutc)
       else

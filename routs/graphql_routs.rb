@@ -15,17 +15,10 @@ Dir["./models/*.rb"].each {|file| require file}
 
 post '/api/v1/graphql' do
 
-	#token = params[:apitoken]
-
-	#if User.where(api_token: token).exists?
-
 		request_payload = JSON.parse(request.body.read)
 
 	  result = NanoTwitterAPI.execute(request_payload['query'])
 
 	  result.to_json
-	#else
-	# 	"invalid API token".to_json
-	# end
 
 end

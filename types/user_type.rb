@@ -4,8 +4,8 @@ UserType = GraphQL::ObjectType.define do
   description "A User of Nanotwiiter GraphQL"
   field :id, types.ID
   field :name, types.String
-  field :email, types.String
-  field :password, types.String
+  #field :email, types.String
+  #field :password, types.String
 
   field :tweets do
     type types[TweetType]
@@ -28,9 +28,9 @@ UserType = GraphQL::ObjectType.define do
   field :following do
     type types[UserType]
     resolve -> (user,args,ctx){
-      fwrs = user.followers
+      fwrs = user.following
       following_users = []
-      fwrs.each {|f| following_users << f.follower}
+      fwrs.each {|f| following_users << f.user}
       return following_users
     }
   end
