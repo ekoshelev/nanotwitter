@@ -101,7 +101,7 @@ class TwitterFunctionality
   def add_mentions(tweet)
     mentions = tweet.text.scan(/@\w+/)
     users = User.all
-    
+
     mentions.each do |mention|
       mention.slice!(0)
       user = User.find_by(name: mention)
@@ -111,6 +111,30 @@ class TwitterFunctionality
       end
 
     end
+
+  end
+
+  def display_tweet(tweet)
+    split = tweet.text.split(' ')
+
+    split.map! do |word|
+      first = word.slice(0)
+      if first == '@'
+        word.slice!(0)
+
+        if User.find_by(name: word) != nil
+          user = User.find_by(name: word)
+          word = "#{href="/profile/<%= User.find_by(id: user_id).id.to_s%>"}"
+        end
+
+      elsif first == '#'
+        word = 'TAG'
+      else
+        word = word
+      end
+    end
+
+    return "#{split.join(' ')}"
 
   end
 

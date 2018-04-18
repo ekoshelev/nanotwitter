@@ -72,7 +72,7 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
-	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
+	@tweets = @timeclass.return_timeline_by_user( session[:user])
 	@followers = Follower.all
 	erb :display
 end
@@ -100,7 +100,7 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
+	@tweets = @timeclass.return_timeline_by_user( session[:user])
 	erb :display
 end
 
@@ -139,8 +139,8 @@ post '/post_tweet' do
 	@tweet = params[:tweet]
 	@result = Tweet.new(@tweet)
 	@result.save
-  @twitter_functionality.add_hashtags(@tweet)
-  @twitter_functionality.add_mentions(@tweet)
+  @twitter_functionality.add_hashtags(@result)
+  @twitter_functionality.add_mentions(@result)
 	@tweets = Tweet.all
 	redirect '/display'
 end

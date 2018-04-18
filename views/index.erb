@@ -127,7 +127,7 @@
                         <% if tweet.retweet_id != nil %>
                             <p class="card-text">  <%= origintweet.text%></p>
                         <% else %>
-                          <p class="card-text">  <%=tweet.text%></p>
+                          <p class="card-text">  <%=@twitter_functionality.display_tweet(tweet)%></p>
         <%end%>
         <% if session[:user] != nil && tweet.user_id != session[:user].id %>
         <form method="POST" action="/retweet">

@@ -27,13 +27,19 @@ end
   end
 
   def return_timeline_by_user(user)
-    @followinglist = return_following_list(user)
+    @followinglist = return_following_list(user.id)
     followingids=[]
       @followinglist.each do |follow|
         followingids.push(follow.user_id)
       end
-        followingids.push(user.to_i)
-    usertweets = @tweets.select { |tweet| followingids.include? tweet.user_id }
+
+      followingids.push()
+
+        followingids.push(user.id.to_i)
+    usertweets = @tweets.select { |tweet| followingids.include? tweet.user_id}
+
+    user.mentions.each {|mention| usertweets.push(mention.tweet)}
+
     sortusertweets= usertweets.sort_by{ |k| k["time_created"] }.reverse!
     return sortusertweets[0..49]
   end
