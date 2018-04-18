@@ -124,12 +124,12 @@ class TwitterFunctionality
 
         if User.find_by(name: word) != nil
           user = User.find_by(name: word)
-          word = "<a href=\"/profile/#{User.find_by(id: user.id).id.to_s}\">#{word}</a>"
+          word = "<a href=\"/profile/#{user.id.to_s}\">@#{word}</a>"
         end
 
       elsif first == '#'
-        word.slice!(0)
-        
+        tag = Hashtag.find_by(name: word)
+        word = "<a href=\"/hashtags/#{tag.id.to_s}\">#{word}</a>"
       else
         word = word
       end

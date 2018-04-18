@@ -1,3 +1,5 @@
+
+
 class ReturnTimeline
 def initialize
   @tweets = Tweet.all
@@ -43,4 +45,7 @@ end
     sortusertweets= usertweets.sort_by{ |k| k["time_created"] }.reverse!
     return sortusertweets[0..49]
   end
+
+
+
 end
