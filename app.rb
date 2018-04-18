@@ -139,6 +139,8 @@ post '/post_tweet' do
 	@tweet = params[:tweet]
 	@result = Tweet.new(@tweet)
 	@result.save
+  @twitter_functionality.add_hashtags(@tweet)
+  @twitter_functionality.add_mentions(@tweet)
 	@tweets = Tweet.all
 	redirect '/display'
 end

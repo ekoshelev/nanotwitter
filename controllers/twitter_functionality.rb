@@ -15,13 +15,13 @@ class TwitterFunctionality
   end
 
 
-  def reset_User
+  def reset_user
     if User.exists?
       User.delete_all
     end
   end
 
-  def reset_Tweet
+  def reset_tweet
     if Tweet.exists?
       Tweet.delete_all
       TweetHashtag.delete_all
@@ -35,25 +35,25 @@ class TwitterFunctionality
     end
   end
 
-  def reset_Mention
+  def reset_mention
     if Mention.exists?
       Mention.delete_all
     end
   end
 
 
-  def reset_Follower
+  def reset_follower
     if Follower.exists?
       Follower.delete_all
     end
   end
 
   def reset_All
-    reset_User
-  	reset_Tweet
+    reset_user
+  	reset_tweet
   	reset_Hashtag
-    reset_Mention
-    reset_Follower
+    reset_mention
+    reset_follower
   end
 
   def delete_user(user)
@@ -82,4 +82,37 @@ class TwitterFunctionality
     follow.follower_id = follower.id
     follow.save
   end
+
+  def add_hashtags(tweet)
+    tags = tweet.text.scan(/#\w+/)
+    current_tags = Hashtag.all
+
+    tags.each do |hashtag|
+      if current_tags.find_by(name: hashtag) == nil
+        tweet.hashtags.create(name: hashtag)
+      else
+        existing = current_tags.find_by(name: hashtag)
+        TweetHashtag.create(tweet_id: tweet.id, hashtag_id: existing.id)
+      end
+    end
+
+  end
+
+  def add_mentions(tweet)
+    mentions = tweet.text.scan(/@\w+/)
+    users = User.all
+    
+    mentions.each do |mention|
+      mention.slice!(0)
+      user = User.find_by(name: mention)
+
+      if user != nil
+        Mention.create(tweet_id: tweet.id, user_id: user.id)
+      end
+
+    end
+
+  end
+
+
 end

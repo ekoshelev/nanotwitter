@@ -72,10 +72,10 @@ end
 
 post '/test/reset/standard' do
 
-	@twitter_functionality.reset_User
-	@twitter_functionality.reset_Tweet
-	@twitter_functionality.reset_Follower
-	@twitter_functionality.reset_Mention
+	@twitter_functionality.reset_user
+	@twitter_functionality.reset_tweet
+	@twitter_functionality.reset_follower
+	@twitter_functionality.reset_mention
 
 	@twitter_functionality.create_test_user
 

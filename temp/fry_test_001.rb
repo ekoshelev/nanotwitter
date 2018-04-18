@@ -4,10 +4,10 @@ require_relative '../controllers/twitter_functionality.rb'
 get '/fry_test' do
   tester = TwitterFunctionality.new
 
-	tester.reset_User
-	tester.reset_Tweet
-	tester.reset_Follower
-	tester.reset_Mention
+	tester.reset_user
+	tester.reset_tweet
+	tester.reset_follower
+	tester.reset_mention
 	tester.reset_Retweet
 
 	tester.create_test_user

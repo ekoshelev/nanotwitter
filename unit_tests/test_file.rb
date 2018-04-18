@@ -57,12 +57,12 @@ class TestUser <  Minitest::Test
     user.save
 
     tweet = Tweet.new
-    tweet.text = "This is a test Tweet"
+    tweet.text = "This is a #test Tweet"
     tweet.user_id = user.id
     tweet.save
 
     hashtag = Hashtag.new
-    hashtag.name = "#Test"
+    hashtag.name = "#test"
     hashtag.save
 
     join = TweetHashtag.new
@@ -70,10 +70,18 @@ class TestUser <  Minitest::Test
     join.hashtag_id = Hashtag.first.id
     join.save
 
+    tweet2 = Tweet.create(text: "hey im #testing hashtags #poundsign #test")
+    @controller.add_hashtags(tweet2)
+
     #checks the database pathing to find the name of a hastag through a tweet and user
-    assert_equal "#Test", Hashtag.first.name
-    assert_equal "#Test", Tweet.first.hashtags.first.name
-    assert_equal "#Test", User.first.tweets.first.hashtags.first.name
+    assert_equal "#test", Hashtag.first.name
+    assert_equal "#test", Tweet.first.hashtags.first.name
+    assert_equal "#test", User.first.tweets.first.hashtags.first.name
+
+    assert_equal "#testing", Tweet.second.hashtags.find_by(name: "#testing").name
+    assert_equal "#poundsign", Tweet.second.hashtags.find_by(name: "#poundsign").name
+    assert_equal "#test", Tweet.second.hashtags.find_by(name: "#test").name
+
 
     @controller.reset_All
   end
@@ -101,10 +109,17 @@ class TestUser <  Minitest::Test
     mention.user_id = user2.id
     mention.save
 
+    tweet2 = Tweet.create(text: "hey @MentionedUser, whats up?  @yolo", user_id: user.id)
+    @controller.add_mentions(tweet2)
+
     assert_equal "MentionedUser", Mention.first.user.name
     assert_equal "MentionedUser", Tweet.first.mentions.first.user.name
     assert_equal "MentionedUser", User.first.tweets.first.mentions.first.user.name
     assert_equal "TestUser", User.second.mentions.first.tweet.user.name
+    
+    assert_equal "MentionedUser", Tweet.second.mentions.first.user.name
+    assert_equal "TestUser", User.second.mentions.second.tweet.user.name
+    assert_equal 1, Tweet.second.mentions.size
 
     @controller.reset_All
 
