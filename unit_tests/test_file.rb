@@ -116,7 +116,7 @@ class TestUser <  Minitest::Test
     assert_equal "MentionedUser", Tweet.first.mentions.first.user.name
     assert_equal "MentionedUser", User.first.tweets.first.mentions.first.user.name
     assert_equal "TestUser", User.second.mentions.first.tweet.user.name
-    
+
     assert_equal "MentionedUser", Tweet.second.mentions.first.user.name
     assert_equal "TestUser", User.second.mentions.second.tweet.user.name
     assert_equal 1, Tweet.second.mentions.size
@@ -183,6 +183,24 @@ class TestUser <  Minitest::Test
 
     @controller.reset_All
   end
+
+  # def test_mention_hashtag
+  #   @controller.reset_All
+  #   user1 = User.create(name: "Test")
+  #   user2 = User.create(name: "User")
+  #   user3 = User.create(name: "Fun")
+  #
+  #   tweet1 = user1.tweets.create(text: "hey @User, do you like to #tweet")
+  #   tweet2 = user2.tweets.create(text: "#testing @Fun with all my #tweet")
+  #   tweet3 = user3.tweets.create(text: "@Test @User I am having #fun! #testing #tweet")
+  #
+  #   @controller.add_hashtags(tweet1)
+  #   @controller.add_mentions(tweet1)
+  #
+  #   assert_equal "hey @User, do you like to #tweet", @controller.display_tweet(tweet1)
+  #
+  #   @controller.reset_All
+  # end
 
 
 

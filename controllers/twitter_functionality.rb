@@ -120,15 +120,22 @@ class TwitterFunctionality
     split.map! do |word|
       first = word.slice(0)
       if first == '@'
+        original = word
         word.slice!(0)
 
         if User.find_by(name: word) != nil
           user = User.find_by(name: word)
           word = "<a href=\"/profile/#{user.id.to_s}\">@#{word}</a>"
+        else
+          
+          word = "@#{original}"
         end
 
       elsif first == '#'
-        tag = Hashtag.find_by(name: word)
+        strip = word.scan(/#\w+/)
+
+        tag = Hashtag.find_by(name: strip[0])
+
         word = "<a href=\"/hashtags/#{tag.id.to_s}\">#{word}</a>"
       else
         word = word
