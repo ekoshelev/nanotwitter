@@ -1,4 +1,6 @@
 require 'graphql'
+require './query_type.rb'
+require './tweet_type.rb'
 Dir["./controllers/*.rb"].each {|file| require file}
 
 UserType = GraphQL::ObjectType.define do
