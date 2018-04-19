@@ -36,18 +36,18 @@ QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  # field :hashtag do
-  #   type HashtagType
-  #   argument :id, types.ID
-  #   argument :tag, types.String
-  #   resolve -> (obj, args, ctx){
-  #     if args[:id] != nil
-  #       Hashtag.find(args[:id])
-  #     else
-  #       Hashtag.find_by(name: args[:tag])
-  #     end
-  #   }
-  # end
+  field :hashtag do
+    type HashtagType
+    argument :id, types.ID
+    argument :tag, types.String
+    resolve -> (obj, args, ctx){
+      if args[:id] != nil
+        Hashtag.find(args[:id])
+      else
+        Hashtag.find_by(name: args[:tag])
+      end
+    }
+  end
 
   field :post_tweet do
     type TweetType
