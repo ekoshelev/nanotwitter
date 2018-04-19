@@ -1,4 +1,5 @@
 require 'graphql'
+Dir["./types/*.rb"].each {|file| require file}
 Dir["./controllers/*.rb"].each {|file| require file}
 
 HashtagType = GraphQL::ObjectType.define do

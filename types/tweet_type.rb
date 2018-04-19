@@ -1,4 +1,5 @@
 require 'graphql'
+Dir["./types/*.rb"].each {|file| require file}
 TweetType = GraphQL::ObjectType.define do
   name "Tweet"
   description "A Tweet from Nanotwiiter QraphQL test"
