@@ -41,6 +41,10 @@ before do
 	@timeclass=ReturnTimeline.new
   @followercontroller=FollowerController.new
 	@twitter_functionality = TwitterFunctionality.new
+  @testuser = User.find_by(name: "TestUser")
+  if @testuser == nil
+    @testuser = @twitter_functionality.create_test_user
+  end
 end
 
 get '/' do
@@ -152,7 +156,7 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-	@tweets = Tweet.all
+	#@tweets = Tweet.all
 	redirect '/display'
 end
 
