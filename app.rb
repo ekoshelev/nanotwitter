@@ -16,7 +16,7 @@ require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require_relative './temp/fry_seeding.rb'
 require './routs/test_interface_routs.rb'
-require './routs/graphql_routs.rb'
+#require './routs/graphql_routs.rb'
 Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 #Dir["./controllers/*.rb"].each {|file| require file}
