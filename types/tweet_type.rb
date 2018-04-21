@@ -8,6 +8,13 @@ TweetType = GraphQL::ObjectType.define do
   field :time_created, types.String
   field :retweet_id, types.ID
 
+  field :poster do
+    type types.String
+    resolve -> (tweet, args, ctx){
+      tweet.user.name
+    }
+  end
+
   field :user do
     type UserType
     resolve -> (tweet, args, ctx){
