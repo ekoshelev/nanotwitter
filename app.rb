@@ -17,7 +17,8 @@ require './controllers/twitter_functionality.rb'
 require_relative './temp/fry_seeding.rb'
 require './routs/test_interface_routs.rb'
 #require './routs/graphql_routs.rb'
-Dir["./types/*.rb"].each {|file| require file}
+#Dir["./types/*.rb"].each {|file| require file}
+require './types/schema.rb'
 Dir["./models/*.rb"].each {|file| require file}
 #Dir["./controllers/*.rb"].each {|file| require file}
 
