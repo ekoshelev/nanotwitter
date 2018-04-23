@@ -94,7 +94,8 @@ post '/test/reset/standard' do
 
 	@testuser = @twitter_functionality.create_test_user
 
-  last_user_id = User.count
+  last_user_id = User.last.id
+  
 
   users_columns = [:name, :email, :password, :api_token]
   users_data = CSV.read("lib/seeds/users.csv")
@@ -102,7 +103,7 @@ post '/test/reset/standard' do
 
   columns = [:user_id, :text, :time_created]
   tweets_data = CSV.read("lib/seeds/tweets.csv")
-  tweets_data = tweets_csv[0, params[:tweets].to_i]
+  tweets_data = tweets_data[0, params[:tweets].to_i]
   tweets_data.each do |tweet|
     tweet[0] = Integer(tweet[0]) + last_user_id
   end
