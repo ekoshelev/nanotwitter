@@ -94,17 +94,26 @@ post '/test/reset/standard' do
 
 	@testuser = @twitter_functionality.create_test_user
 
+  last_user_id = User.count
+
   users_columns = [:name, :email, :password, :api_token]
   users_data = CSV.read("lib/seeds/users.csv")
   User.import(users_columns, users_data, validate: false)
 
   columns = [:user_id, :text, :time_created]
-  tweets_csv = CSV.read("lib/seeds/tweets.csv")
-  tweets_csv = tweets_csv[0, params[:tweets].to_i]
-  Tweet.import columns, tweets_csv, validate: false
+  tweets_data = CSV.read("lib/seeds/tweets.csv")
+  tweets_data = tweets_csv[0, params[:tweets].to_i]
+  tweets_data.each do |tweet|
+    tweet[0] = Integer(tweet[0]) + last_user_id
+  end
+  Tweet.import columns, tweets_data, validate: false
 
   follows_columns = [:user_id, :follower_id]
   follows_data = CSV.read("lib/seeds/follows.csv")
+  follows_data.each do |follow|
+    follow[0] = Integer(follow[0]) + last_user_id
+    follow[1] = Integer(follow[1]) + last_user_id
+  end
   Follower.import(follows_columns, follows_data, validate: false)
 
   # seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
