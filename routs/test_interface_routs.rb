@@ -100,7 +100,7 @@ post '/test/reset/standard' do
 
   columns = [:user_id, :text, :time_created]
   tweets_csv = CSV.read("lib/seeds/tweets.csv")
-  tweets_csv = tweets_csv[0, params[:tweets]]
+  tweets_csv = tweets_csv[0, params[:tweets].to_i]
   Tweet.import columns, tweets_csv, validate: false
 
   follows_columns = [:user_id, :follower_id]
