@@ -77,7 +77,7 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
-	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
+	@tweets = @timeclass.return_timeline_by_user( session[:user])
 	@followers = Follower.all
 	erb :display
 end
@@ -149,8 +149,14 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-  @timeclass.post_tweet_redis
+  @timeclass.post_tweet_redis(@result)
 	redirect '/display'
+end
+
+get '/hashtags/:id' do
+  @hashtag = Hashtag.find_by(id: params[:id])
+  @hashtagtweets = @hashtag.tweets.sort_by{ |k| k["time_created"] }.reverse!
+  erb :hashtags
 end
 
 post '/register' do
