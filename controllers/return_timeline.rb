@@ -48,8 +48,12 @@ end
 
 
 def get_main_timeline
+    if ((@redis.get "home_timeline") !=nil)
   rb_hash = JSON.parse(@redis.get("home_timeline"))
-
+  return rb_hash["tweets"]
+else
+  return nil
+end
 end
 
 def post_tweet_redis(tweet)
