@@ -1,10 +1,10 @@
 
 
 class ReturnTimeline
-def initialize
-  @tweets = Tweet.all
-  @followers=Follower.all
-  @alltweets= @tweets
+def initialize(redis,tweets,followers)
+  @redis=redis
+  @tweets = tweets
+  @followers= followers
 end
 
   def return_recent_tweets
@@ -41,5 +41,20 @@ end
   end
 
 
+def get_main_timeline
+  rb_hash = JSON.parse(@redis.get("home_timeline"))
+  
+end
 
+def post_tweet_redis(tweet)
+  if ((@redis.get "home_timeline") !=nil)
+    rb_hash = JSON.parse(@redis.get("home_timeline"))
+    rb_hash["tweets"] << { :id => tweet.id, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }
+    @redis.set "home_timeline", rb_hash.to_json
+  else
+    @redis.del "home_timeline"
+    rb_hash = {:tweets => [{ :id => tweet.id, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }]}
+    @redis.set "home_timeline", rb_hash.to_json
+  end
+end
 end

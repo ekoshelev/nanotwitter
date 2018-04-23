@@ -23,7 +23,6 @@ Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 require_relative './temp/fry_seeding.rb'
-
 configure do
   enable :sessions
 end
@@ -35,12 +34,15 @@ helpers do
   end
 end
 
-
-
 before do
-	@timeclass=ReturnTimeline.new
-  @followercontroller=FollowerController.new
+  @redis = Redis.new(url: ENV["REDIS_URL"])
+  @tweets= Tweet.all
+  @followers=Follower.all
+  @users = User.all
+	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers)
+  @followercontroller=FollowerController.new(@redis, @users)
 	@twitter_functionality = TwitterFunctionality.new
+
 end
 
 get '/' do
@@ -144,7 +146,7 @@ post '/post_tweet' do
 	@tweet = params[:tweet]
 	@result = Tweet.new(@tweet)
 	@result.save
-	@tweets = Tweet.all
+  @timeclass.post_tweet_redis(@result)
 	redirect '/display'
 end
 

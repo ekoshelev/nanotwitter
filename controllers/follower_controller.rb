@@ -1,7 +1,7 @@
 class FollowerController
-  def initialize
-    @users = User.all
-    @redis = Redis.new(url: ENV["REDIS_URL"])
+  def initialize(redis, users)
+    @redis=redis
+    @users=users
   end
 
   def incr_following(user,following)
@@ -79,41 +79,7 @@ def get_followers(user)
   end
   return  @redis.lrange(followers_id,0,-1)
 end
-=begin
-  def get_follower_count(user)
-    id = make_follower_id(user);
-    if it doesnt exist
-      Redis::put(id,1)
-    return 1
-  else {
-    return  Redis::get(make_follower_id(user))
-  }
-  end
 
-  def get_following_count(user)
-    if it doesnt exist
-    Redis::put(make_following_id(user),1)
-
-    return 0
-  else {
-    return  Redis::get(make_following_id(user))
-  }
-  end
-
-
-
-  def decr_following_count(user)
-        Redis::decrement(make_following_id(user))
-  end
-
-  def  incr_follower_count(user)
-      Redis::increment(make_follower_id(user))
-  end
-
-  def decr_follower_count(user)
-        Redis::decrement(make_follower_id(user))
-  end
-=end
 def make_following_id(user)
   return user.to_s + "_following";
 end
