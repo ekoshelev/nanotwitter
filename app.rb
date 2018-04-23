@@ -51,7 +51,8 @@ before do
 end
 
 get '/' do
-	@hometweets= @timeclass.return_recent_tweets
+#	@hometweets= @timeclass.return_recent_tweets
+@hometweets=   @timeclass.get_main_timeline
 	erb :index
 end
 
