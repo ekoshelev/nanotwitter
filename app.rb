@@ -39,10 +39,14 @@ before do
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
-	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers)
   @followercontroller=FollowerController.new(@redis, @users)
+	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers,@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
 
+  @testuser = User.find_by(name: "TestUser")
+  if @testuser == nil
+    @testuser = @twitter_functionality.create_test_user
+  end
 
 end
 

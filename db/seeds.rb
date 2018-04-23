@@ -7,7 +7,7 @@ require 'activerecord-import'
 # seed_table("tweets.csv", "tweets", "(text, time_created, user_id)")
 # seed_table("follows.csv", "followers", "(user_id, follower_id)")
 
-last_user_id = User.count
+last_user_id = User.last.id
 
 users_columns = [:name, :email, :password, :api_token]
 users_data = CSV.read("lib/seeds/users.csv")

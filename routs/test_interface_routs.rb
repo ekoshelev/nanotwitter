@@ -82,7 +82,7 @@ end
 
 get '/test/version' do
 	#donn't know what is meant by presented as JSON
-	0.7.to_json
+	1.0.to_json
 end
 
 
@@ -95,7 +95,6 @@ post '/test/reset/standard' do
 	@testuser = @twitter_functionality.create_test_user
 
   last_user_id = User.last.id
-  
 
   users_columns = [:name, :email, :password, :api_token]
   users_data = CSV.read("lib/seeds/users.csv")
