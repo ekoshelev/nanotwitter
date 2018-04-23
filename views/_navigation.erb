@@ -18,9 +18,20 @@
           <li><a href="/display"> Timeline</a></li>
           <li><a href="/profile/<%= session[:user].id.to_s%>"> Your Profile</a></li>
           <li><a href="/logout">Sign Out</a></li>
+          <li>
+            <form method="POST" action="/search" class="navbar-form" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search_term" id="search">
+                <div class="input-group-btn">
+                  <button class="btn btn-outline-success " type="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </li>
         <% else %>
           <%= erb :_register %>
           <%= erb :_login %>
+
         <% end %>
       </ul>
     </div>

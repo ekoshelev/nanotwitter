@@ -16,15 +16,13 @@ require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require_relative './temp/fry_seeding.rb'
 require './routs/test_interface_routs.rb'
-#require './routs/graphql_routs.rb'
-#Dir["./types/*.rb"].each {|file| require file}
-require './types/schema.rb'
+require './routs/graphql_routs.rb'
+Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 #Dir["./controllers/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 require_relative './temp/fry_seeding.rb'
-
 configure do
   enable :sessions
 end
@@ -36,16 +34,16 @@ helpers do
   end
 end
 
-
-
 before do
-	@timeclass=ReturnTimeline.new
-  @followercontroller=FollowerController.new
+  @redis = Redis.new(url: ENV["REDIS_URL"])
+  @tweets= Tweet.all
+  @followers=Follower.all
+  @users = User.all
+	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers)
+  @followercontroller=FollowerController.new(@redis, @users)
 	@twitter_functionality = TwitterFunctionality.new
-  @testuser = User.find_by(name: "TestUser")
-  if @testuser == nil
-    @testuser = @twitter_functionality.create_test_user
-  end
+
+
 end
 
 get '/' do
@@ -79,7 +77,7 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
-	@tweets = @timeclass.return_timeline_by_user( session[:user])
+	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
 	@followers = Follower.all
 	erb :display
 end
@@ -111,12 +109,6 @@ end
 get '/display' do
 	@tweets = @timeclass.return_timeline_by_user( session[:user])
 	erb :display
-end
-
-get '/hashtags/:id' do
-  @hashtag = Hashtag.find_by(id: params[:id])
-  @hashtagtweets = @hashtag.tweets.sort_by{ |k| k["time_created"] }.reverse!
-  erb :hashtags
 end
 
 
@@ -157,7 +149,7 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-	#@tweets = Tweet.all
+  @timeclass.post_tweet_redis
 	redirect '/display'
 end
 
@@ -195,15 +187,7 @@ end
 
 
 #Root of GraphQL Based API
-post '/api/v1/graphql' do
 
-		request_payload = JSON.parse(request.body.read)
-
-	  result = NanoTwitterAPI.execute(request_payload['query'])
-
-	  result.to_json
-
-end
 
 post '/api/token/new' do
 	if session[:user] != nil
