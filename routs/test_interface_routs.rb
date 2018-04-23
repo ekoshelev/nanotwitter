@@ -9,13 +9,33 @@ require 'json'
 require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require_relative '../temp/fry_seeding.rb'
-Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
+
+
+get '/user/testuser' do
+  session[:user] = @testuser
+  redirect '/display'
+end
+
+post '/user/testuser/tweet' do
+	tweet = {
+	"text" => Faker::Hacker.say_something_smart,
+	"time_created" => Time.new.inspect,
+	"user_id" => @testuser.id}
+
+	@result = Tweet.new(tweet)
+	@result.save
+  @twitter_functionality.add_hashtags(@result)
+  @twitter_functionality.add_mentions(@result)
+
+	redirect '/user/testuser'
+
+end
 
 post '/test/reset/all' do
 
 	@twitter_functionality.reset_All
-	@twitter_functionality.create_test_user
+	@testuser = @twitter_functionality.create_test_user
 
 	return 200
 end
@@ -23,32 +43,27 @@ end
 post '/test/reset/testuser' do
 
 
-	if User.exists?(name: 'TestUser')
-
-    test_user = User.where(name: 'TestUser').first
-
-	if test_user.tweets.exists?
-	@twitter_functionality.test_user.tweets.each do |tweet|
+	if @testuser.tweets.exists?
+	@testuser.tweets.each do |tweet|
 			@twitter_functionality.delete_tweet(tweet)
 		end
 	end
 
-	if test_user.followers.exists?
-		test_user.followers.each do |follow|
+	if @testuser.followers.exists?
+		@testuser.followers.each do |follow|
 			@twitter_functionality.delete_follow(follow)
 		end
 	end
 
-	if test_user.following.exists?
-		test_user.following.each do |following|
+	if @testuser.following.exists?
+		@testuser.following.each do |following|
 			@twitter_functionality.delete_following(following)
 		end
 	end
 
-	test_user.delete
-	end
+	@testuser.delete
 
-	@twitter_functionality.create_test_user
+	@testuser = @twitter_functionality.create_test_user
 
 end
 
@@ -71,12 +86,12 @@ end
 
 post '/test/reset/standard' do
 
-	@twitter_functionality.reset_User
-	@twitter_functionality.reset_Tweet
-	@twitter_functionality.reset_Follower
-	@twitter_functionality.reset_Mention
+	@twitter_functionality.reset_user
+	@twitter_functionality.reset_tweet
+	@twitter_functionality.reset_follower
+	@twitter_functionality.reset_mention
 
-	@twitter_functionality.create_test_user
+	@testuser = @twitter_functionality.create_test_user
 
   seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
   seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])

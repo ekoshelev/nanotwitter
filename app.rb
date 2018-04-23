@@ -43,6 +43,7 @@ before do
   @followercontroller=FollowerController.new(@redis, @users)
 	@twitter_functionality = TwitterFunctionality.new
 
+
 end
 
 get '/' do
@@ -106,7 +107,7 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-	@tweets = @timeclass.return_timeline_by_user( session[:user].id)
+	@tweets = @timeclass.return_timeline_by_user( session[:user])
 	erb :display
 end
 
@@ -146,7 +147,9 @@ post '/post_tweet' do
 	@tweet = params[:tweet]
 	@result = Tweet.new(@tweet)
 	@result.save
-  @timeclass.post_tweet_redis(@result)
+  @twitter_functionality.add_hashtags(@result)
+  @twitter_functionality.add_mentions(@result)
+  @timeclass.post_tweet_redis
 	redirect '/display'
 end
 
