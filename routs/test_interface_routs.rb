@@ -8,6 +8,8 @@ require 'graphql'
 require 'json'
 require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
+require 'csv'
+require 'activerecord-import'
 require_relative '../temp/fry_seeding.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
@@ -85,7 +87,6 @@ end
 
 
 post '/test/reset/standard' do
-
 	@twitter_functionality.reset_user
 	@twitter_functionality.reset_tweet
 	@twitter_functionality.reset_follower
@@ -93,9 +94,32 @@ post '/test/reset/standard' do
 
 	@testuser = @twitter_functionality.create_test_user
 
-  seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
-  seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])
-  seed_table("follows.csv", "followers", "(user_id, follower_id)", params[:follows])
+  last_user_id = User.last.id
+  
+
+  users_columns = [:name, :email, :password, :api_token]
+  users_data = CSV.read("lib/seeds/users.csv")
+  User.import(users_columns, users_data, validate: false)
+
+  columns = [:user_id, :text, :time_created]
+  tweets_data = CSV.read("lib/seeds/tweets.csv")
+  tweets_data = tweets_data[0, params[:tweets].to_i]
+  tweets_data.each do |tweet|
+    tweet[0] = Integer(tweet[0]) + last_user_id
+  end
+  Tweet.import columns, tweets_data, validate: false
+
+  follows_columns = [:user_id, :follower_id]
+  follows_data = CSV.read("lib/seeds/follows.csv")
+  follows_data.each do |follow|
+    follow[0] = Integer(follow[0]) + last_user_id
+    follow[1] = Integer(follow[1]) + last_user_id
+  end
+  Follower.import(follows_columns, follows_data, validate: false)
+
+  # seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
+  # seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])
+  # seed_table("follows.csv", "followers", "(user_id, follower_id)", params[:follows])
 
 	return 200
 end

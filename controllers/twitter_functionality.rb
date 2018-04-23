@@ -39,7 +39,7 @@ class TwitterFunctionality
     if Mention.exists?
       Mention.delete_all
     end
-  end
+  end    
 
 
   def reset_follower
@@ -115,7 +115,7 @@ class TwitterFunctionality
   end
 
   def display_tweet(tweet)
-    split = tweet.text.split(' ')
+    split = tweet["text"].split(' ')
 
     split.map! do |word|
       first = word.slice(0)
@@ -127,7 +127,7 @@ class TwitterFunctionality
           user = User.find_by(name: word)
           word = "<a href=\"/profile/#{user.id.to_s}\">@#{word}</a>"
         else
-          
+
           word = "@#{original}"
         end
 

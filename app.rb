@@ -42,13 +42,11 @@ before do
 	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers)
   @followercontroller=FollowerController.new(@redis, @users)
 	@twitter_functionality = TwitterFunctionality.new
-
-
 end
 
 get '/' do
-	@hometweets= @timeclass.return_recent_tweets
-  @timeclass.get_main_timeline
+#	@hometweets= @timeclass.return_recent_tweets
+@hometweets=   @timeclass.get_main_timeline
 	erb :index
 end
 
@@ -152,6 +150,12 @@ post '/post_tweet' do
   @twitter_functionality.add_mentions(@result)
   @timeclass.post_tweet_redis(@result)
 	redirect '/display'
+end
+
+get '/hashtags/:id' do
+  @hashtag = Hashtag.find_by(id: params[:id])
+  @hashtagtweets = @hashtag.tweets.sort_by{ |k| k["time_created"] }.reverse!
+  erb :hashtags
 end
 
 post '/register' do
