@@ -53,11 +53,11 @@ get '/' do
 	erb :index
 end
 
-get '/test_search' do
+get '/search' do
   erb :test_search
 end
 
-post '/test_search' do
+post '/search' do
   @users = User.all
   @tweets = Tweet.all
 
@@ -67,9 +67,6 @@ post '/test_search' do
   erb :test_search_success
 end
 
-get '/search' do
-	erb :search
-end
 
 get '/post' do
 	erb :post
