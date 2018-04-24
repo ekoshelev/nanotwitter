@@ -9233,3 +9233,80 @@ Did you mean?  user
 [2018-04-24 14:19:08 -0400 MacBook-Pro.local (32581)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
 [2018-04-24 14:19:11 -0400 MacBook-Pro.local (32581)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
 >>>>>>> emergency
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Environment: development
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : No known dispatcher detected.
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Installing Sinatra instrumentation
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Installing Net instrumentation
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 16:22:41 -0400 MacBook-Pro.local (35071)] INFO : Finished instrumentation
+[2018-04-24 16:22:42 -0400 MacBook-Pro.local (35071)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 16:22:42 -0400 MacBook-Pro.local (35071)] INFO : Installing Redis Instrumentation
+[2018-04-24 16:23:12 -0400 MacBook-Pro.local (35071)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-24 16:23:12 -0400 MacBook-Pro.local (35071)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Environment: development
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : No known dispatcher detected.
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing Sinatra instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing Net instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Finished instrumentation
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 16:24:41 -0400 MacBook-Pro.local (35129)] INFO : Installing Redis Instrumentation
+[2018-04-24 16:24:43 -0400 MacBook-Pro.local (35129)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Environment: development
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : No known dispatcher detected.
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Installing Sinatra instrumentation
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Installing Net instrumentation
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 16:25:22 -0400 MacBook-Pro.local (35164)] INFO : Finished instrumentation
+[2018-04-24 16:25:23 -0400 MacBook-Pro.local (35164)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 16:25:23 -0400 MacBook-Pro.local (35164)] INFO : Installing Redis Instrumentation
+[2018-04-24 16:25:23 -0400 MacBook-Pro.local (35164)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Environment: development
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : No known dispatcher detected.
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Installing Sinatra instrumentation
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Installing Net instrumentation
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 16:27:00 -0400 MacBook-Pro.local (35207)] INFO : Finished instrumentation
+[2018-04-24 16:27:01 -0400 MacBook-Pro.local (35207)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 16:27:01 -0400 MacBook-Pro.local (35207)] INFO : Installing Redis Instrumentation
+[2018-04-24 16:27:03 -0400 MacBook-Pro.local (35207)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Environment: development
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : No known dispatcher detected.
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing Sinatra instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing Net instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Finished instrumentation
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 16:28:29 -0400 MacBook-Pro.local (35252)] INFO : Installing Redis Instrumentation
+[2018-04-24 16:28:31 -0400 MacBook-Pro.local (35252)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
