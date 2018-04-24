@@ -97,7 +97,7 @@ post '/followprofile' do
 	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @followercontroller.get_followers( @follow[:user_id])
 	@following = @followercontroller.get_following(  @follow[:user_id])
-
+  @timeclass.add_user_timeline(@usertweets,session[:user])
 	erb :profile
 end
 
@@ -110,11 +110,13 @@ post '/unfollowprofile' do
 	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
 	@followers = @followercontroller.get_followers( @unfollow[:user_id])
 	@following = @followercontroller.get_following( @unfollow[:user_id])
+  @timeclass.remove_user_timeline(@user,session[:user])
 	erb :profile
 end
 
 get '/display' do
-	@tweets = @timeclass.return_timeline_by_user( session[:user])
+	#@tweets = @timeclass.return_timeline_by_user( session[:user])
+  @tweets = @timeclass.get_user_timeline(session[:user])
 	erb :display
 end
 
@@ -170,6 +172,7 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
+  @result.text = @twitter_functionality.display_tweet(@result)
   @timeclass.post_tweet_redis(@result)
 	redirect '/display'
 end
@@ -214,3 +217,12 @@ end
 
 
 #Root of GraphQL Based API
+post '/api/v1/graphql' do
+
+		request_payload = JSON.parse(request.body.read)
+
+	  result = NanoTwitterAPI.execute(request_payload['query'])
+
+	  result.to_json
+
+end
