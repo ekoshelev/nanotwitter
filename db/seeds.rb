@@ -1,5 +1,6 @@
 require 'csv'
 require 'activerecord-import'
+require 'seedredis.rb'
 # require_relative '../temp/fry_seeding.rb'
 
 #start_time = Time.now
@@ -7,7 +8,7 @@ require 'activerecord-import'
 # seed_table("tweets.csv", "tweets", "(text, time_created, user_id)")
 # seed_table("follows.csv", "followers", "(user_id, follower_id)")
 
-last_user_id = User.count
+last_user_id = User.last.id
 
 users_columns = [:name, :email, :password, :api_token]
 users_data = CSV.read("lib/seeds/users.csv")
@@ -36,5 +37,7 @@ end
 
 Follower.import(follows_columns, follows_data, validate: false)
 
-
+@seed_redis = SeedRedis.new
+@seed_redis.put_tweets_into_redis
+@seed_redis.put_followers_into_redis
 # puts Time.now - start_time #(~171.3)

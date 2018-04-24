@@ -36,6 +36,7 @@ end
 
 post '/test/reset/all' do
 
+  @redis.flushall
 	@twitter_functionality.reset_All
 	@testuser = @twitter_functionality.create_test_user
 
@@ -82,11 +83,12 @@ end
 
 get '/test/version' do
 	#donn't know what is meant by presented as JSON
-	0.7.to_json
+	1.0.to_json
 end
 
 
 post '/test/reset/standard' do
+  @redis.flushall
 	@twitter_functionality.reset_user
 	@twitter_functionality.reset_tweet
 	@twitter_functionality.reset_follower
@@ -123,7 +125,7 @@ post '/test/reset/standard' do
 
 	return 200
 end
- 
+
 
 
 
