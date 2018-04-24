@@ -32,6 +32,14 @@ class FollowerController
 
   end
 
+  def quitRedis
+  @redis.quit
+  end
+
+  def connectRedis
+    @redis._client.connect
+  end
+  
   def decr_following(user,following)
     fcount_id= make_followingcount_id(user)
     follower_count_id= make_followercount_id(following)
@@ -42,6 +50,9 @@ class FollowerController
     @redis.decr(fcount_id)
     @redis.decr(follower_count_id)
   end
+
+
+
 
   def get_following_count(user)
      fcount_id= make_followingcount_id(user)
