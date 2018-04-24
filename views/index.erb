@@ -9,15 +9,17 @@
             <ol>
               <%if @hometweets != nil%>
               <%@hometweets.each do |tweet|%>
+                        <%if User.find_by(id: "#{tweet['user_id']}")!=nil%>
               <div class="card">
                   <div class="card-block">
                     <div class="row">
+
                       <a class="card-text" href="/profile/<%=tweet['user_id'].to_s%>"><b><%= User.find_by(id: "#{tweet['user_id']}").name %> </a></b>
       <% if tweet["retweet_id"] != nil
         origintweet = Tweet.find_by(id: tweet["retweet_id"]) %>
       retweeted <a class="card-text" href="/profile/<%=origintweet['user_id'].to_s%>"><b><%= User.find_by(id: "#{origintweet["user_id"]}").name %> </a>
         <%end%>
-      </b> <%=tweet["time_created"]%></p>
+      </b> <%=tweet["time_created"][0..9]%> at <%=tweet["time_created"][11..18]%></p>
 
 
                         </div>
@@ -34,13 +36,15 @@
           <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
         <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
         </form>
-        <%end%>
+
                   </div>
               </div>
 
               <br>
                 <br>
               </li>
+                <%end%>
+              <%end%>
               <%end%>
               <%end%>
             </ol>

@@ -35,14 +35,14 @@ helpers do
 end
 
 before do
-  @redis = Redis.new(url: ENV["REDIS_URL"])
+      @redis = Redis.new(url: ENV["REDIS_URL"])
+
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
   @followercontroller=FollowerController.new(@redis, @users)
 	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers,@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
-
   @testuser = User.find_by(name: "TestUser")
   if @testuser == nil
     @testuser = @twitter_functionality.create_test_user
@@ -133,12 +133,13 @@ end
 
 get '/profile/:id' do
   @followercontroller
+  byebug
   @user = User.find_by_id(params[:id])
   @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
 	@followers =@followercontroller.get_followers(params[:id])
 	@following = @followercontroller.get_following(params[:id])
   @token = ""
-  if session[:user].id != nil && session[:user].id==params[:id].to_i
+  if session[:user] != nil && session[:user].id==(params[:id]).to_i
 		@token = session[:user].api_token
   end
 	erb :profile
@@ -173,7 +174,9 @@ post '/post_tweet' do
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
   @result.text = @twitter_functionality.display_tweet(@result)
+  @timeclass.post_tweet_home_timeline(@result)
   @timeclass.post_tweet_redis(@result)
+
 	redirect '/display'
 end
 

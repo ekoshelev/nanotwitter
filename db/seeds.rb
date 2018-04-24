@@ -1,5 +1,6 @@
 require 'csv'
 require 'activerecord-import'
+
 # require_relative '../temp/fry_seeding.rb'
 
 #start_time = Time.now
@@ -35,6 +36,5 @@ follows_data.each do |follow|
 end
 
 Follower.import(follows_columns, follows_data, validate: false)
-
 
 # puts Time.now - start_time #(~171.3)

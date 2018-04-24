@@ -32,7 +32,7 @@
                   <form method="POST" action="/unfollowprofile">
                 <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
                 <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
-                <input class='btn btn-primary' type='submit' value='Unfollow'>
+                <input class='btn btn-primary btn-sm' type='submit' value='Unfollow'>
               </form>
 
             <%end%>
@@ -42,7 +42,7 @@
             <form method="POST" action="/followprofile">
               <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
               <input type="hidden" name="follow[user_id]" value="<%=  @user.id  %>">
-              <input class='btn btn-primary' type='submit' value='Follow'>
+              <input class='btn btn-primary btn-sm' type='submit' value='Follow'>
 </form>
             <% end %>
               <%end%>
@@ -114,13 +114,13 @@
         <div class="tab-pane fade in" id="tab2">
           <%
           @followers.each do |follower|  %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: follower.to_s).id.to_s%>"><b><%= User.find_by(id: "#{follower}").name %> </a></b> <br>
+          <a class="card-text" href="/profile/<%=follower%>"><b><%= User.find_by(id: "#{follower}").name %> </a></b> <br>
                     <%end%>
         </div>
         <div class="tab-pane fade in" id="tab3">
           <%
           @following.each do |following| %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: following).id.to_s%>"><b><%= User.find_by(id: "#{following}").name %> </a></b> <br>
+          <a class="card-text" href="/profile/<%=following%>"><b><%= User.find_by(id: "#{following}").name %> </a></b> <br>
                     <%end%>
         </div>
       </div>

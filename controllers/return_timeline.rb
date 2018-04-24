@@ -51,7 +51,7 @@ end
 def add_user_redis(user)
   if ((@redis.get "users") !=nil)
     rb_hash = JSON.parse(@redis.get("users"))
-    rb_hash["allusers"] << { :id => user.id, :email => user.email, :api_token => user.api_token }
+    rb_hash["allusers"] << { :id => user.id,  :email => user.email, :api_token => user.api_token }
     @redis.set "users", rb_hash.to_json
   else
     @redis.del "home_timeline"
@@ -63,7 +63,8 @@ end
 def get_main_timeline
     if ((@redis.get "home_timeline") !=nil)
         rb_hash = JSON.parse(@redis.get("home_timeline"))
-      return rb_hash["tweets"]
+        sortusertweets= rb_hash["tweets"].sort_by{ |k| k["time_created"] }.reverse!
+      return sortusertweets
   else
     return nil
   end
@@ -77,22 +78,25 @@ def get_user_timeline(user)
   return nil
 end
 
-def post_tweet_redis(tweet)
+def post_tweet_home_timeline(tweet)
   if ((@redis.get "home_timeline") !=nil)
     rb_hash = JSON.parse(@redis.get("home_timeline"))
     rb_hash["tweets"] << { :id => tweet.id, :text => tweet.text, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }
+    if (rb_hash["tweets"].size>=51)
+      rb_hash["tweets"]=rb_hash["tweets"].drop(1)
+    end
     @redis.set "home_timeline", rb_hash.to_json
   else
     @redis.del "home_timeline"
     rb_hash = {:tweets => [{ :id => tweet.id, :text => tweet.text, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }]}
     @redis.set "home_timeline", rb_hash.to_json
   end
+end
 
+def post_tweet_redis(tweet)
   add_user_timeline([tweet],tweet.user)
   posted_tweets(tweet)
-
   fanout(tweet)
-
 end
 
 def get_user_tweets(user)
