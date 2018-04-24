@@ -90,6 +90,7 @@ post '/followprofile' do
 	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @followercontroller.get_followers( @follow[:user_id])
 	@following = @followercontroller.get_following(  @follow[:user_id])
+
 	erb :profile
 end
 
@@ -110,6 +111,16 @@ get '/display' do
 	erb :display
 end
 
+post '/api/token/new' do
+  @token=Faker::Crypto.unique.md5
+		session[:user].api_token = @token
+		session[:user].save
+  @user=session[:user]
+  @usertweets = @timeclass.return_tweets_by_user( session[:user].id)
+  @followers = @followercontroller.get_followers( session[:user].id)
+  @following = @followercontroller.get_following( session[:user].id)
+	erb :profile
+end
 
 get '/profile/:id' do
   @followercontroller
@@ -117,6 +128,10 @@ get '/profile/:id' do
   @usertweets = @timeclass.return_tweets_by_user(params[:id])
 	@followers =@followercontroller.get_followers(params[:id])
 	@following = @followercontroller.get_following(params[:id])
+  @token = ""
+  if session[:user].id != nil && session[:user].id==params[:id].to_i
+		@token = session[:user].api_token
+  end
 	erb :profile
 end
 
@@ -192,22 +207,3 @@ end
 
 
 #Root of GraphQL Based API
-
-
-post '/api/token/new' do
-	if session[:user] != nil
-		session[:user].api_token = Faker::Crypto.unique.md5
-		session[:user].save
-	end
-	redirect to('/api/token/view')
-end
-
-get '/api/token/view' do
-	if session[:user] != nil
-		@token = session[:user].api_token
-	else
-		@token = "You must sign in to view your API token"
-	end
-
-	erb :api_token
-end

@@ -46,6 +46,17 @@ end
     return sortusertweets[0..49]
   end
 
+def add_user_redis(user)
+  if ((@redis.get "users") !=nil)
+    rb_hash = JSON.parse(@redis.get("users"))
+    rb_hash["allusers"] << { :id => user.id, :email => user.email, :api_token => user.api_token }
+    @redis.set "users", rb_hash.to_json
+  else
+    @redis.del "home_timeline"
+    rb_hash = {:tweets => [{ :id => tweet.id, :text => tweet.text, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }]}
+    @redis.set "home_timeline", rb_hash.to_json
+  end
+end
 
 def get_main_timeline
     if ((@redis.get "home_timeline") !=nil)
