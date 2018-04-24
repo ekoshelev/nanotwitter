@@ -272,9 +272,9 @@ get '/loaderio-f58d25c9cfc33c94fb8c771be91e2848/' do
 end
 
 #old loader
-# get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
-# 	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
-# end
+get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
+	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'
+end
 
 
 
