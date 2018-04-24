@@ -1,7 +1,7 @@
 class ReturnTimeline
-def initialize
-  @tweets = Tweet.all
-  @followers=Follower.all
+def initialize(tweets,followers)
+  @tweets = tweets
+  @followers= followers
   @alltweets= @tweets
 end
 
