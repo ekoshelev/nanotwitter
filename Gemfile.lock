@@ -79,7 +79,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.1)
-    redis (4.0.1)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -120,7 +119,6 @@ DEPENDENCIES
   rack-contrib
   railties
   rake (~> 12.3)
-  redis
   sinatra
   sinatra-activerecord
   sinatra-contrib
