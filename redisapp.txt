@@ -35,16 +35,16 @@ helpers do
 end
 
 before do
-  @redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
+  $redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
   read_timeout: 1.0,
   write_timeout: 0.5
 )
-  @redis.quit
+  $redis.quit
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
-  @followercontroller=FollowerController.new(@redis, @users)
-	@timeclass=ReturnTimeline.new(@redis, @tweets, @followers,@followercontroller)
+  @followercontroller=FollowerController.new($redis, @users)
+	@timeclass=ReturnTimeline.new($redis, @tweets, @followers,@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
 
   @testuser = User.find_by(name: "TestUser")
@@ -59,7 +59,7 @@ get '/' do
   #@hometweets= @timeclass.return_recent_tweets
   #@timeclass.quitRedis
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
     @hometweets=   @timeclass.get_main_timeline
     @timeclass.quitRedis
   else
@@ -96,7 +96,7 @@ post '/retweet' do
 	@result = Tweet.new(@retweet)
 	@result.save
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
 	@tweets = @timeclass.return_timeline_by_user( session[:user])
   @timeclass.quitRedis
 end
@@ -110,7 +110,7 @@ post '/followprofile' do
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
   @followercontroller.incr_following(session[:user].id,@follow[:user_id])
 	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @followercontroller.get_followers( @follow[:user_id])
@@ -126,7 +126,7 @@ post '/unfollowprofile' do
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
   @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
   @user = User.find_by_id( @unfollow[:user_id])
 	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @unfollow[:user_id])
@@ -141,7 +141,7 @@ end
 get '/display' do
 	#@tweets = @timeclass.return_timeline_by_user( session[:user])
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
     @tweets = @timeclass.get_user_timeline(session[:user])
     @timeclass.quitRedis
   else
@@ -158,7 +158,7 @@ post '/api/token/new' do
 		session[:user].save
   @user=session[:user]
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
   @usertweets = @timeclass.return_tweets_by_user( session[:user].id)
   @followers = @followercontroller.get_followers( session[:user].id)
   @following = @followercontroller.get_following( session[:user].id)
@@ -171,7 +171,7 @@ get '/profile/:id' do
 
   @user = User.find_by_id(params[:id])
   @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
     @followercontroller
     @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
     byebug
@@ -208,7 +208,7 @@ end
 
 get '/login_fail' do
     @timeclass.connectRedis
-  if (@redis._client.connected?)
+  if ($redis._client.connected?)
   @hometweets= @timeclass.return_recent_tweets
   @timeclass.quitRedis
 end
@@ -228,7 +228,7 @@ post '/post_tweet' do
   @twitter_functionality.add_mentions(@result)
   @result.text = @twitter_functionality.display_tweet(@result)
   @timeclass.connectRedis
-if (@redis._client.connected?)
+if ($redis._client.connected?)
   @timeclass.post_tweet_home_timeline(@result)
   @timeclass.post_tweet_redis(@result)
   @timeclass.quitRedis

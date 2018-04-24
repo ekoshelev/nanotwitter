@@ -28,6 +28,10 @@ require_relative 'temp/rabbit_authorization.rb'
 
 configure do
   enable :sessions
+  $redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
+  read_timeout: 1.0,
+  write_timeout: 0.5
+  )
 end
 
 helpers do
@@ -38,17 +42,17 @@ helpers do
 end
 
 before do
-  @redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
-  read_timeout: 1.0,
-  write_timeout: 0.5
-)
-  @redis.quit
+#   $redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
+#   read_timeout: 1.0,
+#   write_timeout: 0.5
+# )
+#  $redis.quit
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
-  @followercontroller=FollowerController.new(@redis, @users)
+  @followercontroller=FollowerController.new($redis, @users)
   @timeline_class=ReturnTimeline.new(@tweets,@followers)
-	@redis_timeline=ReturnTimelineRedis.new(@redis, @tweets, @followers,@followercontroller)
+	$redis_timeline=ReturnTimelineRedis.new($redis, @tweets, @followers,@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
   @testuser = User.find_by(name: "TestUser")
   if @testuser == nil
