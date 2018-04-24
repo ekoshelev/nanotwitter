@@ -102,6 +102,7 @@ post '/test/reset/standard' do
 
   users_columns = [:name, :email, :password, :api_token]
   users_data = CSV.read("lib/seeds/users.csv")
+  users_data = tweets_data[0, params[:users].to_i]
   User.import(users_columns, users_data, validate: false)
 
   columns = [:user_id, :text, :time_created]
@@ -114,6 +115,7 @@ post '/test/reset/standard' do
 
   follows_columns = [:user_id, :follower_id]
   follows_data = CSV.read("lib/seeds/follows.csv")
+  follows_data = follows_data[0, params[:follows].to_i]
   follows_data.each do |follow|
     follow[0] = Integer(follow[0]) + last_user_id
     follow[1] = Integer(follow[1]) + last_user_id
