@@ -21,6 +21,7 @@ Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 require_relative './temp/fry_seeding.rb'
+require_relative 'temp/rabbit_authorization.rb'
 
 configure do
   enable :sessions
@@ -149,18 +150,20 @@ post '/post_tweet' do
 end
 
 post '/register' do
-	user_check = User.find_by(name: "#{params[:user]['name']}")
+  rabbitmq_authorization(params[:user])
 
-	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
-		redirect '/'
-	end
-	params[:user].delete('confirm-password')
-
-	@user = User.new(params[:user])
-	@user.password = BCrypt::Password.create(@user.password)
-	@user.save
-session[:user] = @user
-	redirect to('/display')
+# 	user_check = User.find_by(name: "#{params[:user]['name']}")
+#
+# 	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
+# 		redirect '/'
+# 	end
+# 	params[:user].delete('confirm-password')
+#
+# 	@user = User.new(params[:user])
+# 	@user.password = BCrypt::Password.create(@user.password)
+# 	@user.save
+#   session[:user] = @user
+# 	redirect to('/display')
 end
 
 post '/search' do
