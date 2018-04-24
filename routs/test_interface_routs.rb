@@ -10,7 +10,7 @@ require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require 'csv'
 require 'activerecord-import'
-require 'seedredis.rb'
+require './db/seedredis.rb'
 require_relative '../temp/fry_seeding.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
