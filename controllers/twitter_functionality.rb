@@ -39,7 +39,7 @@ class TwitterFunctionality
     if Mention.exists?
       Mention.delete_all
     end
-  end    
+  end
 
 
   def reset_follower
@@ -144,6 +144,47 @@ class TwitterFunctionality
 
     return "#{split.join(' ')}"
 
+  end
+
+  def timeline_to_hash(timeline)
+    timeline_hash = {"tweets" => []}
+    if timeline.empty?
+      return nil
+    end
+    timeline.each do |tweet|
+      tweet_hash = { "id" => "#{tweet.id}",
+        "text" => tweet.text, "time_created" => tweet.time_created,
+        "user_id" => "#{tweet.user_id}", "retweet_id" => tweet.retweet_id }
+      timeline_hash["tweets"] << tweet_hash
+    end
+    return timeline_hash
+  end
+
+  def follower_to_int(followers)
+    follower_set = []
+
+    if followers.empty?
+      return nil
+    end
+
+    followers.each do |follow|
+      follower_set << follow.follower_id
+    end
+    return follower_set
+  end
+
+  def following_to_int(following)
+    following_set = []
+
+    if following.empty?
+      return nil
+    end
+
+    following.each do |followed|
+      following_set << followed.user_id
+    end
+
+    return following_set
   end
 
 

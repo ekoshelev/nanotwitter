@@ -78,6 +78,15 @@ def get_user_timeline(user)
   return nil
 end
 
+def get_user_tweets(user)
+  hash_name = "posted_tweets_#{user.id}"
+  if @redis.get(hash_name) != nil
+    posted = JSON.parse(@redis.get(hash_name))
+    return posted
+  end
+  return nil
+end
+
 def post_tweet_home_timeline(tweet)
   if ((@redis.get "home_timeline") !=nil)
     rb_hash = JSON.parse(@redis.get("home_timeline"))
@@ -99,11 +108,6 @@ def post_tweet_redis(tweet)
   fanout(tweet)
 end
 
-def get_user_tweets(user)
-  hash_name = "posted_tweets_#{user.id}"
-  posted = JSON.parse(@redis.get(hash_name))
-  return posted
-end
 
 def posted_tweets(tweet)
   hash_name = "posted_tweets_#{tweet.user.id}"

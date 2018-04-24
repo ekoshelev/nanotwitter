@@ -116,7 +116,15 @@ end
 
 get '/display' do
 	#@tweets = @timeclass.return_timeline_by_user( session[:user])
-  @tweets = @timeclass.get_user_timeline(session[:user])
+
+  if @redis._client.connected?
+    @tweets = @timeclass.get_user_timeline(session[:user])
+  else
+    timeline = @timeclass.return_timeline_by_user(session[:user])
+    @tweets = @twitter_functionality.timeline_to_hash(timeline)["tweets"]
+
+  end
+
 	erb :display
 end
 
@@ -133,11 +141,20 @@ end
 
 get '/profile/:id' do
   @followercontroller
-  byebug
   @user = User.find_by_id(params[:id])
-  @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
-	@followers =@followercontroller.get_followers(params[:id])
-	@following = @followercontroller.get_following(params[:id])
+  if @redis._client.connected?
+    @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
+  	@followers =@followercontroller.get_followers(params[:id])
+  	@following = @followercontroller.get_following(params[:id])
+  else
+    timeline = @timeclass.return_tweets_by_user(params[:id])
+    @usertweets = @twitter_functionality.timeline_to_hash(timeline)
+    followers = @timeclass.return_follower_list(@user.id)
+    following = @timeclass.return_following_list(@user.id)
+    @followers = @twitter_functionality.follower_to_int(followers)
+    @following = @twitter_functionality.following_to_int(following)
+    
+  end
   @token = ""
   if session[:user] != nil && session[:user].id==(params[:id]).to_i
 		@token = session[:user].api_token
