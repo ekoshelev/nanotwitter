@@ -10,7 +10,6 @@ require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require 'csv'
 require 'activerecord-import'
-require './db/seedredis.rb'
 require_relative '../temp/fry_seeding.rb'
 Dir["./models/*.rb"].each {|file| require file}
 
@@ -125,9 +124,6 @@ post '/test/reset/standard' do
   # seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
   # seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])
   # seed_table("follows.csv", "followers", "(user_id, follower_id)", params[:follows])
-  @seed_redis = SeedRedis.new
-  @seed_redis.put_tweets_into_redis
-  @seed_redis.put_followers_into_redis
 	return 200
 end
 
