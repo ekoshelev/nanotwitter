@@ -22,6 +22,6 @@ class SeedRedis
     end
   end
 
-@twitter_functionality = TwitterFunctionality.new
+
 
 end
