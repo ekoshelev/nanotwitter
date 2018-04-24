@@ -94,7 +94,7 @@ post '/followprofile' do
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
   @followercontroller.incr_following(session[:user].id,@follow[:user_id])
-	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
+	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @followercontroller.get_followers( @follow[:user_id])
 	@following = @followercontroller.get_following(  @follow[:user_id])
   @timeclass.add_user_timeline(@usertweets,session[:user])
@@ -107,7 +107,7 @@ post '/unfollowprofile' do
 	follower.delete
   @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
   @user = User.find_by_id( @unfollow[:user_id])
-	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
+	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @unfollow[:user_id])
 	@followers = @followercontroller.get_followers( @unfollow[:user_id])
 	@following = @followercontroller.get_following( @unfollow[:user_id])
   @timeclass.remove_user_timeline(@user,session[:user])
@@ -134,7 +134,7 @@ end
 get '/profile/:id' do
   @followercontroller
   @user = User.find_by_id(params[:id])
-  @usertweets = @timeclass.return_tweets_by_user(params[:id])
+  @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
 	@followers =@followercontroller.get_followers(params[:id])
 	@following = @followercontroller.get_following(params[:id])
   @token = ""
@@ -205,10 +205,6 @@ end
 class TestApp < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
 end
-
-#Test Interface HTTP calls
-
-
 
 get '/loaderio-b824862f1b513a533572fb2d3c56d0b3/' do
 	 'loaderio-b824862f1b513a533572fb2d3c56d0b3'

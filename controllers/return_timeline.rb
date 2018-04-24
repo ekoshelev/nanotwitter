@@ -89,9 +89,28 @@ def post_tweet_redis(tweet)
   end
 
   add_user_timeline([tweet],tweet.user)
+  posted_tweets(tweet)
 
   fanout(tweet)
 
+end
+
+def get_user_tweets(user)
+  hash_name = "posted_tweets_#{user.id}"
+  posted = JSON.parse(@redis.get(hash_name))
+  return posted
+end
+
+def posted_tweets(tweet)
+  hash_name = "posted_tweets_#{tweet.user.id}"
+  if @redis.get(hash_name) != nil
+    posted = JSON.parse(@redis.get(hash_name))
+    return posted["tweets"]
+  else
+    @redis.del hash_name
+    posted = {:tweets => [{ :id => tweet.id, :text => tweet.text, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }]}
+  end
+  @redis.set hash_name, posted.to_json
 end
 
 
