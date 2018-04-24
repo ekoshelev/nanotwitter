@@ -35,7 +35,8 @@ helpers do
 end
 
 before do
-  @redis = Redis.new(url: ENV["REDIS_URL"])
+      @redis = Redis.new(url: ENV["REDIS_URL"])
+
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
@@ -132,12 +133,13 @@ end
 
 get '/profile/:id' do
   @followercontroller
+  byebug
   @user = User.find_by_id(params[:id])
   @usertweets = @timeclass.return_tweets_by_user(params[:id])
 	@followers =@followercontroller.get_followers(params[:id])
 	@following = @followercontroller.get_following(params[:id])
   @token = ""
-  if session[:user].id != nil && session[:user].id==params[:id].to_i
+  if session[:user] != nil && session[:user].id==(params[:id]).to_i
 		@token = session[:user].api_token
   end
 	erb :profile

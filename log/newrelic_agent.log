@@ -7219,3 +7219,86 @@ Did you mean?  user
 [2018-04-24 00:21:00 -0400 lizzie-GT62VR-7RE (7662)] INFO : Finished instrumentation
 [2018-04-24 00:21:00 -0400 lizzie-GT62VR-7RE (7662)] INFO : Doing deferred dependency-detection before Rack startup
 [2018-04-24 00:21:00 -0400 lizzie-GT62VR-7RE (7662)] INFO : Installing Redis Instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Environment: development
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : No known dispatcher detected.
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing Net instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing Sinatra instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Finished instrumentation
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 00:27:13 -0400 lizzie-GT62VR-7RE (8102)] INFO : Installing Redis Instrumentation
+[2018-04-24 00:27:19 -0400 lizzie-GT62VR-7RE (8102)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-24 00:27:19 -0400 lizzie-GT62VR-7RE (8102)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Environment: development
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : No known dispatcher detected.
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing Net instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing Sinatra instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Finished instrumentation
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 00:52:11 -0400 lizzie-GT62VR-7RE (9269)] INFO : Installing Redis Instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Environment: development
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : No known dispatcher detected.
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing Net instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing Sinatra instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Finished instrumentation
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 01:01:08 -0400 lizzie-GT62VR-7RE (10151)] INFO : Installing Redis Instrumentation
+[2018-04-24 01:01:17 -0400 lizzie-GT62VR-7RE (10151)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-24 01:01:17 -0400 lizzie-GT62VR-7RE (10151)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Environment: development
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : No known dispatcher detected.
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing Net instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing Sinatra instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Finished instrumentation
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 01:07:16 -0400 lizzie-GT62VR-7RE (10557)] INFO : Installing Redis Instrumentation
+[2018-04-24 01:08:11 -0400 lizzie-GT62VR-7RE (10557)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-24 01:08:11 -0400 lizzie-GT62VR-7RE (10557)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Reading configuration from config/newrelic.yml (/home/lizzie/Dropbox/cosi105b_koshelev/nanotwitter)
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Environment: development
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : No known dispatcher detected.
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] ERROR : Invalid license key: ENV['NEW_RELIC_LICENSE_KEY']
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing Net instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing Sinatra instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Finished instrumentation
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-24 01:10:41 -0400 lizzie-GT62VR-7RE (10806)] INFO : Installing Redis Instrumentation
+[2018-04-24 01:10:47 -0400 lizzie-GT62VR-7RE (10806)] ERROR : Invalid license key, please contact support@newrelic.com
+[2018-04-24 01:10:47 -0400 lizzie-GT62VR-7RE (10806)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
