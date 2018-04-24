@@ -36,6 +36,7 @@ end
 
 post '/test/reset/all' do
 
+  @redis.flushall
 	@twitter_functionality.reset_All
 	@testuser = @twitter_functionality.create_test_user
 
@@ -87,6 +88,7 @@ end
 
 
 post '/test/reset/standard' do
+  @redis.flushall
 	@twitter_functionality.reset_user
 	@twitter_functionality.reset_tweet
 	@twitter_functionality.reset_follower

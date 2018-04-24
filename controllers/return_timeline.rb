@@ -75,24 +75,28 @@ end
 
 
 def fanout(tweet)
-  user_timelines = @followercontroller.get_followers(tweet.user)
-  byebug
-  tweet.mentions.each {|mentioned| user_timelines << mentioned.user}
+  user_timelines = @followercontroller.get_followers(tweet.user.id)
+  tweet.mentions.each do |mentioned|
+    add = mentioned.user.id.to_s
+    if user_timelines.include?(add)
+      user_timelines << add
+    end
+  end
 
-  tweet_json = { :id => tweet.id, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }
+  tweet_json = { :id => tweet.id, :time_created => tweet.time_created, :user_id => tweet.user_id, :retweet_id => tweet.retweet_id }.to_json
+
 
   if user_timelines.size>0
     user_timelines.each do |user|
-      byebug
-      hash_name = "user_timeline_#{user.id}"
+      hash_name = "user_timeline_#{user}"
 
       if @redis.get(hash_name) != nil
-        user_timeline = JASON.parse(@redis.get(hash_name))
+        user_timeline = JSON.parse(@redis.get(hash_name))
         user_timeline << tweet_json
         @redis.set hash_name, user_timeline
       else
         @redis.del hash_name
-        @redis.set hash_name, [tweet_hash]
+        @redis.set hash_name, [tweet_json]
       end
     end
   end
