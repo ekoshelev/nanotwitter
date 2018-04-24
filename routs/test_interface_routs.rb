@@ -90,7 +90,7 @@ end
 
 
 post '/test/reset/standard' do
-  @redis.flushall
+  # @redis.flushall
 	@twitter_functionality.reset_user
 	@twitter_functionality.reset_tweet
 	@twitter_functionality.reset_follower
@@ -103,7 +103,7 @@ post '/test/reset/standard' do
 
   users_columns = [:name, :email, :password, :api_token]
   users_data = CSV.read("lib/seeds/users.csv")
-  users_data = tweets_data[0, params[:users].to_i]
+  users_data = users_data[0, params[:users].to_i]
   User.import(users_columns, users_data, validate: false)
 
   columns = [:user_id, :text, :time_created]
@@ -126,6 +126,9 @@ post '/test/reset/standard' do
   # seed_table("users.csv", "users", "(name, email, password, api_token)", params[:users])
   # seed_table("tweets.csv", "tweets", "(text, time_created, user_id)", params[:tweets])
   # seed_table("follows.csv", "followers", "(user_id, follower_id)", params[:follows])
+  # @seed_redis = SeedRedis.new
+  # @seed_redis.put_tweets_into_redis
+  # @seed_redis.put_followers_into_redis
 	return 200
 end
 

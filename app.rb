@@ -24,6 +24,7 @@ Dir["./models/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 require_relative './temp/fry_seeding.rb'
+require_relative 'temp/rabbit_authorization.rb'
 
 configure do
   enable :sessions
@@ -35,8 +36,6 @@ helpers do
     session[:original_request] = request.path_info
   end
 end
-
-
 
 before do
   @redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
@@ -51,6 +50,10 @@ before do
   @timeline_class=ReturnTimeline.new(@tweets,@followers)
 	@redis_timeline=ReturnTimelineRedis.new(@redis, @tweets, @followers,@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
+  @testuser = User.find_by(name: "TestUser")
+  if @testuser == nil
+    @testuser = @twitter_functionality.create_test_user
+  end
 end
 
 get '/' do
@@ -96,7 +99,6 @@ post '/followprofile' do
   @user = User.find_by_id( @follow[:user_id])
 	@usertweets = @timeline_class.return_tweets_by_user( @follow[:user_id])
   @followercontroller.startRedis
-  byebug
   if @followercontroller.redisWorking
     @followercontroller.incr_following(session[:user].id,@follow[:user_id])
    @followers = @followercontroller.get_followers( @follow[:user_id])
@@ -140,7 +142,6 @@ get '/profile/:id' do
   @user = User.find_by_id(params[:id])
   @usertweets = @timeline_class.return_tweets_by_user(params[:id])
   @followercontroller.startRedis
-  byebug
   if @followercontroller.redisWorking
    @followers = @followercontroller.get_followers( params[:id])
    @following = @followercontroller.get_following( params[:id])
@@ -187,18 +188,20 @@ post '/post_tweet' do
 end
 
 post '/register' do
-	user_check = User.find_by(name: "#{params[:user]['name']}")
+  rabbitmq_authorization(params[:user])
 
-	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
-		redirect '/'
-	end
-	params[:user].delete('confirm-password')
-
-	@user = User.new(params[:user])
-	@user.password = BCrypt::Password.create(@user.password)
-	@user.save
-session[:user] = @user
-	redirect to('/display')
+# 	user_check = User.find_by(name: "#{params[:user]['name']}")
+#
+# 	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
+# 		redirect '/'
+# 	end
+# 	params[:user].delete('confirm-password')
+#
+# 	@user = User.new(params[:user])
+# 	@user.password = BCrypt::Password.create(@user.password)
+# 	@user.save
+#   session[:user] = @user
+# 	redirect to('/display')
 end
 
 post '/search' do
