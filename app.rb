@@ -43,6 +43,11 @@ before do
   @followercontroller=FollowerController.new(@redis, @users)
 	@twitter_functionality = TwitterFunctionality.new
 
+  @testuser = User.find_by(name: "TestUser")
+  if @testuser == nil
+    @testuser = @twitter_functionality.create_test_user
+  end
+
 
 end
 
