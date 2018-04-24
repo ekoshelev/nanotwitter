@@ -88,7 +88,7 @@ end
 
 
 post '/test/reset/standard' do
-  @redis.flushall
+  # @redis.flushall
 	@twitter_functionality.reset_user
 	@twitter_functionality.reset_tweet
 	@twitter_functionality.reset_follower
