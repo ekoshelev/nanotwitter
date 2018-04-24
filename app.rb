@@ -55,11 +55,15 @@ end
 
 get '/' do
   #@hometweets= @timeclass.return_recent_tweets
+  #@timeclass.quitRedis
   @timeclass.connectRedis
   if (@redis._client.connected?)
-  @hometweets=   @timeclass.get_main_timeline
-  @timeclass.quitRedis
-end
+    @hometweets=   @timeclass.get_main_timeline
+    @timeclass.quitRedis
+  else
+    timeline = @timeclass.return_recent_tweets
+    @hometweets= @twitter_functionality.timeline_to_hash(timeline)
+  end
 	erb :index
 end
 
@@ -167,10 +171,11 @@ get '/profile/:id' do
   @timeclass.connectRedis
   if (@redis._client.connected?)
     @followercontroller
-  @usertweets = @timeclass.return_tweets_by_user(params[:id])
-	@followers =@followercontroller.get_followers(params[:id])
-	@following = @followercontroller.get_following(params[:id])
-  @timeclass.quitRedis
+    @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
+    byebug
+    @followers =@followercontroller.get_followers(params[:id])
+  	@following = @followercontroller.get_following(params[:id])
+    @timeclass.quitRedis
   else
     timeline = @timeclass.return_tweets_by_user(params[:id])
     @usertweets = @twitter_functionality.timeline_to_hash(timeline)
