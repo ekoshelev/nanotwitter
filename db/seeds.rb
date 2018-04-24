@@ -1,6 +1,6 @@
 require 'csv'
 require 'activerecord-import'
-require 'seedredis.rb'
+
 # require_relative '../temp/fry_seeding.rb'
 
 #start_time = Time.now
@@ -37,7 +37,4 @@ end
 
 Follower.import(follows_columns, follows_data, validate: false)
 
-@seed_redis = SeedRedis.new
-@seed_redis.put_tweets_into_redis
-@seed_redis.put_followers_into_redis
 # puts Time.now - start_time #(~171.3)
