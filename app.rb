@@ -34,8 +34,6 @@ helpers do
   end
 end
 
-
-
 before do
 	@timeclass=ReturnTimeline.new
 	@twitter_functionality = TwitterFunctionality.new
