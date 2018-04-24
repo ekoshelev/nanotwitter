@@ -35,8 +35,11 @@ helpers do
 end
 
 before do
-      @redis = Redis.new(url: ENV["REDIS_URL"])
-
+  @redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
+  read_timeout: 1.0,
+  write_timeout: 0.5
+)
+  @redis.quit
   @tweets= Tweet.all
   @followers=Follower.all
   @users = User.all
@@ -51,9 +54,12 @@ before do
 end
 
 get '/' do
-  #	@hometweets= @timeclass.return_recent_tweets
-
+  #@hometweets= @timeclass.return_recent_tweets
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
   @hometweets=   @timeclass.get_main_timeline
+  @timeclass.quitRedis
+end
 	erb :index
 end
 
@@ -83,7 +89,11 @@ post '/retweet' do
 	@retweet = params[:retweet]
 	@result = Tweet.new(@retweet)
 	@result.save
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
 	@tweets = @timeclass.return_timeline_by_user( session[:user])
+  @timeclass.quitRedis
+end
 	@followers = Follower.all
 	erb :display
 end
@@ -93,11 +103,15 @@ post '/followprofile' do
 	@result = Follower.new(@follow)
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
   @followercontroller.incr_following(session[:user].id,@follow[:user_id])
 	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @follow[:user_id])
 	@followers = @followercontroller.get_followers( @follow[:user_id])
 	@following = @followercontroller.get_following(  @follow[:user_id])
   @timeclass.add_user_timeline(@usertweets,session[:user])
+  @timeclass.quitRedis
+end
 	erb :profile
 end
 
@@ -105,24 +119,28 @@ post '/unfollowprofile' do
 	@unfollow = params[:unfollow]
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
   @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
   @user = User.find_by_id( @unfollow[:user_id])
 	@usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user( @unfollow[:user_id])
 	@followers = @followercontroller.get_followers( @unfollow[:user_id])
 	@following = @followercontroller.get_following( @unfollow[:user_id])
   @timeclass.remove_user_timeline(@user,session[:user])
+  @timeclass.quitRedis
+end
 	erb :profile
 end
 
 get '/display' do
 	#@tweets = @timeclass.return_timeline_by_user( session[:user])
-
-  if @redis._client.connected?
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
     @tweets = @timeclass.get_user_timeline(session[:user])
+    @timeclass.quitRedis
   else
     timeline = @timeclass.return_timeline_by_user(session[:user])
     @tweets = @twitter_functionality.timeline_to_hash(timeline)["tweets"]
-
   end
 
 	erb :display
@@ -133,19 +151,26 @@ post '/api/token/new' do
 		session[:user].api_token = @token
 		session[:user].save
   @user=session[:user]
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
   @usertweets = @timeclass.return_tweets_by_user( session[:user].id)
   @followers = @followercontroller.get_followers( session[:user].id)
   @following = @followercontroller.get_following( session[:user].id)
+  @timeclass.quitRedis
+end
 	erb :profile
 end
 
 get '/profile/:id' do
-  @followercontroller
+
   @user = User.find_by_id(params[:id])
-  if @redis._client.connected?
-    @usertweets = @timeclass.get_user_tweets(@user)#@timeclass.return_tweets_by_user(params[:id])
-  	@followers =@followercontroller.get_followers(params[:id])
-  	@following = @followercontroller.get_following(params[:id])
+  @timeclass.connectRedis
+  if (@redis._client.connected?)
+    @followercontroller
+  @usertweets = @timeclass.return_tweets_by_user(params[:id])
+	@followers =@followercontroller.get_followers(params[:id])
+	@following = @followercontroller.get_following(params[:id])
+  @timeclass.quitRedis
   else
     timeline = @timeclass.return_tweets_by_user(params[:id])
     @usertweets = @twitter_functionality.timeline_to_hash(timeline)
@@ -153,7 +178,7 @@ get '/profile/:id' do
     following = @timeclass.return_following_list(@user.id)
     @followers = @twitter_functionality.follower_to_int(followers)
     @following = @twitter_functionality.following_to_int(following)
-    
+
   end
   @token = ""
   if session[:user] != nil && session[:user].id==(params[:id]).to_i
@@ -175,7 +200,11 @@ post '/login' do
 end
 
 get '/login_fail' do
+    @timeclass.connectRedis
+  if (@redis._client.connected?)
   @hometweets= @timeclass.return_recent_tweets
+  @timeclass.quitRedis
+end
   erb :login_fail
 end
 
@@ -191,8 +220,12 @@ post '/post_tweet' do
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
   @result.text = @twitter_functionality.display_tweet(@result)
+  @timeclass.connectRedis
+if (@redis._client.connected?)
   @timeclass.post_tweet_home_timeline(@result)
   @timeclass.post_tweet_redis(@result)
+  @timeclass.quitRedis
+end
 
 	redirect '/display'
 end

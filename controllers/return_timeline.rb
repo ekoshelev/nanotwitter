@@ -48,6 +48,14 @@ end
     return sortusertweets[0..49]
   end
 
+    def quitRedis
+      @redis.quit
+    end
+
+    def connectRedis
+      @redis._client.connect
+    end
+    
 def add_user_redis(user)
   if ((@redis.get "users") !=nil)
     rb_hash = JSON.parse(@redis.get("users"))
