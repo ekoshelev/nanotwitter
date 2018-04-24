@@ -40,7 +40,6 @@ end
 
 before do
 	@timeclass=ReturnTimeline.new
-  @followercontroller=FollowerController.new
 	@twitter_functionality = TwitterFunctionality.new
   @testuser = User.find_by(name: "TestUser")
   if @testuser == nil
@@ -86,10 +85,9 @@ post '/followprofile' do
 	@result = Follower.new(@follow)
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
-  @followercontroller.incr_following(session[:user].id,@follow[:user_id])
 	@usertweets = @timeclass.return_tweets_by_user( @follow[:user_id])
-	@followers = @followercontroller.get_followers( @follow[:user_id])
-	@following = @followercontroller.get_following(  @follow[:user_id])
+	@followers = @timeclass.return_follower_list( @follow[:user_id])
+	@following = @timeclass.return_following_list( @follow[:user_id])
 	erb :profile
 end
 
@@ -97,11 +95,10 @@ post '/unfollowprofile' do
 	@unfollow = params[:unfollow]
 	follower =  Follower.find_by(follower: @unfollow[:follower_id], user_id: @unfollow[:user_id])
 	follower.delete
-  @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
   @user = User.find_by_id( @unfollow[:user_id])
 	@usertweets = @timeclass.return_tweets_by_user( @unfollow[:user_id])
-	@followers = @followercontroller.get_followers( @unfollow[:user_id])
-	@following = @followercontroller.get_following( @unfollow[:user_id])
+	@followers = @timeclass.return_follower_list( @unfollow[:user_id])
+	@following = @timeclass.return_following_list( @unfollow[:user_id])
 	erb :profile
 end
 
@@ -118,11 +115,10 @@ end
 
 
 get '/profile/:id' do
-  @followercontroller
   @user = User.find_by_id(params[:id])
   @usertweets = @timeclass.return_tweets_by_user(params[:id])
-	@followers =@followercontroller.get_followers(params[:id])
-	@following = @followercontroller.get_following(params[:id])
+	@followers = @timeclass.return_follower_list(params[:id])
+	@following = @timeclass.return_following_list(params[:id])
 	erb :profile
 end
 

@@ -22,14 +22,16 @@
           <% if session[:user] != nil && session[:user].id != @user.id
             @unfollow=false
           %>
-              <% if @followers.include? session[:user].id.to_s
+            <%@followers.each do |follower|
+              %>
+              <% if follower.follower_id == session[:user].id && follower.user_id ==  @user.id
                 @unfollow=true %>
                   <form method="POST" action="/unfollowprofile">
                 <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
                 <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
                 <input class='btn btn-primary' type='submit' value='Unfollow'>
               </form>
-
+              <%end%>
             <%end%>
             <% if @unfollow ==false %>
 
@@ -53,12 +55,12 @@
         </div>
         <div class="btn-group" role="group">
             <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Followers <%=@followercontroller.get_followers_count(@user.id) %> </div>
+                <div class="hidden-xs">Followers <%=@followers.size%></div>
             </button>
         </div>
         <div class="btn-group" role="group">
             <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <div class="hidden-xs">Following <%=@followercontroller.get_following_count(@user.id) %></div>
+                <div class="hidden-xs">Following<%=@following.size%></div>
             </button>
         </div>
     </div>
@@ -106,14 +108,14 @@
 
         <div class="tab-pane fade in" id="tab2">
           <%
-          @followers.each do |follower|  %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: follower.to_s).id.to_s%>"><b><%= User.find_by(id: "#{follower}").name %> </a></b> <br>
+          @followers.each do |follower| %>
+          <a class="card-text" href="/profile/<%= User.find_by(id: follower.follower_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{follower.follower_id}").name %> </a></b> <br>
                     <%end%>
         </div>
         <div class="tab-pane fade in" id="tab3">
           <%
           @following.each do |following| %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: following).id.to_s%>"><b><%= User.find_by(id: "#{following}").name %> </a></b> <br>
+          <a class="card-text" href="/profile/<%= User.find_by(id: following.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{following.user_id}").name %> </a></b> <br>
                     <%end%>
         </div>
       </div>
