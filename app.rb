@@ -61,8 +61,16 @@ before do
 end
 
 get '/' do
-	@hometweets= @timeline_class.return_recent_tweets
-	erb :index
+  $redis_timeline.startRedis
+  if $redis_timeline.redisWorking
+    @hometweets = $redis_timeline.get_main_timeline
+    $redis_timeline.quitRedis
+    erb :redisindex
+  else
+    @hometweets= @timeline_class.return_recent_tweets
+    erb :index
+  end
+
 end
 
 get '/test_search' do
@@ -187,25 +195,39 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
+  $redis_timeline.startRedis
+  if $redis_timeline.redisWorking
+    @result.text = @twitter_functionality.display_tweet(@result)
+    $redis_timeline.post_tweet_home_timeline(@result)
+    $redis_timeline.quitRedis
+  else
+
+  end
 	@tweets = Tweet.all
 	redirect '/display'
 end
 
-post '/register' do
-  rabbitmq_authorization(params[:user])
+get '/hashtags/:id' do
+  @hashtag = Hashtag.find_by(id: params[:id])
+  @hashtagtweets = @hashtag.tweets.sort_by{ |k| k["time_created"] }.reverse!
+  erb :hashtags
+end
 
-# 	user_check = User.find_by(name: "#{params[:user]['name']}")
-#
-# 	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
-# 		redirect '/'
-# 	end
-# 	params[:user].delete('confirm-password')
-#
-# 	@user = User.new(params[:user])
-# 	@user.password = BCrypt::Password.create(@user.password)
-# 	@user.save
-#   session[:user] = @user
-# 	redirect to('/display')
+post '/register' do
+  #rabbitmq_authorization(params[:user])
+
+	user_check = User.find_by(name: "#{params[:user]['name']}")
+
+	if !user_check.nil? || (params[:user]['password'] != params[:user]['confirm-password'])
+		redirect '/'
+	end
+	params[:user].delete('confirm-password')
+
+	@user = User.new(params[:user])
+	@user.password = BCrypt::Password.create(@user.password)
+	@user.save
+  session[:user] = @user
+	redirect to('/display')
 end
 
 post '/search' do

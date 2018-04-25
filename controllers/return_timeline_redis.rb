@@ -13,8 +13,12 @@ class ReturnTimelineRedis
     $redis.quit
   end
 
-  def connectRedis
+  def startRedis
     $redis._client.connect
+  end
+
+  def redisWorking
+    return $redis._client.connected?
   end
 
   def add_user_redis(user)
