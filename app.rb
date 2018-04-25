@@ -115,6 +115,7 @@ post '/followprofile' do
     @followercontroller.incr_following(session[:user].id,@follow[:user_id])
    @followers = @followercontroller.get_followers( @follow[:user_id])
    @following = @followercontroller.get_following( @follow[:user_id])
+   $redis_timeline.add_user_timeline(@usertweets,session[:user])
     @followercontroller.quitRedis
        erb :redisprofile
     else
@@ -135,6 +136,7 @@ post '/unfollowprofile' do
     @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
    @followers = @followercontroller.get_followers( @unfollow[:user_id])
    @following = @followercontroller.get_following( @unfollow[:user_id])
+   $redis_timeline.remove_user_timeline(@user,session[:user])
     @followercontroller.quitRedis
        erb :redisprofile
     else

@@ -45,7 +45,8 @@ class ReturnTimelineRedis
     hash_name = get_hash_name(user.id)
     unless $redis.get(hash_name).nil?
       timeline = JSON.parse($redis.get(hash_name))
-      return timeline['tweets']
+      sorted = timeline['tweets'].sort_by { |k| k['time_created'] }.reverse!
+      return sorted
     end
     nil
   end
@@ -87,7 +88,8 @@ class ReturnTimelineRedis
       return posted['tweets']
     else
       $redis.del hash_name
-      posted = { tweets: [{ id: tweet.id, text: tweet.text, time_created: tweet.time_created, user_id: tweet.user_id, retweet_id: tweet.retweet_id }] }
+      posted = { tweets: [{ id: tweet.id, text: tweet.text, time_created: tweet.time_created,
+                  user_id: tweet.user_id, retweet_id: tweet.retweet_id }] }
     end
     $redis.set hash_name, posted.to_json
   end
@@ -98,7 +100,9 @@ class ReturnTimelineRedis
       add = mentioned.user.id.to_s
       user_timelines << add unless user_timelines.include?(add)
     end
-    tweet_json = { id: tweet.id, text: tweet.text, time_created: tweet.time_created, user_id: tweet.user_id, retweet_id: tweet.retweet_id }
+
+    tweet_json = { id: tweet.id, text: tweet.text, time_created: tweet.time_created,
+                    user_id: tweet.user_id, retweet_id: tweet.retweet_id }
 
     unless user_timelines.empty?
       user_timelines.each do |user|
@@ -106,6 +110,7 @@ class ReturnTimelineRedis
 
         if !$redis.get(hash_name).nil?
           user_timeline = JSON.parse($redis.get(hash_name))
+          #user_timeline['tweets'] = user_timeline['tweets'].sort_by { |k| k['time_created'] }.reverse!
           user_timeline['tweets'] << tweet_json
           $redis.set hash_name, user_timeline.to_json
         else
@@ -128,22 +133,28 @@ class ReturnTimelineRedis
     else
       $redis.del hash_name
     end
+
+    #timeline['tweets'] = timeline['tweets'].sort_by { |k| k['time_created'] }.reverse!
+
     tweets.each do |tweet|
-      tweet_json = { id: tweet.id, text: tweet.text, time_created: tweet.time_created, user_id: tweet.user_id, retweet_id: tweet.retweet_id }
+      tweet_json = { id: tweet.id, text: tweet.text, time_created: tweet.time_created,
+                      user_id: tweet.user_id, retweet_id: tweet.retweet_id}
       timeline['tweets'] << tweet_json
     end
-
     $redis.set get_hash_name(user.id), timeline.to_json
   end
 
   def remove_user_timeline(unfollowed, user)
     hash_name = get_hash_name(user.id)
+
     timeline = JSON.parse($redis.get(hash_name))
 
-    timeline['tweets'].each do |tweet|
-      timeline['tweets'].delete(tweet) if tweet['user_id'] == unfollowed.id
-    end
+    updated = []
 
+    timeline['tweets'].each do |tweet|
+       updated << tweet if tweet['user_id'] != unfollowed.id
+    end
+    timeline['tweets'] = updated
     $redis.set hash_name, timeline.to_json
   end
 end
