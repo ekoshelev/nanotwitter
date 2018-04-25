@@ -20,7 +20,7 @@
         origintweet = Tweet.find_by(id: tweet["retweet_id"]) %>
       retweeted <a class="card-text" href="/profile/<%=origintweet['user_id'].to_s%>"><b><%= User.find_by(id: "#{origintweet["user_id"]}").name %> </a>
         <%end%>
-      </b> <%=tweet["time_created"][0..9]%> at <%=tweet["time_created"][11..18]%></p>
+      </b> <%=tweet["time_created"][0..9]%> at <%=tweet["time_created"][11..15]%></p>
 
 
 

@@ -145,8 +145,16 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-	@tweets = @timeline_class.return_timeline_by_user( session[:user])
-	erb :display
+  $redis_timeline.startRedis
+  if $redis_timeline.redisWorking
+    @tweets = $redis_timeline.get_user_timeline(session[:user])
+    $redis_timeline.quitRedis
+
+    erb :redisdisplay
+  else
+    @tweets = @timeline_class.return_timeline_by_user( session[:user])
+    erb :display
+  end
 end
 
 
@@ -199,11 +207,11 @@ post '/post_tweet' do
   if $redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)
     $redis_timeline.post_tweet_home_timeline(@result)
+    $redis_timeline.post_tweet_redis(@result)
     $redis_timeline.quitRedis
   else
-
+    @tweets = Tweet.all
   end
-	@tweets = Tweet.all
 	redirect '/display'
 end
 

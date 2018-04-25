@@ -42,8 +42,9 @@ class ReturnTimelineRedis
   end
 
   def get_user_timeline(user)
-    unless $redis.get("user_timeline_#{user.id}").nil?
-      timeline = JSON.parse($redis.get("user_timeline_#{user.id}"))
+    hash_name = get_hash_name(user.id)
+    unless $redis.get(hash_name).nil?
+      timeline = JSON.parse($redis.get(hash_name))
       return timeline['tweets']
     end
     nil
