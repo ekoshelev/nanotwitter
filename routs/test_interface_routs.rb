@@ -131,6 +131,7 @@ post '/test/reset/standard' do
   @seed_redis = SeedRedis.new
   # @seed_redis.put_tweets_into_redis
   @seed_redis.put_followers_into_redis
+  @seed_redis.put_timelines_into_redis
   $redis.quit
 	return 200
 end
@@ -158,12 +159,15 @@ post '/test/users/create' do
 		u.password = Faker::Internet.password
 		u.save
 
+    $redis_timeline.startRedis
 		tweet_number.times do
 			t = Tweet.new
 			t.text = Faker::Twitter.status['text']
 			t.user_id = u.id
 			t.save
+      $redis_timeline.post_tweet_redis(t)
 		end
+    $redis_timeline.quitRedis
 
 	end
 
@@ -173,11 +177,11 @@ end
 
 post '/test/user/:u/tweets' do
 	if params[:u] == 'testuser'
-		user = User.find_by_name('TestUser')
+		user = @testuser
 	elsif User.find_by_id(params[:u].to_i)
 		user = User.find_by_id(params[:u].to_i)
 	else
-		return 404
+		return 500
 	end
 
 	number_tweets = params[:count].to_i
@@ -188,9 +192,14 @@ post '/test/user/:u/tweets' do
 
 	number_tweets.times do
 		t = Tweet.new
-		t.text = Faker::Twitter.status['text']
+		t.text = Faker::Hacker.say_something_smart
 		t.user_id = user.id
+    t.time_created = Time.now
 		t.save
+    $redis_timeline.startRedis
+    byebug
+    $redis_timeline.post_tweet_redis(t)
+    $redis_timeline.quitRedis
 	end
 
 return 200

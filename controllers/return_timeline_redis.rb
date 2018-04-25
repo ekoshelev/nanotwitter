@@ -61,7 +61,9 @@ class ReturnTimelineRedis
   end
 
   def post_tweet_home_timeline(tweet)
+    byebug
     if ($redis.get 'home_timeline') != nil
+      byebug
       rb_hash = JSON.parse($redis.get('home_timeline'))
       rb_hash['tweets'] << { id: tweet.id, text: tweet.text, time_created: tweet.time_created, user_id: tweet.user_id, retweet_id: tweet.retweet_id }
       if rb_hash['tweets'].size >= 51
@@ -76,6 +78,7 @@ class ReturnTimelineRedis
   end
 
   def post_tweet_redis(tweet)
+    post_tweet_home_timeline(tweet)
     add_user_timeline([tweet], tweet.user)
     posted_tweets(tweet)
     fanout(tweet)
@@ -112,6 +115,9 @@ class ReturnTimelineRedis
           user_timeline = JSON.parse($redis.get(hash_name))
           #user_timeline['tweets'] = user_timeline['tweets'].sort_by { |k| k['time_created'] }.reverse!
           user_timeline['tweets'] << tweet_json
+          if user_timeline['tweets'].size >= 51
+            user_timeline['tweets'] = user_timeline['tweets'].drop(1)
+          end
           $redis.set hash_name, user_timeline.to_json
         else
           $redis.del hash_name
@@ -140,6 +146,9 @@ class ReturnTimelineRedis
       tweet_json = { id: tweet.id, text: tweet.text, time_created: tweet.time_created,
                       user_id: tweet.user_id, retweet_id: tweet.retweet_id}
       timeline['tweets'] << tweet_json
+      if timeline['tweets'].size >= 51
+        timeline['tweets'] = timeline['tweets'].drop(1)
+      end
     end
     $redis.set get_hash_name(user.id), timeline.to_json
   end
@@ -151,6 +160,7 @@ class ReturnTimelineRedis
 
     updated = []
 
+    #does not work with mentions
     timeline['tweets'].each do |tweet|
        updated << tweet if tweet['user_id'] != unfollowed.id
     end

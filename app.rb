@@ -208,7 +208,7 @@ post '/post_tweet' do
   $redis_timeline.startRedis
   if $redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)
-    $redis_timeline.post_tweet_home_timeline(@result)
+    #$redis_timeline.post_tweet_home_timeline(@result)
     $redis_timeline.post_tweet_redis(@result)
     $redis_timeline.quitRedis
   else
