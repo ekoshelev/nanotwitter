@@ -162,7 +162,8 @@ post '/test/users/create' do
     $redis_timeline.startRedis
 		tweet_number.times do
 			t = Tweet.new
-			t.text = Faker::Twitter.status['text']
+			t.text = Faker::Hacker.say_something_smart
+      t.time_created = Time.now
 			t.user_id = u.id
 			t.save
       $redis_timeline.post_tweet_redis(t)
@@ -197,7 +198,6 @@ post '/test/user/:u/tweets' do
     t.time_created = Time.now
 		t.save
     $redis_timeline.startRedis
-    byebug
     $redis_timeline.post_tweet_redis(t)
     $redis_timeline.quitRedis
 	end

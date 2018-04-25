@@ -61,9 +61,7 @@ class ReturnTimelineRedis
   end
 
   def post_tweet_home_timeline(tweet)
-    byebug
     if ($redis.get 'home_timeline') != nil
-      byebug
       rb_hash = JSON.parse($redis.get('home_timeline'))
       rb_hash['tweets'] << { id: tweet.id, text: tweet.text, time_created: tweet.time_created, user_id: tweet.user_id, retweet_id: tweet.retweet_id }
       if rb_hash['tweets'].size >= 51
