@@ -32,6 +32,12 @@ configure do
   read_timeout: 1.0,
   write_timeout: 0.5
   )
+  $testuser = User.find_by(name: "TestUser")
+  tw = TwitterFunctionality.new
+  if $testuser == nil
+    $testuser = tw.create_test_user
+  end
+  $testuser_id = $testuser.id
 end
 
 helpers do
@@ -49,19 +55,15 @@ before do
 #  $redis.quit
   @tweets= Tweet.all
   @followers=Follower.all
-  @users = User.all
-  @followercontroller=FollowerController.new($redis, @users)
+  #@users = User.all
+  @followercontroller=FollowerController.new()
   @timeline_class=ReturnTimeline.new(@tweets,@followers)
-	$redis_timeline=ReturnTimelineRedis.new($redis, @tweets, @followers,@followercontroller)
+	$redis_timeline=ReturnTimelineRedis.new(@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
-  @testuser = User.find_by(name: "TestUser")
-  if @testuser == nil
-    @testuser = @twitter_functionality.create_test_user
-  end
 end
 
 get '/' do
-
+  @users = JSON.parse(User.all.to_json)
   if $redis_timeline.startRedis #$redis_timeline.redisWorking
     @hometweets = $redis_timeline.get_main_timeline
     $redis_timeline.quitRedis
@@ -149,6 +151,7 @@ end
 get '/display' do
   #$redis_timeline.startRedis
   if $redis_timeline.startRedis#$redis_timeline.redisWorking
+    @users = JSON.parse(User.all.to_json)
     @tweets = $redis_timeline.get_user_timeline(session[:user])
     $redis_timeline.quitRedis
 

@@ -1,7 +1,7 @@
 class FollowerController
-  def initialize(redis, users)
+  def initialize()
     #$redis=redis
-    @users=users
+    #@users=users
   end
 
   def incr_following(user,following)

@@ -2,10 +2,10 @@ require_relative 'follower_controller_redis'
 require 'byebug'
 
 class ReturnTimelineRedis
-  def initialize(redis, tweets, followers, fc)
+  def initialize(fc)
     #$redis = redis
-    @tweets = tweets
-    @followers = followers
+    #@tweets = tweets
+    #@followers = followers
     @followercontroller = fc
   end
 

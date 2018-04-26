@@ -187,5 +187,14 @@ class TwitterFunctionality
     return following_set
   end
 
+  def find_user_id(user_list,tweet)
+    user_list.each do |user|
+      if user['id'] == tweet['user_id']
+        return user
+      end
+    end
+    return nil
+  end
+
 
 end

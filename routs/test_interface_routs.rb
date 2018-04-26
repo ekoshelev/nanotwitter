@@ -18,7 +18,7 @@ Dir["./models/*.rb"].each {|file| require file}
 
 
 get '/user/testuser' do
-  session[:user] = @testuser
+  session[:user] = $testuser
   redirect '/display'
 end
 
@@ -26,7 +26,7 @@ post '/user/testuser/tweet' do
 	tweet = {
 	"text" => Faker::Hacker.say_something_smart,
 	"time_created" => Time.new.inspect,
-	"user_id" => @testuser.id}
+	"user_id" => $testuser_id}
 
 	@result = Tweet.new(tweet)
 	@result.save
@@ -48,7 +48,7 @@ post '/test/reset/all' do
 
   $redis.flushall
 	@twitter_functionality.reset_All
-	@testuser = @twitter_functionality.create_test_user
+	$testuser = @twitter_functionality.create_test_user
 
 	return 200
 end
@@ -56,27 +56,27 @@ end
 post '/test/reset/testuser' do
 
 
-	if @testuser.tweets.exists?
-	@testuser.tweets.each do |tweet|
+	if $testuser.tweets.exists?
+	$testuser.tweets.each do |tweet|
 			@twitter_functionality.delete_tweet(tweet)
 		end
 	end
 
-	if @testuser.followers.exists?
-		@testuser.followers.each do |follow|
+	if $testuser.followers.exists?
+		$testuser.followers.each do |follow|
 			@twitter_functionality.delete_follow(follow)
 		end
 	end
 
-	if @testuser.following.exists?
-		@testuser.following.each do |following|
+	if $testuser.following.exists?
+		$testuser.following.each do |following|
 			@twitter_functionality.delete_following(following)
 		end
 	end
 
-	@testuser.delete
+	$testuser.delete
 
-	@testuser = @twitter_functionality.create_test_user
+	$testuser = @twitter_functionality.create_test_user
 
 end
 
@@ -105,7 +105,7 @@ post '/test/reset/standard' do
 	@twitter_functionality.reset_follower
 	@twitter_functionality.reset_mention
 
-	@testuser = @twitter_functionality.create_test_user
+	$testuser = @twitter_functionality.create_test_user
 
   last_user_id = User.last.id
 
@@ -185,7 +185,7 @@ end
 
 post '/test/user/:u/tweets' do
 	if params[:u] == 'testuser'
-		user = @testuser
+		user = $testuser
 	elsif User.find_by_id(params[:u].to_i)
 		user = User.find_by_id(params[:u].to_i)
 	else

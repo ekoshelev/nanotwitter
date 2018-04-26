@@ -4,7 +4,7 @@ class SeedRedis
     @followers=Follower.all
     @users = User.all
     @tweets = Tweet.all
-    @followercontroller=FollowerController.new($redis, @users)
+    @followercontroller=FollowerController.new
   end
 
   def put_followers_into_redis

@@ -21,10 +21,11 @@
 </div>
         <%if @tweets != nil%>
         <%@tweets.each do |tweet|%>
+        <%user = @twitter_functionality.find_user_id(@users,tweet)%>
         <div class="card">
             <div class="card-block">
               <div class="row">
-                <a class="card-text" href="/profile/<%= tweet['user_id'].to_s%>"><b><%= User.find_by(id: "#{tweet['user_id']}").name %> </a></b>
+                <a class="card-text" href="/profile/<%= tweet['user_id'].to_s%>"><b><%= user['name'] %> </a></b>
 <% if tweet['retweet_id'] != nil
   origintweet = Tweet.find_by(id: tweet['retweet_id']) %>
 retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
