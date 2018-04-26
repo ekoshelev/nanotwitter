@@ -61,8 +61,8 @@ before do
 end
 
 get '/' do
-  $redis_timeline.startRedis
-  if $redis_timeline.redisWorking
+
+  if $redis_timeline.startRedis #$redis_timeline.redisWorking
     @hometweets = $redis_timeline.get_main_timeline
     $redis_timeline.quitRedis
     erb :redisindex
@@ -147,8 +147,8 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-  $redis_timeline.startRedis
-  if $redis_timeline.redisWorking
+  #$redis_timeline.startRedis
+  if $redis_timeline.startRedis#$redis_timeline.redisWorking
     @tweets = $redis_timeline.get_user_timeline(session[:user])
     $redis_timeline.quitRedis
 
@@ -205,8 +205,8 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-  $redis_timeline.startRedis
-  if $redis_timeline.redisWorking
+  #$redis_timeline.startRedis
+  if $redis_timeline.startRedis#$redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)
     #$redis_timeline.post_tweet_home_timeline(@result)
     $redis_timeline.post_tweet_redis(@result)

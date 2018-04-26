@@ -14,7 +14,17 @@ class ReturnTimelineRedis
   end
 
   def startRedis
-    $redis._client.connect
+
+    begin
+      $redis._client.connect
+      true
+    rescue
+      false
+    end
+
+
+
+
   end
 
   def redisWorking
