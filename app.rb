@@ -63,12 +63,14 @@ before do
 end
 
 get '/' do
-  @users = JSON.parse(User.all.to_json)
+
   if $redis_timeline.startRedis #$redis_timeline.redisWorking
+    @users = JSON.parse(User.all.to_json)
     @hometweets = $redis_timeline.get_main_timeline
     $redis_timeline.quitRedis
     erb :redisindex
   else
+    @users = User.all
     @hometweets= @timeline_class.return_recent_tweets
     erb :index
   end
@@ -149,7 +151,7 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-  #$redis_timeline.startRedis
+  $redis_timeline.startRedis
   if $redis_timeline.startRedis#$redis_timeline.redisWorking
     @users = JSON.parse(User.all.to_json)
     @tweets = $redis_timeline.get_user_timeline(session[:user])
@@ -157,6 +159,7 @@ get '/display' do
 
     erb :redisdisplay
   else
+    @users = User.all
     @tweets = @timeline_class.return_timeline_by_user( session[:user])
     erb :display
   end
