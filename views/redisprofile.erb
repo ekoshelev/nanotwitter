@@ -17,7 +17,7 @@
         <div class="card-background">
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
-        <div class="card-info"> <span class="card-title">redis <%= @user.name
+        <div class="card-info"> <span class="card-title"><%= @user.name
             %></span>
           <% if session[:user] != nil && session[:user].id != @user.id
             @unfollow=false
