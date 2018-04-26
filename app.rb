@@ -61,6 +61,7 @@ before do
 end
 
 get '/' do
+  $redis_timeline.quitRedis
   $redis_timeline.startRedis
   if $redis_timeline.redisWorking
     @hometweets = $redis_timeline.get_main_timeline
@@ -110,6 +111,7 @@ post '/followprofile' do
 	@result.save
   @user = User.find_by_id( @follow[:user_id])
 	@usertweets = @timeline_class.return_tweets_by_user( @follow[:user_id])
+  $redis_timeline.quitRedis
   @followercontroller.startRedis
   if @followercontroller.redisWorking
     @followercontroller.incr_following(session[:user].id,@follow[:user_id])
@@ -131,6 +133,7 @@ post '/unfollowprofile' do
 	follower.delete
   @user = User.find_by_id( @unfollow[:user_id])
 	@usertweets = @timeline_class.return_tweets_by_user( @unfollow[:user_id])
+  $redis_timeline.quitRedis
   @followercontroller.startRedis
   if @followercontroller.redisWorking
     @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
@@ -147,6 +150,7 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
+  $redis_timeline.quitRedis
   $redis_timeline.startRedis
   if $redis_timeline.redisWorking
     @tweets = $redis_timeline.get_user_timeline(session[:user])
@@ -163,6 +167,7 @@ end
 get '/profile/:id' do
   @user = User.find_by_id(params[:id])
   @usertweets = @timeline_class.return_tweets_by_user(params[:id])
+  $redis_timeline.quitRedis
   @followercontroller.startRedis
   if @followercontroller.redisWorking
    @followers = @followercontroller.get_followers( params[:id])
@@ -205,6 +210,7 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
+  $redis_timeline.quitRedis
   $redis_timeline.startRedis
   if $redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)

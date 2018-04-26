@@ -10836,3 +10836,37 @@ Did you mean?  user
 [2018-04-25 17:58:47 -0400 MacBook-Pro.local (47053)] INFO : Installing Bunny instrumentation
 [2018-04-25 17:58:48 -0400 MacBook-Pro.local (47053)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
 [2018-04-25 17:59:21 -0400 MacBook-Pro.local (47053)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Environment: development
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : No known dispatcher detected.
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Installing Sinatra instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Installing Net instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Finished instrumentation
+[2018-04-25 18:01:19 -0400 MacBook-Pro.local (47154)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
+[2018-04-25 18:01:20 -0400 MacBook-Pro.local (47154)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-25 18:01:20 -0400 MacBook-Pro.local (47154)] INFO : Installing Redis Instrumentation
+[2018-04-25 18:01:20 -0400 MacBook-Pro.local (47154)] INFO : Installing Bunny instrumentation
+[2018-04-25 18:01:24 -0400 MacBook-Pro.local (47154)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Starting the New Relic agent version 5.0.0.342 in "development" environment.
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Reading configuration from config/newrelic.yml (/Users/Riely/Dropbox/cosi105b_flyingr/nanotwitter)
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Environment: development
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : No known dispatcher detected.
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Application: Error 404's NanoTwitter (Development)
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Installing ActiveRecord 5 instrumentation
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Installing Sinatra instrumentation
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Installing Net instrumentation
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Installing deferred Rack::Builder instrumentation
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Installing Rack::Builder middleware instrumentation
+[2018-04-25 20:38:48 -0400 MacBook-Pro.local (47787)] INFO : Finished instrumentation
+[2018-04-25 20:38:49 -0400 MacBook-Pro.local (47787)] INFO : Doing deferred dependency-detection before Rack startup
+[2018-04-25 20:38:49 -0400 MacBook-Pro.local (47787)] INFO : Installing Redis Instrumentation
+[2018-04-25 20:38:49 -0400 MacBook-Pro.local (47787)] INFO : Installing Bunny instrumentation
+[2018-04-25 20:38:50 -0400 MacBook-Pro.local (47787)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1925321/applications/123314727
+[2018-04-25 20:39:17 -0400 MacBook-Pro.local (47787)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
