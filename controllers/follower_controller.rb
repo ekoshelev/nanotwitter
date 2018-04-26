@@ -1,6 +1,6 @@
 class FollowerController
   def initialize(redis, users)
-    $redis=redis
+    #$redis=redis
     @users=users
   end
 

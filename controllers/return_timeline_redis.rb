@@ -3,7 +3,7 @@ require 'byebug'
 
 class ReturnTimelineRedis
   def initialize(redis, tweets, followers, fc)
-    $redis = redis
+    #$redis = redis
     @tweets = tweets
     @followers = followers
     @followercontroller = fc

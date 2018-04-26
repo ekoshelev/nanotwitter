@@ -1,6 +1,6 @@
 class SeedRedis
   def initialize
-    $redis = Redis.new(url: ENV["REDIS_URL"])
+    #$redis = Redis.new(url: ENV["REDIS_URL"])
     @followers=Follower.all
     @users = User.all
     @tweets = Tweet.all
