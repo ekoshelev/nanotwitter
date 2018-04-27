@@ -269,7 +269,15 @@ end
 
 
 #Root of GraphQL Based API
+post '/api/v1/graphql' do
 
+		request_payload = JSON.parse(request.body.read)
+
+	  result = NanoTwitterAPI.execute(request_payload['query'])
+
+	  result.to_json
+
+end
 
 post '/api/token/new' do
 	if session[:user] != nil

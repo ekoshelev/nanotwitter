@@ -76,7 +76,7 @@ QueryType = GraphQL::ObjectType.define do
       tw = TwitterFunctionality.new
       if User.find_by(api_token: args[:api_token]) != nil
         user = User.find_by(api_token: args[:api_token])
-        tweet = user.tweets.create(text: args[:text],time_created: Time.now.getutc)
+        tweet = user.tweets.create(text: args[:text],time_created: Time.now)
         tw.add_hashtags(tweet)
         tw.add_mentions(tweet)
         return tweet
