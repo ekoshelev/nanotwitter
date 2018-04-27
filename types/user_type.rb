@@ -22,7 +22,7 @@ UserType = GraphQL::ObjectType.define do
     type types[TweetType]
     argument :recent, types.Int, default_value: 50
     resolve -> (user, args, ctx){
-      timeclass = ReturnTimeline.new
+      timeclass = ReturnTimeline.new(Tweet.all,nil)
       timeline = timeclass.return_timeline_by_user(user)
       return timeline[0...args[:recent]]
     }
