@@ -50,8 +50,8 @@ QueryType = GraphQL::ObjectType.define do
     type types[TweetType]
     argument :recent, types.Int, default_value: 50
     resolve -> (obj, args, ctx) {
-      #timeclass = ReturnTimeline.new
-      tweets = @timeline_class.return_recent_tweets
+      timeline_class = ReturnTimeline.new(Tweet.all,nil)
+      tweets = timeline_class.return_recent_tweets
       return tweets[0...args[:recent]]
     }
   end
