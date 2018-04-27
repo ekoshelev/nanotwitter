@@ -1,7 +1,7 @@
 require 'graphql'
 Dir["./controllers/*.rb"].each {|file| require file}
 #Dir["./*.rb"].each {|file| require file}
-require_relative 'user_type.rb'
+require './types/user_type.rb'
 require './types/tweet_type.rb'
 require './types/hashtag_type.rb'
 QueryType = GraphQL::ObjectType.define do
