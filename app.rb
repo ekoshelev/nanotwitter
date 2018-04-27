@@ -17,8 +17,8 @@ require './controllers/return_timeline_redis.rb'
 require './controllers/follower_controller_redis.rb'
 require_relative './temp/fry_seeding.rb'
 require './routs/test_interface_routs.rb'
-#require './routs/graphql_routs.rb'
-Dir["./types/*.rb"].each {|file| require file}
+require './routs/graphql_routs.rb'
+#Dir["./types/*.rb"].each {|file| require file}
 Dir["./models/*.rb"].each {|file| require file}
 #Dir["./controllers/*.rb"].each {|file| require file}
 
