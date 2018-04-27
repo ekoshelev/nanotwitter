@@ -1,6 +1,6 @@
 require 'graphql'
 Dir["./controllers/*.rb"].each {|file| require file}
-Dir["./types/*.rb"].each {|file| require file}
+Dir["./*.rb"].each {|file| require file}
 QueryType = GraphQL::ObjectType.define do
   name "Query"
   description "The query root for NanoTwitter's GraphQL Schema"
