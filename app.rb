@@ -164,8 +164,10 @@ get '/profile/:id' do
   @user = User.find_by_id(params[:id])
   @usertweets = @timeline_class.return_tweets_by_user(params[:id])
   @token = ""
-  if session[:user].id != nil && session[:user].id==params[:id].to_i
-		@token = session[:user].api_token
+  if session[:user] != nil
+    if session[:user].id != nil && session[:user].id==params[:id].to_i
+  		@token = session[:user].api_token
+    end
   end
   @followercontroller.startRedis
   if @followercontroller.redisWorking
