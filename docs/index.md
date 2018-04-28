@@ -13,6 +13,6 @@ This app was programmed primarily in Ruby. It was built using Sinatra, a lightwe
 
 
 ## Designed and Programmed by...
-- Elizabeth Koshalev
+- Elizabeth Koshelev
 - Riely Allen
 - Lara Frymark

@@ -15,8 +15,8 @@ class SeedRedis
 
   def put_timelines_into_redis
     @tweets.each do |tweet|
-      #$redis_timeline.post_tweet_home_timeline(tweet)
-      $redis_timeline.post_tweet_redis(tweet)
+      #@redis_timeline.post_tweet_home_timeline(tweet)
+      @redis_timeline.post_tweet_redis(tweet)
     end
   end
 

@@ -33,11 +33,11 @@ post '/user/testuser/tweet' do
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
 
-  if $redis_timeline.startRedis#$redis_timeline.redisWorking
+  if @redis_timeline.startRedis#@redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)
-    #$redis_timeline.post_tweet_home_timeline(@result)
-    $redis_timeline.post_tweet_redis(@result)
-    $redis_timeline.quitRedis
+    #@redis_timeline.post_tweet_home_timeline(@result)
+    @redis_timeline.post_tweet_redis(@result)
+    @redis_timeline.quitRedis
   end
 
 	redirect '/user/testuser'
@@ -166,16 +166,16 @@ post '/test/users/create' do
 		u.password = Faker::Internet.password
 		u.save
 
-    $redis_timeline.startRedis
+    @redis_timeline.startRedis
 		tweet_number.times do
 			t = Tweet.new
 			t.text = Faker::Hacker.say_something_smart
       t.time_created = Time.now
 			t.user_id = u.id
 			t.save
-      $redis_timeline.post_tweet_redis(t)
+      @redis_timeline.post_tweet_redis(t)
 		end
-    $redis_timeline.quitRedis
+    @redis_timeline.quitRedis
 
 	end
 
@@ -204,9 +204,9 @@ post '/test/user/:u/tweets' do
 		t.user_id = user.id
     t.time_created = Time.now
 		t.save
-    $redis_timeline.startRedis
-    $redis_timeline.post_tweet_redis(t)
-    $redis_timeline.quitRedis
+    @redis_timeline.startRedis
+    @redis_timeline.post_tweet_redis(t)
+    @redis_timeline.quitRedis
 	end
 
 return 200
