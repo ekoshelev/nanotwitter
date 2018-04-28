@@ -1,4 +1,4 @@
-## Welcome to nanoTwitter
+## Welcome to nanoTwitter (4.28.18)
 ![Home Page](home.png)
 
 ## So, what is nanoTwitter?
@@ -9,10 +9,15 @@ This app was programmed primarily in Ruby. It was built using Sinatra, a lightwe
 
 ![Profile Page](profile.png)
 
+## Some interesting technologies:
+Redis:
+GraphQL:
+Client Library as a gem:
+
 ## How does it perform?
 
 
 ## Designed and Programmed by...
-- Elizabeth Koshelev
+- Elizabeth Koshelev - lizkosheleva@gmail.com
 - Riely Allen
 - Lara Frymark
