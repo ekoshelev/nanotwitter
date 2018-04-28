@@ -10,18 +10,14 @@ require 'graphql'
 require 'json'
 require 'redis'
 require 'bcrypt'
-#require 'byebug'
 require './controllers/return_timeline.rb'
 require './controllers/twitter_functionality.rb'
 require './controllers/return_timeline_redis.rb'
 require './controllers/follower_controller_redis.rb'
 require_relative './temp/fry_seeding.rb'
 require './routs/test_interface_routs.rb'
-#require './routs/graphql_routs.rb'
-#Dir["./types/*.rb"].each {|file| require file}
 require './types/schema.rb'
 Dir["./models/*.rb"].each {|file| require file}
-#Dir["./controllers/*.rb"].each {|file| require file}
 
 require_relative 'temp/fry_test_001.rb'
 require_relative './temp/fry_seeding.rb'
@@ -49,14 +45,8 @@ helpers do
 end
 
 before do
-#   $redis = Redis.new(url: ENV["REDIS_URL"], connect_timeout: 0.2,
-#   read_timeout: 1.0,
-#   write_timeout: 0.5
-# )
-#  $redis.quit
   @tweets= Tweet.all
   @followers=Follower.all
-  #@users = User.all
   @followercontroller=FollowerController.new()
   @timeline_class=ReturnTimeline.new(@tweets,@followers)
 	@redis_timeline=ReturnTimelineRedis.new(@followercontroller)
@@ -65,7 +55,7 @@ end
 
 get '/' do
 
-  if @redis_timeline.startRedis #@redis_timeline.redisWorking
+  if @redis_timeline.startRedis
     @users = JSON.parse(User.all.to_json)
     @hometweets = @redis_timeline.get_main_timeline
     @redis_timeline.quitRedis
@@ -153,7 +143,7 @@ end
 
 get '/display' do
   @redis_timeline.startRedis
-  if @redis_timeline.startRedis#@redis_timeline.redisWorking
+  if @redis_timeline.startRedis
     @users = JSON.parse(User.all.to_json)
     @tweets = @redis_timeline.get_user_timeline(session[:user])
     @redis_timeline.quitRedis
