@@ -5,15 +5,15 @@
 	<div class="row">
 		<div class="cn">
 
-              <form action='/post_tweet' method='POST'>
-  <label for="tweet" Username:/>
-<input id="description" name="tweet[text]" type="text">
-<input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
-<input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
-<input type='submit' value='Post Tweet'/>
-</form>
+			<form action='/post_tweet' method='POST'>
+				<label for="tweet" username:="Username:"/>
+				<input id="description" name="tweet[text]" type="text">
+				<input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
+				<input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
+				<input type='submit' value='Post Tweet'/>
+			</form>
 
-        </div>
+		</div>
 	</div>
 </div>
 

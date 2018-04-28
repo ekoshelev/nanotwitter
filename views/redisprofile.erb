@@ -3,8 +3,8 @@
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 <link href="/css/login.css" rel="stylesheet">
 
-  <script type="text/javascript" language="javascript" src="../js/user_profile.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" ></script>
+<script type="text/javascript" language="javascript" src="../js/user_profile.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -12,122 +12,146 @@
 <%= erb :_navigation %>
 
 <div class="container-fluid">
-<div class="col-lg-12 col-sm-12">
+  <div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
-        <div class="card-background">
-            <!-- http://lorempixel.com/850/280/people/9/ -->
-        </div>
-        <div class="card-info"> <span class="card-title"><%= @user.name
-            %></span>
-            <%if session[:user] != nil && @user.id == session[:user].id %><br><br>
-        API token: <%=@token %> <form action="/api/token/new" method="POST">
-          <input  class='btn btn-secondary btn-sm' type="submit" value="Make New API Token">
-        </form>
-      <%end%>
-          <% if session[:user] != nil && session[:user].id != @user.id
+      <div class="card-background">
+        <!-- http://lorempixel.com/850/280/people/9/ -->
+      </div>
+      <div class="card-info">
+        <span class="card-title"><%= @user.name %></span>
+        <%if session[:user] != nil && @user.id == session[:user].id %><br><br>
+          API token:
+          <%=@token %>
+          <form action="/api/token/new" method="POST">
+            <input class='btn btn-secondary btn-sm' type="submit" value="Make New API Token">
+          </form>
+        <%end%>
+        <% if session[:user] != nil && session[:user].id != @user.id
             @unfollow=false
           %>
-              <% if @followers.include? session[:user].id.to_s
+          <% if @followers.include? session[:user].id.to_s
                 @unfollow=true %>
-                  <form method="POST" action="/unfollowprofile">
-                <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
-                <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
-                <input class='btn btn-primary' type='submit' value='Unfollow'>
-              </form>
+            <form method="POST" action="/unfollowprofile">
+              <input type="hidden" name="unfollow[follower_id]" value="<%= session[:user].id %>">
+              <input type="hidden" name="unfollow[user_id]" value="<%=  @user.id  %>">
+              <input class='btn btn-primary' type='submit' value='Unfollow'>
+            </form>
 
-            <%end%>
-            <% if @unfollow ==false %>
+          <%end%>
+          <% if @unfollow ==false %>
 
             <% unless session[:user].nil? %>
-            <form method="POST" action="/followprofile">
-              <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
-              <input type="hidden" name="follow[user_id]" value="<%=  @user.id  %>">
-              <input class='btn btn-primary' type='submit' value='Follow'>
-</form>
+              <form method="POST" action="/followprofile">
+                <input type="hidden" name="follow[follower_id]" value="<%= session[:user].id %>">
+                <input type="hidden" name="follow[user_id]" value="<%=  @user.id  %>">
+                <input class='btn btn-primary' type='submit' value='Follow'>
+              </form>
             <% end %>
-              <%end%>
-              <%end%>
+          <%end%>
+        <%end%>
 
-        </div>
+      </div>
     </div>
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">Tweets</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Followers <%=@followercontroller.get_followers_count(@user.id) %> </div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <div class="hidden-xs">Following <%=@followercontroller.get_following_count(@user.id) %></div>
-            </button>
-        </div>
+      <div class="btn-group" role="group">
+        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <div class="hidden-xs">Tweets</div>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <div class="hidden-xs">Followers
+            <%=@followercontroller.get_followers_count(@user.id) %>
+          </div>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <div class="hidden-xs">Following
+            <%=@followercontroller.get_following_count(@user.id) %></div>
+        </button>
+      </div>
     </div>
 
-        <div class="well">
+    <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
           <%@usertweets.each do |tweet|
             %>
 
-              <% if tweet.user_id = @user.id %>
-          <div class="card">
-              <div class="card-block">
-                <div class="row">
-                  <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b>
-  <% if tweet.retweet_id != nil
+            <% if tweet.user_id = @user.id %>
+              <div class="card">
+                <div class="card-block">
+                  <div class="row">
+                    <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>">
+                      <b><%= User.find_by(id: "#{tweet.user_id}").name %>
+                      </a>
+                    </b>
+                    <% if tweet.retweet_id != nil
     origintweet = Tweet.find_by(id: tweet.retweet_id) %>
-  retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a></b>
-    <%end%>  <%=tweet.time_created%>
+                      retweeted
+                      <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>">
+                        <b><%= User.find_by(id: "#{origintweet.user_id}").name %>
+                        </a>
+                      </b>
+                    <%end%>
+                    <%=tweet.time_created%>
 
-                    </div>
-                    <% if tweet.retweet_id != nil %>
-                        <p class="card-text">  <%= origintweet.text%></p>
-                    <% else %>
-                      <p class="card-text">  <%=tweet.text%></p>
-    <%end%>
-  <% if session[:user] !=nil && tweet.user_id != session[:user].id %>
-                  <form method="POST" action="/retweet">
-                    <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
-                    <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
-                    <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
-                    <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
-      <button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
-  </form>
-  <% end %>
-  </div>
-</div>
+                  </div>
+                  <% if tweet.retweet_id != nil %>
+                    <p class="card-text">
+                      <%= origintweet.text%></p>
+                  <% else %>
+                    <p class="card-text">
+                      <%=tweet.text%></p>
+                  <%end%>
+                  <% if session[:user] !=nil && tweet.user_id != session[:user].id %>
+                    <form method="POST" action="/retweet">
+                      <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
+                      <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
+                      <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
+                      <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
+                      <button class='btn' type='submit' style="background-color: Transparent;">
+                        <span class="glyphicon glyphicon-retweet"></span></button>
+                    </form>
+                  <% end %>
+                </div>
+              </div>
 
-      <%end%>
-      <%end%>
+            <%end%>
+          <%end%>
 
-</div>
-
-
+        </div>
 
         <div class="tab-pane fade in" id="tab2">
           <%
           @followers.each do |follower|  %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: follower.to_s).id.to_s%>"><b><%= User.find_by(id: "#{follower}").name %> </a></b> <br>
-                    <%end%>
+            <a class="card-text" href="/profile/<%= User.find_by(id: follower.to_s).id.to_s%>">
+              <b><%= User.find_by(id: "#{follower}").name %>
+              </a>
+            </b>
+            <br>
+          <%end%>
         </div>
         <div class="tab-pane fade in" id="tab3">
           <%
           @following.each do |following| %>
-          <a class="card-text" href="/profile/<%= User.find_by(id: following).id.to_s%>"><b><%= User.find_by(id: "#{following}").name %> </a></b> <br>
-                    <%end%>
+            <a class="card-text" href="/profile/<%= User.find_by(id: following).id.to_s%>">
+              <b><%= User.find_by(id: "#{following}").name %>
+              </a>
+            </b>
+            <br>
+          <%end%>
         </div>
       </div>
     </div>
 
-
-    </div>
-
   </div>
+
+</div>
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

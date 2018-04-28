@@ -6,6 +6,7 @@ Lara Frymark
 
 Github:https://github.com/ekoshelev/nanotwitter
 Heroku: https://nanotwitternotfound404.herokuapp.com/
+Github Pages: https://ekoshelev.github.io/nanotwitter/
 Email: scalability404@gmail.com
 
 Week 1: Lizzie does bootstrap and UI, Riely sets up database, Lara does routes
