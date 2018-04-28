@@ -19,6 +19,11 @@
         </div>
         <div class="card-info"> <span class="card-title"><%= @user.name
             %></span>
+            <%if session[:user] != nil && @user.id == session[:user].id %><br><br>
+        API token: <%=@token %> <form action="/api/token/new" method="POST">
+          <input  class='btn btn-secondary btn-sm' type="submit" value="Make New API Token">
+        </form>
+      <%end%>
           <% if session[:user] != nil && session[:user].id != @user.id
             @unfollow=false
           %>

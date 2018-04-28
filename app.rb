@@ -170,6 +170,10 @@ end
 get '/profile/:id' do
   @user = User.find_by_id(params[:id])
   @usertweets = @timeline_class.return_tweets_by_user(params[:id])
+  @token = ""
+  if session[:user].id != nil && session[:user].id==params[:id].to_i
+		@token = session[:user].api_token
+  end
   @followercontroller.startRedis
   if @followercontroller.redisWorking
    @followers = @followercontroller.get_followers( params[:id])
@@ -183,6 +187,28 @@ get '/profile/:id' do
     end
 
 end
+
+post '/api/token/new' do
+  @token=Faker::Crypto.unique.md5
+	session[:user].api_token = @token
+	session[:user].save
+  @user = User.find_by_id(session[:user])
+  @usertweets = @timeline_class.return_tweets_by_user(session[:user].id)
+  @followercontroller.startRedis
+    if @followercontroller.redisWorking
+       @followers = @followercontroller.get_followers(session[:user].id)
+       @following = @followercontroller.get_following(session[:user].id)
+      @followercontroller.quitRedis
+     erb :redisprofile
+   else
+          @followers = @timeline_class.return_follower_list(session[:user].id)
+           @following = @timeline_class.return_following_list(session[:user].id)
+           erb :profile
+        end
+end
+
+
+
 
 post '/login' do
 	user = User.find_by(name: "#{params[:username]}")
