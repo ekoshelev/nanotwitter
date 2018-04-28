@@ -238,10 +238,8 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-  #@redis_timeline.startRedis
-  if @redis_timeline.startRedis#@redis_timeline.redisWorking
+  if @redis_timeline.startRedis
     @result.text = @twitter_functionality.display_tweet(@result)
-    #@redis_timeline.post_tweet_home_timeline(@result)
     @redis_timeline.post_tweet_redis(@result)
     @redis_timeline.quitRedis
   else
