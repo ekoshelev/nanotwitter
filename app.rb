@@ -59,16 +59,16 @@ before do
   #@users = User.all
   @followercontroller=FollowerController.new()
   @timeline_class=ReturnTimeline.new(@tweets,@followers)
-	$redis_timeline=ReturnTimelineRedis.new(@followercontroller)
+	@redis_timeline=ReturnTimelineRedis.new(@followercontroller)
 	@twitter_functionality = TwitterFunctionality.new
 end
 
 get '/' do
 
-  if $redis_timeline.startRedis #$redis_timeline.redisWorking
+  if @redis_timeline.startRedis #@redis_timeline.redisWorking
     @users = JSON.parse(User.all.to_json)
-    @hometweets = $redis_timeline.get_main_timeline
-    $redis_timeline.quitRedis
+    @hometweets = @redis_timeline.get_main_timeline
+    @redis_timeline.quitRedis
     erb :redisindex
   else
     @users = User.all
@@ -120,7 +120,7 @@ post '/followprofile' do
     @followercontroller.incr_following(session[:user].id,@follow[:user_id])
    @followers = @followercontroller.get_followers( @follow[:user_id])
    @following = @followercontroller.get_following( @follow[:user_id])
-   $redis_timeline.add_user_timeline(@usertweets,session[:user])
+   @redis_timeline.add_user_timeline(@usertweets,session[:user])
     @followercontroller.quitRedis
        erb :redisprofile
     else
@@ -141,7 +141,7 @@ post '/unfollowprofile' do
     @followercontroller.decr_following(@unfollow[:follower_id],@unfollow[:user_id])
    @followers = @followercontroller.get_followers( @unfollow[:user_id])
    @following = @followercontroller.get_following( @unfollow[:user_id])
-   $redis_timeline.remove_user_timeline(@user,session[:user])
+   @redis_timeline.remove_user_timeline(@user,session[:user])
     @followercontroller.quitRedis
        erb :redisprofile
     else
@@ -152,11 +152,11 @@ post '/unfollowprofile' do
 end
 
 get '/display' do
-  $redis_timeline.startRedis
-  if $redis_timeline.startRedis#$redis_timeline.redisWorking
+  @redis_timeline.startRedis
+  if @redis_timeline.startRedis#@redis_timeline.redisWorking
     @users = JSON.parse(User.all.to_json)
-    @tweets = $redis_timeline.get_user_timeline(session[:user])
-    $redis_timeline.quitRedis
+    @tweets = @redis_timeline.get_user_timeline(session[:user])
+    @redis_timeline.quitRedis
 
     erb :redisdisplay
   else
@@ -238,12 +238,12 @@ post '/post_tweet' do
 	@result.save
   @twitter_functionality.add_hashtags(@result)
   @twitter_functionality.add_mentions(@result)
-  #$redis_timeline.startRedis
-  if $redis_timeline.startRedis#$redis_timeline.redisWorking
+  #@redis_timeline.startRedis
+  if @redis_timeline.startRedis#@redis_timeline.redisWorking
     @result.text = @twitter_functionality.display_tweet(@result)
-    #$redis_timeline.post_tweet_home_timeline(@result)
-    $redis_timeline.post_tweet_redis(@result)
-    $redis_timeline.quitRedis
+    #@redis_timeline.post_tweet_home_timeline(@result)
+    @redis_timeline.post_tweet_redis(@result)
+    @redis_timeline.quitRedis
   else
     @tweets = Tweet.all
   end

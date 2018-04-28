@@ -82,6 +82,8 @@ QueryType = GraphQL::ObjectType.define do
         tweet = user.tweets.create(text: args[:text],time_created: Time.now)
         tw.add_hashtags(tweet)
         tw.add_mentions(tweet)
+        rt = ReturnTimelineRedis.new(FollowerController.new)
+        rt.post_tweet_redis(tweet)
         return tweet
       else
         tweet = Tweet.new(text: "Invalid API Token: #{args[:api_token]}")
