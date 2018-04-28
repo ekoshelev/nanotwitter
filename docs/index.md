@@ -18,6 +18,6 @@ Client Library as a gem:
 
 
 ## Designed and Programmed by...
-- Elizabeth Koshelev
+- Elizabeth Koshelev - lizkosheleva@gmail.com
 - Riely Allen
 - Lara Frymark
