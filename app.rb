@@ -68,22 +68,25 @@ get '/' do
 
 end
 
-get '/test_search' do
-  erb :test_search
-end
-
-post '/test_search' do
-  @users = User.all
-  @tweets = Tweet.all
-
-  @user_search = @users.select {|user| user.name.include?(params[:search_term])}
-  @tweet_search = @tweets.select {|tweet| tweet.text.include?(params[:search_term])}
-
-  erb :test_search_success
-end
-
 get '/search' do
-	erb :search
+  @search_term = params[:search_term]
+
+  if @search_term[0..5] == "user: "
+    @users = User.all
+    @user_results = @users.select {|user| user.name.include?(params[:search_term][6..-1])}
+    puts "#{params[:search_term][6..-1]}"
+  else
+    "tweets"
+    @tweets = Tweet.all
+    @tweet_results = @tweets.select {|tweet| tweet.text.include?(params[:search_term])}
+    puts "TWEET RESULTS"
+  end
+
+  erb :search_success
+end
+
+post '/search' do
+  redirect "/search?search_term=#{params[:search_term]}"
 end
 
 get '/post' do
@@ -259,10 +262,6 @@ post '/register' do
 	@user.save
   session[:user] = @user
 	redirect to('/display')
-end
-
-post '/search' do
-    redirect '/search'
 end
 
 class TestApp < Sinatra::Base
