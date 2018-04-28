@@ -19,6 +19,7 @@ Client Library as a gem:  We built a gem to interface with our NanoTwitter API. 
 ## How does it perform?
 We ran into an issue with redis the day of testing, as we had reached the maximum client load for the free version of the service.  These errors would immediately end our scalability tests.  The work arounds we were able to develop in the very short amount of time we had made us more scalable than if we did not have redis, but limited us from fully utilizing the service.  Without the client load however, our app loads from redis very quickly, regardless of the number of entries in the database.  The use of a "fanout" algorithm also dramatically increases the speed of loading a user's timeline, as the entire timleine is compiled at write time.
 
+Our app was unable to pass the 1500 level of client load.
 
 ## Designed and Programmed by...
 - Elizabeth Koshelev - lizkosheleva@gmail.com
