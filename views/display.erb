@@ -2,61 +2,72 @@
 <link href="/css/login.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 <%= erb :_navigation %>
 <div class="container">
-	<div class="row">
-		<div class="cn">
-          <ol>
-<div class="container-fluid">
-                    <form action='/post_tweet' class="form-inline"  method='POST'>
-        <label for="tweet" Username:/>
-          <div class="form-group row">
-      <input id="description"  class="form-control" name="tweet[text]" type="text" maxlength="280" placeholder="What's happening?" >
-      <input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
-      <input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
-        <input class='btn btn-primary' type='submit' value='Tweet'>
-      </div>
-      </form>
-</div>
+  <div class="row">
+    <div class="cn">
+      <ol>
+        <div class="container-fluid">
+          <form action='/post_tweet' class="form-inline" method='POST'>
+            <label for="tweet" username:="Username:"/>
+            <div class="form-group row">
+              <input id="description" class="form-control" name="tweet[text]" type="text" maxlength="280" placeholder="What's happening?">
+              <input type="hidden" name="tweet[time_created]" value="<%= Time.new.inspect%>">
+              <input type="hidden" name="tweet[user_id]" value="<%= session[:user].id %>">
+              <input class='btn btn-primary' type='submit' value='Tweet'>
+            </div>
+          </form>
+        </div>
 
         <%@tweets.each do |tweet|
           %>
-        <div class="card">
+          <div class="card">
             <div class="card-block">
               <div class="row">
-                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{tweet.user_id}").name %> </a></b>
-<% if tweet.retweet_id != nil
+                <a class="card-text" href="/profile/<%= User.find_by(id: tweet.user_id.to_s).id.to_s%>">
+                  <b><%= User.find_by(id: "#{tweet.user_id}").name %>
+                  </a>
+                </b>
+                <% if tweet.retweet_id != nil
   origintweet = Tweet.find_by(id: tweet.retweet_id) %>
-retweeted <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>"><b><%= User.find_by(id: "#{origintweet.user_id}").name %> </a>
-  <%end%>
-                </b> <%=tweet.time_created%></p>
+                  retweeted
+                  <a class="card-text" href="/profile/<%= User.find_by(id: origintweet.user_id.to_s).id.to_s%>">
+                    <b><%= User.find_by(id: "#{origintweet.user_id}").name %>
+                    </a>
+                  <%end%>
+                </b>
+                <%=tweet.time_created%></p>
 
-                  </div>
-                  <% if tweet.retweet_id != nil %>
-                      <p class="card-text">  <%= origintweet.text%></p>
-                  <% else %>
-                    <p class="card-text">  <%=tweet.text%></p>
-  <%end%>  <% if tweet.user_id != session[:user].id %>
-  <form method="POST" action="/retweet">
-    <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
-    <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
-    <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
-    <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
-<button class='btn' type='submit' style="background-color: Transparent;">  <span class="glyphicon glyphicon-retweet"></span></button>
-</form>
-<%end%>
             </div>
+            <% if tweet.retweet_id != nil %>
+              <p class="card-text">
+                <%= origintweet.text%></p>
+            <% else %>
+              <p class="card-text">
+                <%=tweet.text%></p>
+            <%end%>
+            <% if tweet.user_id != session[:user].id %>
+              <form method="POST" action="/retweet">
+                <input type="hidden" name="retweet[text]" value="<%= tweet.text %>">
+                <input type="hidden" name="retweet[retweet_id]" value="<%= tweet.id %>">
+                <input type="hidden" name="retweet[user_id]" value="<%= session[:user].id %>">
+                <input type="hidden" name="retweet[time_created]" value="<%= Time.new.inspect%>">
+                <button class='btn' type='submit' style="background-color: Transparent;">
+                  <span class="glyphicon glyphicon-retweet"></span></button>
+              </form>
+            <%end%>
+          </div>
         </div>
 
         <br>
-          <br>
-        </li>
-        <%end%>
-      </ol>
+        <br>
+      </li>
+    <%end%>
+  </ol>
 
-        </div>
-	</div>
+</div>
+</div>
 </div>
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
